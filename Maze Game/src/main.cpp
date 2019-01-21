@@ -5,15 +5,6 @@
 
 using std::map;
 
-void mapTypesToPixels(map<Maze::Type, Display::Pixel> &typeToPixelMap) {
-
-	typeToPixelMap.emplace(Maze::Type::WALL, Display::Pixel((char)219, 1));
-	typeToPixelMap.emplace(Maze::Type::PATH, Display::Pixel((char)0, 1));
-	typeToPixelMap.emplace(Maze::Type::START, Display::Pixel('S', 1));
-	typeToPixelMap.emplace(Maze::Type::DESTINATION, Display::Pixel('D', 1));
-	typeToPixelMap.emplace(Maze::Type::PLAYER, Display::Pixel('P', 1));
-}
-
 int main() {
 
 	Maze maze(25, 25);

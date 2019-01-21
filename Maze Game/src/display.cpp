@@ -78,7 +78,7 @@ void Display::swapBuffers() {
 				currentPixel.symbol = nextPixel.symbol;
 				currentPixel.color = nextPixel.color;
 
-				// TODO: Windows specific code. Consider splitting this into its own method to make changing platform specific code easier
+				// TODO: Windows specific code. Consider splitting this into its own function to make changing platform specific code easier
 				COORD newCoord = { x, y };
 				SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), newCoord);
 				SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), nextPixel.color);
