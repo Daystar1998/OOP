@@ -170,26 +170,38 @@ void Maze::update() {
 
 void Maze::draw(Display &display) {
 
-	vector<Display::Pixel> pixels(width * height);
+	vector<Display::Pixel> pixels;
 
 	for (int y = 0; y < height; y++) {
 
 		for (int x = 0; x < width; x++) {
 
+			Display::Pixel current;
+
 			// TODO: Hardcoded. Fix this
-			if (getType(x, y) == Type::WALL) {
+			switch (getType(x, y)) {
 
-				pixels.push_back(display.getPixel("wall"));
-			}else if (getType(x, y) == Type::PATH) {
+				case Type::WALL:
 
-				pixels.push_back(display.getPixel("path"));
-			} else if (getType(x, y) == Type::START) {
+					current = display.getPixel("wall");
+					break;
+				case Type::PATH:
 
-				pixels.push_back(display.getPixel("start"));
-			} else if (getType(x, y) == Type::DESTINATION) {
+					current = display.getPixel("path");
+					break;
+				case Type::START:
 
-				pixels.push_back(display.getPixel("destination"));
+					current = display.getPixel("start");
+					break;
+				case Type::DESTINATION:
+
+					current = display.getPixel("destination");
+					break;
+				default:
+					throw "Error: Unsupported type";
 			}
+
+			pixels.push_back(current);
 		}
 	}
 

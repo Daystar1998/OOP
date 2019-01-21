@@ -53,8 +53,8 @@ public:
 	void clearScreen();
 	void fill(Pixel &pixel);
 
-	void draw(int startX, int startY, int width, int height, vector<Pixel> &buffer);
-	void draw(int x, int y, Pixel pixel);
+	void draw(int x, int y, Pixel data);
+	void draw(int startX, int startY, int width, int height, vector<Pixel> data);
 
 	void resize(int width, int height);
 

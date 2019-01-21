@@ -32,35 +32,32 @@ void Display::clearScreen() {
 
 void Display::fill(Pixel &pixel) {
 
-	for (int x = 0; x < width; x++) {
+	for (int i = 0; i < width * height; i++) {
 
-		for (int y = 0; y < height; y++) {
-
-			draw(x, y, pixel);
-		}
+		nextBuffer[i] = pixel;
 	}
 }
 
-// TODO: Consider switching to accepting a Pixel pointer and merging with the draw function below this one
-void Display::draw(int startX, int startY, int width, int height, vector<Pixel> &buffer) {
+void Display::draw(int x, int y, Pixel data) {
+
+	vector<Pixel> temp = { data };
+
+	draw(x, y, 1, 1, temp);
+}
+
+void Display::draw(int startX, int startY, int width, int height, vector<Pixel> data) {
 
 	// TODO: Implement clipping to avoid out of bounds errors and other odd effects
 
 	// TODO: The y-axis seems to be flipped so adding 1 causes the position to move down. Flip it here to correct it
-	for (int y = startY; y < height; y++) {
+	for (int y = 0; y < height; y++) {
 
-		for (int x = startX; x < width; x++) {
+		for (int x = 0; x < width; x++) {
 
-			Pixel current = buffer[y * width + x];
-
-			draw(x, y, current);
+			Pixel current = data[y * width + x];
+			nextBuffer[(y + startY) * Display::width + (x + startX)] = current;
 		}
 	}
-}
-
-void Display::draw(int x, int y, Pixel pixel) {
-
-	nextBuffer[y * width + x] = pixel;
 }
 
 void Display::swapBuffers() {

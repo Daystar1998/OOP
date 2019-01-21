@@ -16,3 +16,5 @@
 /x64/Debug
 =======
 >>>>>>> 143d9cc... Drawing to the command prompt and generating the maze
+/intermediates
+/Win32/Debug
