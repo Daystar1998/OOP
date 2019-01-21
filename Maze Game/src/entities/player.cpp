@@ -22,28 +22,24 @@ void Player::update(Maze &maze) {
 	}
 }
 
-// TODO: Consider splitting this into an Input class which would run on a seperate thread to avoid unwanted pauses
 int Player::getKey() {
 
 	int result = 0;
 
-	while (result == 0) {
+	short MAX_SHORT = 0x7FFF; //111111111111111
 
-		short MAX_SHORT = 0x7FFF; //111111111111111
+	if (GetAsyncKeyState(VK_LEFT) & MAX_SHORT) {
 
-		if (GetAsyncKeyState(VK_LEFT) & MAX_SHORT) {
+		result = VK_LEFT;
+	} else if (GetAsyncKeyState(VK_UP) & MAX_SHORT) {
 
-			result = VK_LEFT;
-		} else if (GetAsyncKeyState(VK_UP) & MAX_SHORT) {
+		result = VK_UP;
+	} else if (GetAsyncKeyState(VK_RIGHT) & MAX_SHORT) {
 
-			result = VK_UP;
-		} else if (GetAsyncKeyState(VK_RIGHT) & MAX_SHORT) {
+		result = VK_RIGHT;
+	} else if (GetAsyncKeyState(VK_DOWN) & MAX_SHORT) {
 
-			result = VK_RIGHT;
-		} else if (GetAsyncKeyState(VK_DOWN) & MAX_SHORT) {
-
-			result = VK_DOWN;
-		}
+		result = VK_DOWN;
 	}
 
 	return result;
