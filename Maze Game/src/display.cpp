@@ -49,13 +49,12 @@ void Display::draw(int startX, int startY, int width, int height, vector<Pixel> 
 
 	// TODO: Implement clipping to avoid out of bounds errors and other odd effects
 
-	// TODO: The y-axis seems to be flipped so adding 1 causes the position to move down. Flip it here to correct it
 	for (int y = 0; y < height; y++) {
 
 		for (int x = 0; x < width; x++) {
 
 			Pixel current = data[y * width + x];
-			nextBuffer[(y + startY) * Display::width + (x + startX)] = current;
+			nextBuffer[(Display::width - 1 - (y + startY)) * Display::width + (x + startX)] = current;
 		}
 	}
 }
