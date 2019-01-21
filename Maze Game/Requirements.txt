@@ -1,0 +1,34 @@
+Your program must:
+
+	1. Generate a new random solvable maze each time the program is run.  I used an algorithm represented in the flowchart in Figure 2. You may use any other algorithm you would like. The problem with this algorithm is that the “wrong” paths are often easy to see because they are so short. (25 points)
+	2. Mark the starting point of the maze. (3 points)
+	3. Select a destination within the maze that can be navigated to, and mark it. (3 points)
+	4. Allow the user to use the arrow keys to navigate through the maze. Move a character to indicate where the player current is. The player should not be able to move through walls or go out of bounds. (8 points)    
+		a. I used the GetAsyncKeyState(i) function from the windows.h library to read the arrow keys from the keyboard. The method I used eats up a processor while the program is running (I am not a fan of that).  
+		b. I used setConsoleCursorPosition from the windows.h library to change where I would write characters at specific coordinates
+	5. Notify the user when they have completed the maze. (3 points)
+	6. Have at least one of the following options: (8 points)
+		a. Add colors to the start (S), destination (X),  and player (P).  You are free to use any symbols you want.
+		b. Keep a low time list.  Allow the user to enter their name if they have one of the 10 best times.  You will most likely want to save this to a text file.
+		c. Have a ghost or ghosts that randomly move around the maze. If you touch them you lose. You may allow ghosts to move through walls. This option will require threading.
+		d. Add an options menu to set things such as the maze size and START, DESTINATION, and PLAYER symbols.
+		e.Drop bread crumbs. Pick up the breadcrumbs and do not drop more if you are backtracking. In this way, when you are done only the solution is marked.
+		f. Add portals (special walls) that will move the player somewhere else on the board (may be a random location).
+
+Design requirements:
+
+	1. Organize the vast majority of your maze logic within a class named Maze.
+	2. Organize the operations you perform on the maze in concise methods.
+	3. Use the STL stack in the maze generation. 
+	See example STL stack code at http://www.dreamincode.net/forums/topic/57497-stl-stack/.
+
+Your syntax must:  (Penalty points will be deducted for breaking the following syntax rules.)
+
+	1. Use descriptive variable and function names. No abbreviations.
+	2. Have appropriate classes, properties and methods.
+	3. Use constants where appropriate.
+	4. Avoid duplicate code.
+	5. Avoid long, cumbersome, functions.
+	6. Avoid comments that repeat the code.  (No flower boxes before functions.)
+	7. Always use {} with conditional statements even when they are not required.
+	8. Always free memory that has been dynamically allocated.

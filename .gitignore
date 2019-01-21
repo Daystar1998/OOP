@@ -1,0 +1,18 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/Debug
+/Maze Game/.vs/Maze Game/v15
+/Maze Game/Debug/Maze Game.tlog
+/Maze Game/Debug
+/Maze Game/Maze Game.vcxproj.user
+/Maze Game/Maze Game.vcxproj.filters
+/Maze Game/Maze Game.vcxproj
+/OOP.sln
+<<<<<<< HEAD
+/Maze Game/x64/Debug
+/x64/Debug
+=======
+>>>>>>> 143d9cc... Drawing to the command prompt and generating the maze

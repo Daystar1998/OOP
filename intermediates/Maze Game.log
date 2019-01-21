@@ -1,0 +1,9 @@
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(376,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
+  display.cpp
+h:\spring 2019\oop\maze game\src\display.cpp(78): warning C4838: conversion from 'int' to 'SHORT' requires a narrowing conversion
+  player.cpp
+  main.cpp
+  maze.cpp
+h:\spring 2019\oop\maze game\src\maze.cpp(49): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+  Generating Code...
+  Maze Game.vcxproj -> H:\Spring 2019\OOP\Win32\Debug\Maze Game.exe
