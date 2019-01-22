@@ -17,9 +17,7 @@ int main() {
 	display.setPixel("destination", Display::Pixel('D', 1));
 	display.setPixel("player", Display::Pixel('P', 1));
 
-	bool stopped = false;
-
-	while (!stopped) {
+	while (maze.getState() == GameObject::State::RUNNING) {
 
 		maze.update();
 

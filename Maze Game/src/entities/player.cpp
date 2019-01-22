@@ -22,6 +22,7 @@ void Player::update(Maze &maze) {
 	}
 }
 
+// TODO: Consider splitting to an Inputs class to make it easier to change platform specific code
 int Player::getKey() {
 
 	int result = 0;
