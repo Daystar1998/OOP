@@ -60,8 +60,6 @@ public:
 	Maze(GameObject::Position position, int width, int height);
 
 	void draw(Display &display) override;
-
-	bool inBounds(int x, int y);
 private:
 
 	void initializeMaze();

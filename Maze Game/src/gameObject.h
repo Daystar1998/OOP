@@ -80,6 +80,11 @@ public:
 		}
 	}
 
+	bool inBounds(int x, int y) {
+
+		return y >= 0 || y < height || x >= 0 || x < width;
+	}
+
 	inline State getState() {
 
 		return currentState;
@@ -100,8 +105,16 @@ public:
 
 	inline void setPosition(Position position) {
 
-		GameObject::position.x = parent->position.x + position.x;
-		GameObject::position.y = parent->position.y + position.y;
+		// Sets the child's position relative to the parent's position
+		Position parentPosition = parent->getPosition();
+
+		GameObject::position.x = parentPosition.x + position.x;
+		GameObject::position.y = parentPosition.y + position.y;
+
+		for (int i = 0; i < children.size(); i++) {
+
+			children[i]->setPosition(GameObject::position);
+		}
 	}
 
 	inline Position getPosition() {
@@ -121,7 +134,7 @@ public:
 
 	int getData(int x, int y) {
 
-		if (x < 0 || y < 0 || x >= width || y >= height) {
+		if (!inBounds(x, y)) {
 
 			string exception = "Error: Position " + to_string(x) + ", " + to_string(y) + " is out of bounds";
 			throw exception;
@@ -132,7 +145,7 @@ public:
 
 	void setData(int x, int y, int newData) {
 
-		if (x < 0 || y < 0 || x >= width || y >= height) {
+		if (!inBounds(x, y)) {
 
 			string exception = "Error: Position " + to_string(x) + ", " + to_string(y) + " is out of bounds";
 			throw exception;

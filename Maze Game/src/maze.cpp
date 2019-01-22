@@ -171,8 +171,3 @@ void Maze::draw(Display &display) {
 
 	GameObject::draw(display);
 }
-
-bool Maze::inBounds(int x, int y) {
-
-	return !(y < 0 || y >= height || x < 0 || x >= width);
-}
