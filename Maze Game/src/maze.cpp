@@ -10,9 +10,10 @@ Due Date: 1/23/19
 
 #include "maze.h"
 
-Maze::Maze(int width, int height) {
+Maze::Maze(GameObject::Position position, int width, int height)
+	: GameObject(position, width, height) {
 
-	initializeMaze(width, height);
+	initializeMaze();
 }
 
 Maze::~Maze() {
@@ -22,14 +23,11 @@ Maze::~Maze() {
 		delete entities.back();
 		entities.pop_back();
 	}
+
+	GameObject::~GameObject();
 }
 
-void Maze::initializeMaze(int width, int height) {
-
-	// Reset all data for the maze
-	Maze::width = width;
-	Maze::height = height;
-	maze.resize(width * height);
+void Maze::initializeMaze() {
 
 	for (int i = 0; i < width * height; i++) {
 
@@ -43,12 +41,12 @@ void Maze::initializeMaze(int width, int height) {
 
 void Maze::digMaze() {
 
-	stack<Entity::Position> positions;
+	stack<GameObject::Position> positions;
 	vector<Direction> availableDirections;
 
 	srand(time(nullptr));
 
-	Entity::Position current = getRandomPosition();
+	GameObject::Position current = getRandomPosition();
 	setType(current.x, current.y, Type::START);
 
 	entities.push_back(new Player(current, "player"));
@@ -66,7 +64,7 @@ void Maze::digMaze() {
 		} else {
 
 			int random = rand() % availableDirections.size();
-			Entity::Position newPosition(0, 0);
+			GameObject::Position newPosition(0, 0);
 
 			digDirection(current, newPosition, availableDirections[random]);
 
@@ -77,7 +75,7 @@ void Maze::digMaze() {
 	} while (!positions.empty());
 }
 
-void Maze::digDirection(Entity::Position &position, Entity::Position &newPosition, Direction direction) {
+void Maze::digDirection(GameObject::Position &position, GameObject::Position &newPosition, Direction direction) {
 
 	switch (direction) {
 
@@ -112,7 +110,7 @@ void Maze::digDirection(Entity::Position &position, Entity::Position &newPositio
 	}
 }
 
-void Maze::getAvailableDirections(Entity::Position &position, vector<Direction> &availableDirections) {
+void Maze::getAvailableDirections(GameObject::Position &position, vector<Direction> &availableDirections) {
 
 	if (position.x - 2 >= 0 && getType(position.x - 2, position.y) == Type::WALL) {
 
@@ -137,7 +135,7 @@ void Maze::getAvailableDirections(Entity::Position &position, vector<Direction> 
 
 void Maze::setExit() {
 
-	Entity::Position position(0, 0);
+	GameObject::Position position(0, 0);
 
 	// Case for when only one path tile exists, the start position is overwritten with the exit
 	if (width == 3 && height == 3) {
@@ -155,12 +153,12 @@ void Maze::setExit() {
 	setType(position.x, position.y, Type::EXIT);
 }
 
-Entity::Position Maze::getRandomPosition() {
+GameObject::Position Maze::getRandomPosition() {
 
 	int x = 1 + (rand() % (int)(((width - 2) / 2.0 + 0.5)) * 2);
 	int y = 1 + (rand() % (int)(((height - 2) / 2.0 + 0.5)) * 2);
 
-	return Entity::Position(x, y);
+	return GameObject::Position(x, y);
 }
 
 void Maze::update() {
@@ -169,6 +167,8 @@ void Maze::update() {
 
 		entities[i]->update(*this);
 	}
+
+	GameObject::update();
 }
 
 void Maze::draw(Display &display) {
@@ -214,6 +214,8 @@ void Maze::draw(Display &display) {
 
 		entities[i]->draw(display);
 	}
+
+	GameObject::draw(display);
 }
 
 Maze::Type Maze::getType(int x, int y) {

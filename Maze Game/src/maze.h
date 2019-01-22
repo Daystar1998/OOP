@@ -56,19 +56,17 @@ private:
 		RIGHT
 	};
 
-	int width, height;
-
 	vector<Type> maze;
 	vector<Entity*> entities;
 public:
 
-	Maze(int width, int height);
+	Maze(GameObject::Position position, int width, int height);
 
-	~Maze();
+	~Maze() override;
 
-	void update();
+	void update() override;
 
-	void draw(Display &display);
+	void draw(Display &display) override;
 
 	Type getType(int x, int y);
 
@@ -77,15 +75,15 @@ public:
 	bool inBounds(int x, int y);
 private:
 
-	void initializeMaze(int width, int height);
+	void initializeMaze();
 
 	void digMaze();
 
-	void digDirection(Entity::Position &position, Entity::Position &newPosition, Direction direction);
+	void digDirection(GameObject::Position &position, GameObject::Position &newPosition, Direction direction);
 
-	void getAvailableDirections(Entity::Position &position, vector<Direction> &availableDirections);
+	void getAvailableDirections(GameObject::Position &position, vector<Direction> &availableDirections);
 
 	void setExit();
 
-	Entity::Position getRandomPosition();
+	GameObject::Position getRandomPosition();
 };

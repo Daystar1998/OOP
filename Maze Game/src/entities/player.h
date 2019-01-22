@@ -20,7 +20,7 @@ class Player : public Entity {
 
 public:
 
-	Player(Position position, string pixelLabel);
+	Player(GameObject::Position position, string pixelLabel);
 
 	void update(Maze &maze) override;
 private:

@@ -1,21 +1,25 @@
 #include <map>
 
 #include "display.h"
+#include "gameObject.h"
 #include "maze.h"
 
 using std::map;
 
 int main() {
 
-	GameObject *maze = new Maze(25, 25);
+	int width = 25;
+	int height = 25;
 
-	Display display(25, 25);
+	GameObject *maze = new Maze(GameObject::Position(0, 0), width, height);
 
-	display.setPixel("wall", Display::Pixel((char)219, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED));
+	Display display(width, height);
+
+	display.setPixel("wall", Display::Pixel((char)219, FOREGROUND_GREEN));
 	display.setPixel("path", Display::Pixel((char)0, 0));
 	display.setPixel("start", Display::Pixel('S', FOREGROUND_BLUE | FOREGROUND_INTENSITY));
-	display.setPixel("exit", Display::Pixel('E', FOREGROUND_GREEN | FOREGROUND_INTENSITY));
-	display.setPixel("player", Display::Pixel('P', FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY));
+	display.setPixel("exit", Display::Pixel('E', FOREGROUND_RED | FOREGROUND_INTENSITY));
+	display.setPixel("player", Display::Pixel('P', FOREGROUND_RED | FOREGROUND_INTENSITY));
 
 	while (maze->getState() == GameObject::State::RUNNING) {
 

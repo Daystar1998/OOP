@@ -15,26 +15,18 @@ Due Date: 1/23/19
 #include <string>
 
 #include "../display.h"
+#include "../gameObject.h"
 
 class Maze;
 
 class Entity {
 
-public:
-
-	struct Position {
-
-		int x, y;
-
-		Position(int x, int y)
-			: x(x), y(y) {}
-	};
 protected:
 
-	Position position;
+	GameObject::Position position;
 	string pixelLabel;
 
-	Entity(Position position, string pixelLabel)
+	Entity(GameObject::Position position, string pixelLabel)
 		: position(position), pixelLabel(pixelLabel) {}
 public:
 

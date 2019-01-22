@@ -1,6 +1,6 @@
 #include "player.h"
 
-Player::Player(Position position, string pixelLabel)
+Player::Player(GameObject::Position position, string pixelLabel)
 	: Entity(position, pixelLabel) {}
 
 void Player::update(Maze &maze) {
