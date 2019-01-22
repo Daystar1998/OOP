@@ -20,6 +20,11 @@ void Player::update(Maze &maze) {
 
 		position.y--;
 	}
+
+	if (maze.getType(position.x, position.y) == Maze::Type::EXIT) {
+
+		maze.setState(GameObject::State::SUCCESS);
+	}
 }
 
 // TODO: Consider splitting to an Inputs class to make it easier to change platform specific code
