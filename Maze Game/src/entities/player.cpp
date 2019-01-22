@@ -1,51 +1,40 @@
 #include "player.h"
 
 Player::Player(GameObject::Position position, string pixelLabel)
-	: Entity(position, pixelLabel) {}
+	: Entity(position, 1, 1, pixelLabel) {}
 
-void Player::update(Maze &maze) {
+void Player::update() {
 
-	int key = getKey();
-
-	if (key == VK_LEFT && maze.getType(position.x - 1, position.y) != Maze::Type::WALL) {
+	if (getKey(VK_LEFT) && getParent()->getData(position.x - 1, position.y) != Maze::Type::WALL) {
 
 		position.x--;
-	} else if (key == VK_RIGHT && maze.getType(position.x + 1, position.y) != Maze::Type::WALL) {
+	} else if (getKey(VK_RIGHT) && getParent()->getData(position.x + 1, position.y) != Maze::Type::WALL) {
 
 		position.x++;
-	} else if (key == VK_UP && maze.getType(position.x, position.y + 1) != Maze::Type::WALL) {
+	} else if (getKey(VK_UP) && getParent()->getData(position.x, position.y + 1) != Maze::Type::WALL) {
 
 		position.y++;
-	} else if (key == VK_DOWN && maze.getType(position.x, position.y - 1) != Maze::Type::WALL) {
+	} else if (getKey(VK_DOWN) && getParent()->getData(position.x, position.y - 1) != Maze::Type::WALL) {
 
 		position.y--;
 	}
 
-	if (maze.getType(position.x, position.y) == Maze::Type::EXIT) {
+	if (getParent()->getData(position.x, position.y) == Maze::Type::EXIT) {
 
-		maze.setState(GameObject::State::SUCCESS);
+		getParent()->setState(GameObject::State::SUCCESS);
 	}
 }
 
 // TODO: Consider splitting to an Inputs class to make it easier to change platform specific code
-int Player::getKey() {
+int Player::getKey(int key) {
 
 	int result = 0;
 
 	short MAX_SHORT = 0x7FFF; //111111111111111
 
-	if (GetAsyncKeyState(VK_LEFT) & MAX_SHORT) {
+	if (GetAsyncKeyState(key) & MAX_SHORT) {
 
-		result = VK_LEFT;
-	} else if (GetAsyncKeyState(VK_UP) & MAX_SHORT) {
-
-		result = VK_UP;
-	} else if (GetAsyncKeyState(VK_RIGHT) & MAX_SHORT) {
-
-		result = VK_RIGHT;
-	} else if (GetAsyncKeyState(VK_DOWN) & MAX_SHORT) {
-
-		result = VK_DOWN;
+		result = key;
 	}
 
 	return result;

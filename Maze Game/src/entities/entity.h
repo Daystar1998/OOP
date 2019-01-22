@@ -19,20 +19,17 @@ Due Date: 1/23/19
 
 class Maze;
 
-class Entity {
+class Entity : public GameObject {
 
 protected:
 
-	GameObject::Position position;
 	string pixelLabel;
 
-	Entity(GameObject::Position position, string pixelLabel)
-		: position(position), pixelLabel(pixelLabel) {}
+	Entity(GameObject::Position position, int width, int height, string pixelLabel)
+		: GameObject(position, width, height), pixelLabel(pixelLabel) {}
 public:
 
-	virtual void update(Maze &maze) = 0;
-
-	virtual void draw(Display &display) {
+	virtual void draw(Display &display) override {
 
 		display.draw(position.x, position.y, display.getPixel(pixelLabel));
 	}

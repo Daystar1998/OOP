@@ -38,9 +38,9 @@ class Maze : public GameObject {
 
 public:
 
-	enum class Type {
+	enum Type {
 
-		WALL,
+		WALL = 0,
 		PATH,
 		START,
 		EXIT,
@@ -55,22 +55,11 @@ private:
 		LEFT,
 		RIGHT
 	};
-
-	vector<Type> maze;
-	vector<Entity*> entities;
 public:
 
 	Maze(GameObject::Position position, int width, int height);
 
-	~Maze() override;
-
-	void update() override;
-
 	void draw(Display &display) override;
-
-	Type getType(int x, int y);
-
-	void setType(int x, int y, Maze::Type newType);
 
 	bool inBounds(int x, int y);
 private:

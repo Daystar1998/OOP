@@ -16,22 +16,14 @@ Maze::Maze(GameObject::Position position, int width, int height)
 	initializeMaze();
 }
 
-Maze::~Maze() {
-
-	while (!entities.empty()) {
-
-		delete entities.back();
-		entities.pop_back();
-	}
-
-	GameObject::~GameObject();
-}
-
 void Maze::initializeMaze() {
 
-	for (int i = 0; i < width * height; i++) {
+	for (int y = 0; y < height; y++) {
 
-		maze.push_back(Type::WALL);
+		for (int x = 0; x < width; x++) {
+
+			setData(x, y, Type::WALL);
+		}
 	}
 
 	digMaze();
@@ -47,9 +39,9 @@ void Maze::digMaze() {
 	srand(time(nullptr));
 
 	GameObject::Position current = getRandomPosition();
-	setType(current.x, current.y, Type::START);
+	setData(current.x, current.y, Type::START);
 
-	entities.push_back(new Player(current, "player"));
+	addChild(new Player(current, "player"));
 
 	positions.push(current);
 
@@ -81,29 +73,29 @@ void Maze::digDirection(GameObject::Position &position, GameObject::Position &ne
 
 		case Direction::UP:
 
-			setType(position.x, position.y + 1, Type::PATH);
-			setType(position.x, position.y + 2, Type::PATH);
+			setData(position.x, position.y + 1, Type::PATH);
+			setData(position.x, position.y + 2, Type::PATH);
 			newPosition.x = position.x;
 			newPosition.y = position.y + 2;
 			break;
 		case Direction::DOWN:
 
-			setType(position.x, position.y - 1, Type::PATH);
-			setType(position.x, position.y - 2, Type::PATH);
+			setData(position.x, position.y - 1, Type::PATH);
+			setData(position.x, position.y - 2, Type::PATH);
 			newPosition.x = position.x;
 			newPosition.y = position.y - 2;
 			break;
 		case Direction::LEFT:
 
-			setType(position.x - 1, position.y, Type::PATH);
-			setType(position.x - 2, position.y, Type::PATH);
+			setData(position.x - 1, position.y, Type::PATH);
+			setData(position.x - 2, position.y, Type::PATH);
 			newPosition.x = position.x - 2;
 			newPosition.y = position.y;
 			break;
 		case Direction::RIGHT:
 
-			setType(position.x + 1, position.y, Type::PATH);
-			setType(position.x + 2, position.y, Type::PATH);
+			setData(position.x + 1, position.y, Type::PATH);
+			setData(position.x + 2, position.y, Type::PATH);
 			newPosition.x = position.x + 2;
 			newPosition.y = position.y;
 			break;
@@ -112,22 +104,22 @@ void Maze::digDirection(GameObject::Position &position, GameObject::Position &ne
 
 void Maze::getAvailableDirections(GameObject::Position &position, vector<Direction> &availableDirections) {
 
-	if (position.x - 2 >= 0 && getType(position.x - 2, position.y) == Type::WALL) {
+	if (position.x - 2 >= 0 && getData(position.x - 2, position.y) == Type::WALL) {
 
 		availableDirections.push_back(Direction::LEFT);
 	}
 
-	if (position.x + 2 < width && getType(position.x + 2, position.y) == Type::WALL) {
+	if (position.x + 2 < width && getData(position.x + 2, position.y) == Type::WALL) {
 
 		availableDirections.push_back(Direction::RIGHT);
 	}
 
-	if (position.y + 2 < height && getType(position.x, position.y + 2) == Type::WALL) {
+	if (position.y + 2 < height && getData(position.x, position.y + 2) == Type::WALL) {
 
 		availableDirections.push_back(Direction::UP);
 	}
 
-	if (position.y - 2 >= 0 && getType(position.x, position.y - 2) == Type::WALL) {
+	if (position.y - 2 >= 0 && getData(position.x, position.y - 2) == Type::WALL) {
 
 		availableDirections.push_back(Direction::DOWN);
 	}
@@ -147,10 +139,10 @@ void Maze::setExit() {
 		do {
 
 			position = getRandomPosition();
-		} while (getType(position.x, position.y) != Type::PATH);
+		} while (getData(position.x, position.y) != Type::PATH);
 	}
 
-	setType(position.x, position.y, Type::EXIT);
+	setData(position.x, position.y, Type::EXIT);
 }
 
 GameObject::Position Maze::getRandomPosition() {
@@ -159,16 +151,6 @@ GameObject::Position Maze::getRandomPosition() {
 	int y = 1 + (rand() % (int)(((height - 2) / 2.0 + 0.5)) * 2);
 
 	return GameObject::Position(x, y);
-}
-
-void Maze::update() {
-
-	for (unsigned int i = 0; i < entities.size(); i++) {
-
-		entities[i]->update(*this);
-	}
-
-	GameObject::update();
 }
 
 void Maze::draw(Display &display) {
@@ -182,7 +164,7 @@ void Maze::draw(Display &display) {
 			Display::Pixel current;
 
 			// TODO: Hardcoded. Fix this
-			switch (getType(x, y)) {
+			switch (getData(x, y)) {
 
 				case Type::WALL:
 
@@ -210,33 +192,7 @@ void Maze::draw(Display &display) {
 
 	display.draw(0, 0, width, height, pixels);
 
-	for (unsigned int i = 0; i < entities.size(); i++) {
-
-		entities[i]->draw(display);
-	}
-
 	GameObject::draw(display);
-}
-
-Maze::Type Maze::getType(int x, int y) {
-
-	Type result;
-
-	result = maze[y * width + x];
-
-	return result;
-}
-
-void Maze::setType(int x, int y, Type newType) {
-
-	string exception = "Position " + to_string(x) + ", " + to_string(y) + " is out of bounds";
-
-	if (!inBounds(x, y)) {
-
-		throw exception;
-	}
-
-	maze[y * width + x] = newType;
 }
 
 bool Maze::inBounds(int x, int y) {

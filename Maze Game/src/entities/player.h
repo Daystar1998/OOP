@@ -22,9 +22,9 @@ public:
 
 	Player(GameObject::Position position, string pixelLabel);
 
-	void update(Maze &maze) override;
+	void update() override;
 private:
 
-	int getKey();
+	int getKey(int key);
 };
 
