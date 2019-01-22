@@ -15,11 +15,11 @@ int main() {
 
 	Display display(width, height);
 
-	display.setPixel("wall", Display::Pixel((char)219, FOREGROUND_GREEN));
-	display.setPixel("path", Display::Pixel((char)0, 0));
-	display.setPixel("start", Display::Pixel('S', FOREGROUND_BLUE | FOREGROUND_INTENSITY));
-	display.setPixel("exit", Display::Pixel('E', FOREGROUND_RED | FOREGROUND_INTENSITY));
-	display.setPixel("player", Display::Pixel('P', FOREGROUND_RED | FOREGROUND_INTENSITY));
+	display.setPixel(Maze::Type::WALL, Display::Pixel((char)219, FOREGROUND_GREEN));
+	display.setPixel(Maze::Type::PATH, Display::Pixel((char)0, 0));
+	display.setPixel(Maze::Type::START, Display::Pixel('S', FOREGROUND_BLUE | FOREGROUND_INTENSITY));
+	display.setPixel(Maze::Type::EXIT, Display::Pixel('E', FOREGROUND_RED | FOREGROUND_INTENSITY));
+	display.setPixel(Maze::Type::PLAYER, Display::Pixel('P', FOREGROUND_RED | FOREGROUND_INTENSITY));
 
 	while (maze->getState() == GameObject::State::RUNNING) {
 

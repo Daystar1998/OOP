@@ -101,12 +101,12 @@ void Display::resize(int width, int height) {
 	initializeDisplay(width, height);
 }
 
-void Display::setPixel(string label, Pixel pixel) {
+void Display::setPixel(int id, Pixel pixel) {
 
-	pixelMap.emplace(label, pixel);
+	pixelMap.emplace(id, pixel);
 }
 
-Display::Pixel Display::getPixel(string label) {
+Display::Pixel Display::getPixel(int id) {
 
-	return pixelMap[label];
+	return pixelMap[id];
 }

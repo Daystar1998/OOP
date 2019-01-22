@@ -41,7 +41,7 @@ void Maze::digMaze() {
 	GameObject::Position current = getRandomPosition();
 	setData(current.x, current.y, Type::START);
 
-	addChild(new Player(current, "player"));
+	addChild(new Player(current, Type::PLAYER));
 
 	positions.push(current);
 
@@ -161,30 +161,7 @@ void Maze::draw(Display &display) {
 
 		for (int x = 0; x < width; x++) {
 
-			Display::Pixel current;
-
-			// TODO: Hardcoded. Fix this
-			switch (getData(x, y)) {
-
-				case Type::WALL:
-
-					current = display.getPixel("wall");
-					break;
-				case Type::PATH:
-
-					current = display.getPixel("path");
-					break;
-				case Type::START:
-
-					current = display.getPixel("start");
-					break;
-				case Type::EXIT:
-
-					current = display.getPixel("exit");
-					break;
-				default:
-					throw "Error: Unsupported type";
-			}
+			Display::Pixel current = display.getPixel(getData(x, y));
 
 			pixels.push_back(current);
 		}

@@ -20,7 +20,7 @@ class Player : public Entity {
 
 public:
 
-	Player(GameObject::Position position, string pixelLabel);
+	Player(GameObject::Position position, int id);
 
 	void update() override;
 private:

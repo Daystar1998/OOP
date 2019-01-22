@@ -23,15 +23,15 @@ class Entity : public GameObject {
 
 protected:
 
-	string pixelLabel;
+	const int ID;
 
-	Entity(GameObject::Position position, int width, int height, string pixelLabel)
-		: GameObject(position, width, height), pixelLabel(pixelLabel) {}
+	Entity(GameObject::Position position, int width, int height, int id)
+		: GameObject(position, width, height), ID(id) {}
 public:
 
 	virtual void draw(Display &display) override {
 
-		display.draw(position.x, position.y, display.getPixel(pixelLabel));
+		display.draw(position.x, position.y, display.getPixel(ID));
 	}
 };
 

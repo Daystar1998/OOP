@@ -1,7 +1,7 @@
 #include "player.h"
 
-Player::Player(GameObject::Position position, string pixelLabel)
-	: Entity(position, 1, 1, pixelLabel) {}
+Player::Player(GameObject::Position position, int id)
+	: Entity(position, 1, 1, id) {}
 
 void Player::update() {
 

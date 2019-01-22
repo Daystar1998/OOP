@@ -42,7 +42,7 @@ private:
 
 	int width, height;
 
-	map<string, Pixel> pixelMap;
+	map<int, Pixel> pixelMap;
 
 	vector<Pixel> currentBuffer;
 	vector<Pixel> nextBuffer;
@@ -64,7 +64,7 @@ private:
 	void initializeDisplay(int width, int height);
 public:
 
-	void setPixel(string label, Pixel pixel);
+	void setPixel(int id, Pixel pixel);
 
-	Pixel getPixel(string label);
+	Pixel getPixel(int id);
 };
