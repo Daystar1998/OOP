@@ -38,7 +38,7 @@ void Maze::initializeMaze(int width, int height) {
 
 	digMaze();
 
-	setDestination();
+	setExit();
 }
 
 void Maze::digMaze() {
@@ -135,7 +135,7 @@ void Maze::getAvailableDirections(Entity::Position &position, vector<Direction> 
 	}
 }
 
-void Maze::setDestination() {
+void Maze::setExit() {
 
 	Entity::Position position(0, 0);
 
@@ -152,7 +152,7 @@ void Maze::setDestination() {
 		} while (getType(position.x, position.y) != Type::PATH);
 	}
 
-	setType(position.x, position.y, Type::DESTINATION);
+	setType(position.x, position.y, Type::EXIT);
 }
 
 Entity::Position Maze::getRandomPosition() {
@@ -193,9 +193,9 @@ void Maze::draw(Display &display) {
 
 					current = display.getPixel("start");
 					break;
-				case Type::DESTINATION:
+				case Type::EXIT:
 
-					current = display.getPixel("destination");
+					current = display.getPixel("exit");
 					break;
 				default:
 					throw "Error: Unsupported type";

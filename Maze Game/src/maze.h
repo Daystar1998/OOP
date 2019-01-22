@@ -43,7 +43,7 @@ public:
 		WALL,
 		PATH,
 		START,
-		DESTINATION,
+		EXIT,
 		PLAYER,
 	};
 private:
@@ -85,7 +85,7 @@ private:
 
 	void getAvailableDirections(Entity::Position &position, vector<Direction> &availableDirections);
 
-	void setDestination();
+	void setExit();
 
 	Entity::Position getRandomPosition();
 };
