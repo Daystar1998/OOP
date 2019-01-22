@@ -26,7 +26,7 @@ void Display::initializeDisplay(int width, int height) {
 
 void Display::clearScreen() {
 
-	Pixel pixel((char)0, 0);
+	Pixel pixel((char)0, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
 	fill(pixel);
 }
 
