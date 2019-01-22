@@ -139,7 +139,7 @@ void Maze::setExit() {
 
 	Entity::Position position(0, 0);
 
-	// Case for when only one path tile exists, the start position is overwritten with the destination
+	// Case for when only one path tile exists, the start position is overwritten with the exit
 	if (width == 3 && height == 3) {
 
 		position.x = 1;
@@ -157,7 +157,10 @@ void Maze::setExit() {
 
 Entity::Position Maze::getRandomPosition() {
 
-	return Entity::Position(1 + (rand() % ((width - 2) / 2) * 2), 1 + (rand() % ((height - 2) / 2) * 2));
+	int x = 1 + (rand() % (int)(((width - 2) / 2.0 + 0.5)) * 2);
+	int y = 1 + (rand() % (int)(((height - 2) / 2.0 + 0.5)) * 2);
+
+	return Entity::Position(x, y);
 }
 
 void Maze::update() {
