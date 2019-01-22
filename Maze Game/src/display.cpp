@@ -82,6 +82,10 @@ void Display::swapBuffers() {
 			}
 		}
 	}
+
+	// Ensure the console cursor position is always in the bottom right corner where it won't be noticably moving around as characters are updated
+	COORD coord = { width, height - 1 };
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), coord);
 }
 
 void Display::resize(int width, int height) {
