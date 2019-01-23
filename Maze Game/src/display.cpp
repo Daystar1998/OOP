@@ -26,6 +26,7 @@ void Display::initializeDisplay(int width, int height) {
 	// Set the console cursor to not visible
 	CONSOLE_CURSOR_INFO *cursor = new CONSOLE_CURSOR_INFO { 10, false };
 	SetConsoleCursorInfo(GetStdHandle(STD_OUTPUT_HANDLE), cursor);
+	delete cursor;
 }
 
 void Display::clearScreen() {
