@@ -12,8 +12,6 @@ Author: Matthew Day
 Due Date: 1/23/19
 *******************************************************************/
 
-#include <string>
-
 #include "../display.h"
 #include "../gameObject.h"
 
