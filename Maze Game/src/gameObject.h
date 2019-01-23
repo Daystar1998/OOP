@@ -53,45 +53,28 @@ private:
 	vector<int> data;
 public:
 
-	GameObject(Position position, int width, int height)
-		: position(position), width(width), height(height), data(vector<int>(width * height)) {}
+	GameObject(Position position, int width, int height);
 
-	virtual ~GameObject() {
+	virtual ~GameObject();
 
-		while (!children.empty()) {
+	virtual void update();
 
-			delete children.back();
-			children.pop_back();
-		}
+	virtual void draw(Display &display);
+
+	bool inBounds(int x, int y);
+
+	void addChild(GameObject *child);
+
+	void removeChild(GameObject *child);
+
+	GameObject* getChild(int index) {
+
+		return children[index];
 	}
 
-	virtual void update() {
+	int getNumberOfChildren() {
 
-		for (unsigned int i = 0; i < children.size(); i++) {
-
-			children[i]->update();
-		}
-	}
-
-	virtual void draw(Display &display) {
-
-		for (unsigned int i = 0; i < children.size(); i++) {
-
-			children[i]->draw(display);
-		}
-	}
-
-	bool inBounds(int x, int y) {
-
-		return y >= 0 || y < height || x >= 0 || x < width;
-	}
-
-	void addChild(GameObject *child) {
-
-		child->setParent(this);
-		child->setPosition(child->getPosition());
-
-		children.push_back(child);
+		return children.size();
 	}
 
 	inline Status getStatus() {
@@ -104,19 +87,7 @@ public:
 		currentStatus = status;
 	}
 
-	inline void setPosition(Position position) {
-
-		// Sets the child's position relative to the parent's position
-		Position parentPosition = parent->getPosition();
-
-		GameObject::position.x = parentPosition.x + position.x;
-		GameObject::position.y = parentPosition.y + position.y;
-
-		for (unsigned int i = 0; i < children.size(); i++) {
-
-			children[i]->setPosition(children[i]->getPosition());
-		}
-	}
+	void setPosition(Position position);
 
 	inline Position getPosition() {
 
@@ -147,27 +118,9 @@ public:
 		data.resize(width * height);
 	}
 
-	int getData(int x, int y) {
+	int getData(int x, int y);
 
-		if (!inBounds(x, y)) {
-
-			string exception = "Error: Position " + to_string(x) + ", " + to_string(y) + " is out of bounds";
-			throw exception;
-		}
-
-		return data[y * width + x];
-	}
-
-	void setData(int x, int y, int newData) {
-
-		if (!inBounds(x, y)) {
-
-			string exception = "Error: Position " + to_string(x) + ", " + to_string(y) + " is out of bounds";
-			throw exception;
-		}
-
-		data[y * width + x] = newData;
-	}
+	void setData(int x, int y, int newData);
 
 	inline GameObject* getParent() {
 
