@@ -32,10 +32,11 @@ public:
 			: x(x), y(y) {}
 	};
 
-	enum class State {
+	enum class Status {
 
 		RUNNING,
 		FAILURE,
+		FOCUSED,
 		SUCCESS
 	};
 protected:
@@ -44,7 +45,7 @@ protected:
 	int width, height;
 private:
 
-	State currentState = State::RUNNING;
+	Status currentStatus = Status::RUNNING;
 
 	GameObject *parent = nullptr;
 	vector<GameObject*> children;
@@ -93,14 +94,14 @@ public:
 		children.push_back(child);
 	}
 
-	inline State getState() {
+	inline Status getStatus() {
 
-		return currentState;
+		return currentStatus;
 	}
 
-	inline void setState(State state) {
+	inline void setStatus(Status status) {
 
-		currentState = state;
+		currentStatus = status;
 	}
 
 	inline void setPosition(Position position) {

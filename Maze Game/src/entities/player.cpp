@@ -21,7 +21,7 @@ void Player::update() {
 
 	if (getParent()->getData(position.x, position.y) == Maze::Type::EXIT) {
 
-		getParent()->setState(GameObject::State::SUCCESS);
+		getParent()->setStatus(GameObject::Status::SUCCESS);
 	}
 }
 
