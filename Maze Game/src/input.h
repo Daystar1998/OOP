@@ -23,7 +23,8 @@ public:
 		LEFT = VK_LEFT,
 		RIGHT = VK_RIGHT,
 		UP = VK_UP,
-		DOWN = VK_DOWN
+		DOWN = VK_DOWN,
+		ENTER = VK_RETURN
 	};
 
 	static int getKey(int key) {
