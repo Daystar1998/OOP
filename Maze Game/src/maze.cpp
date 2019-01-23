@@ -41,7 +41,7 @@ void Maze::digMaze() {
 	GameObject::Position current = getRandomPosition();
 	setData(current.x, current.y, Type::START);
 
-	addChild(new Player(current, Type::PLAYER));
+	start = current;
 
 	positions.push(current);
 

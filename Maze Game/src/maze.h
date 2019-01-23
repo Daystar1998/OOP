@@ -17,13 +17,9 @@ Due Date: 1/23/19
 #include <iostream>
 #include <map>
 #include <stack>
-#include <string>
 #include <vector>
-#include <windows.h>
 
 #include "display.h"
-#include "entities/entity.h"
-#include "entities/player.h"
 #include "gameObject.h"
 
 using std::map;
@@ -55,6 +51,9 @@ private:
 		LEFT,
 		RIGHT
 	};
+private:
+
+	Position start;
 public:
 
 	Maze(GameObject::Position position, int width, int height);
@@ -73,4 +72,10 @@ private:
 	void setExit();
 
 	GameObject::Position getRandomPosition();
+public:
+
+	inline Position getStart() {
+
+		return start;
+	}
 };

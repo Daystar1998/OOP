@@ -1,6 +1,7 @@
 #include <map>
 
 #include "display.h"
+#include "entities/player.h"
 #include "gameObject.h"
 #include "maze.h"
 #include "gui/label.h"
@@ -14,11 +15,13 @@ int main() {
 
 	GameObject *root = new GameObject(GameObject::Position(0, 0), width, height);
 
-	GameObject *maze = new Maze(GameObject::Position(0, 0), width, height);
-	//root->addChild(maze);
+	Maze *maze = new Maze(GameObject::Position(0, 0), width, height);
+	root->addChild(maze);
+
+	maze->addChild(new Player(maze->getStart(), Maze::Type::PLAYER));
 
 	Label *label = new Label(GameObject::Position(0, 3), "Testing");
-	root->addChild(label);
+	//root->addChild(label);
 
 	Display display(width, height);
 
