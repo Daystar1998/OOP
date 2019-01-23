@@ -3,15 +3,22 @@
 #include "display.h"
 #include "gameObject.h"
 #include "maze.h"
+#include "gui/label.h"
 
 using std::map;
 
 int main() {
 
-	int width = 25;
-	int height = 25;
+	int width = 10;
+	int height = 5;
+
+	GameObject *root = new GameObject(GameObject::Position(0, 0), width, height);
 
 	GameObject *maze = new Maze(GameObject::Position(0, 0), width, height);
+	//root->addChild(maze);
+
+	Label *label = new Label(GameObject::Position(0, 3), "Testing");
+	root->addChild(label);
 
 	Display display(width, height);
 
@@ -23,13 +30,13 @@ int main() {
 
 	while (maze->getState() == GameObject::State::RUNNING) {
 
-		maze->update();
+		root->update();
 
-		maze->draw(display);
+		root->draw(display);
 		display.swapBuffers();
 	}
 
-	delete maze;
+	delete root;
 
 	// Avoid having the press any button to exit message appear randomly in the middle of what was previously on screen
 	display.clearScreen();
