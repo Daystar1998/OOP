@@ -12,9 +12,8 @@ Author: Matthew Day
 Due Date: 1/23/19
 *******************************************************************/
 
-#include <windows.h>
-
 #include "entity.h"
+#include "../input.h"
 
 class Player : public Entity {
 
@@ -23,8 +22,5 @@ public:
 	Player(GameObject::Position position, int id);
 
 	void update() override;
-private:
-
-	int getKey(int key);
 };
 
