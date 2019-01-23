@@ -17,17 +17,16 @@ Due Date: 1/23/19
 #include <windows.h>
 
 #include "../display.h"
-#include "../gameObject.h"
+#include "guiObject.h"
 
 using std::string;
 using std::vector;
 
-class Label : public GameObject {
+class Label : public GuiObject {
 
 private:
 
 	string label;
-	int color;
 public:
 
 	Label(GameObject::Position position, string label, int color = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
