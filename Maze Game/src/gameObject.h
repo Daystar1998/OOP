@@ -127,9 +127,23 @@ public:
 		return width;
 	}
 
+	inline void setWidth(int width) {
+
+		GameObject::width = width;
+
+		data.resize(width * height);
+	}
+
 	inline int getHeight() {
 
 		return height;
+	}
+
+	inline void setHeight(int height) {
+
+		GameObject::height = height;
+
+		data.resize(width * height);
 	}
 
 	int getData(int x, int y) {
