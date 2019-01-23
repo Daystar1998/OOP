@@ -85,6 +85,14 @@ public:
 		return y >= 0 || y < height || x >= 0 || x < width;
 	}
 
+	void addChild(GameObject *child) {
+
+		child->setParent(this);
+		child->setPosition(child->getPosition());
+
+		children.push_back(child);
+	}
+
 	inline State getState() {
 
 		return currentState;
@@ -93,14 +101,6 @@ public:
 	inline void setState(State state) {
 
 		currentState = state;
-	}
-
-	void addChild(GameObject *child) {
-
-		child->setParent(this);
-		child->setPosition(child->getPosition());
-
-		children.push_back(child);
 	}
 
 	inline void setPosition(Position position) {
