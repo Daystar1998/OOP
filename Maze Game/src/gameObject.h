@@ -111,9 +111,9 @@ public:
 		GameObject::position.x = parentPosition.x + position.x;
 		GameObject::position.y = parentPosition.y + position.y;
 
-		for (int i = 0; i < children.size(); i++) {
+		for (unsigned int i = 0; i < children.size(); i++) {
 
-			children[i]->setPosition(GameObject::position);
+			children[i]->setPosition(children[i]->getPosition());
 		}
 	}
 
