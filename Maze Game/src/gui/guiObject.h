@@ -20,10 +20,11 @@ class GuiObject : public GameObject {
 private:
 
 	int color;
+	bool focusable;
 public:
 	
-	GuiObject(GameObject::Position position, int width, int height, int color)
-	: GameObject(position, width, height), color(color) {}
+	GuiObject(GameObject::Position position, int width, int height, int color, bool focusable)
+	: GameObject(position, width, height), color(color), focusable(focusable) {}
 
 	inline int getColor() {
 
@@ -33,5 +34,10 @@ public:
 	inline void setColor(int color) {
 
 		GuiObject::color = color;
+	}
+
+	bool isFocusable() {
+
+		return focusable;
 	}
 };

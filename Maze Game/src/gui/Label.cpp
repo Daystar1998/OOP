@@ -10,8 +10,8 @@ Due Date: 1/23/19
 
 #include "label.h"
 
-Label::Label(GameObject::Position position, string label, int color)
-	: GuiObject(position, label.size(), 1, color) {
+Label::Label(GameObject::Position position, string label, int color, bool focusable)
+	: GuiObject(position, label.size(), 1, color, focusable) {
 
 	setString(label);
 }

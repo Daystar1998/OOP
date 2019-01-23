@@ -29,7 +29,7 @@ private:
 	string label;
 public:
 
-	Label(GameObject::Position position, string label, int color = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY);
+	Label(GameObject::Position position, string label, int color = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY, bool focusable = false);
 
 	void draw(Display &display) override;
 
