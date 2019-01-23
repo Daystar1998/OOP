@@ -59,7 +59,7 @@ void Display::draw(int startX, int startY, int width, int height, vector<Pixel> 
 		for (int x = 0; x < width; x++) {
 
 			Pixel current = data[y * width + x];
-			int index = (Display::height - 1 - (y + startY)) * Display::width + (x + startX);
+			int index = (y + startY) * Display::width + (x + startX);
 			nextBuffer[index] = current;
 		}
 	}

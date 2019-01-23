@@ -11,12 +11,12 @@ void Player::update() {
 	} else if (getKey(VK_RIGHT) && getParent()->getData(position.x + 1, position.y) != Maze::Type::WALL) {
 
 		position.x++;
-	} else if (getKey(VK_UP) && getParent()->getData(position.x, position.y + 1) != Maze::Type::WALL) {
-
-		position.y++;
-	} else if (getKey(VK_DOWN) && getParent()->getData(position.x, position.y - 1) != Maze::Type::WALL) {
+	} else if (getKey(VK_UP) && getParent()->getData(position.x, position.y - 1) != Maze::Type::WALL) {
 
 		position.y--;
+	} else if (getKey(VK_DOWN) && getParent()->getData(position.x, position.y + 1) != Maze::Type::WALL) {
+
+		position.y++;
 	}
 
 	if (getParent()->getData(position.x, position.y) == Maze::Type::EXIT) {
