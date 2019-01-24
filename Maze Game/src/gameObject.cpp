@@ -30,6 +30,21 @@ void GameObject::update() {
 
 		children[i]->update();
 	}
+
+	for (unsigned int i = 0; i < removedChildren.size(); i++) {
+
+		for (unsigned int j = 0; j < children.size(); j++) {
+
+			if (children[j] == removedChildren[i]) {
+
+				children.erase(children.begin() + j);
+			}
+		}
+
+		delete removedChildren[i];
+	}
+
+	removedChildren.clear();
 }
 
 void GameObject::draw(Display &display) {
@@ -55,13 +70,7 @@ void GameObject::addChild(GameObject *child) {
 
 void GameObject::removeChild(GameObject *child) {
 
-	for (unsigned int i = 0; i < children.size(); i++) {
-
-		if (children[i] == child) {
-
-			children.erase(children.begin() + i);
-		}
-	}
+	removedChildren.push_back(child);
 }
 
 void GameObject::setPosition(Position position) {

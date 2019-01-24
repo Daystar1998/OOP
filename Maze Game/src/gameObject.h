@@ -49,6 +49,7 @@ private:
 
 	GameObject *parent = nullptr;
 	vector<GameObject*> children;
+	vector<GameObject*> removedChildren;
 
 	vector<int> data;
 public:
