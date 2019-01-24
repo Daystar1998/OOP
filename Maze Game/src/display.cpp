@@ -67,9 +67,10 @@ void Display::draw(int startX, int startY, int width, int height, vector<Pixel> 
 
 void Display::swapBuffers() {
 
-	for (int y = 0; y < height; y++) {
+	// Draw starting from the bottom right corner up to the the upper left corner. This is done to avoid a bug where the upper part of the display is not drawn at first
+	for (int y = height - 1; y >= 0; y--) {
 
-		for (int x = 0; x < width; x++) {
+		for (int x = width - 1; x >= 0; x--) {
 
 			Pixel &currentPixel = currentBuffer[y * width + x];
 			Pixel &nextPixel = nextBuffer[y * width + x];
