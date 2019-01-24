@@ -40,7 +40,7 @@ public:
 		PATH,
 		START,
 		EXIT,
-		PLAYER,
+		PLAYER
 	};
 private:
 
