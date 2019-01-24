@@ -12,6 +12,8 @@
 
 GameObject *root = nullptr;
 
+Maze *maze;
+
 GameObject* getRootObject() {
 
 	if (root == nullptr)
@@ -20,13 +22,17 @@ GameObject* getRootObject() {
 	return root;
 }
 
+void setMaze(Maze *newMaze) {
+
+	maze = newMaze;
+}
+
 int main() {
+
+	bool running;
 
 	int width = 21;
 	int height = 21;
-
-	//Label *label = new Label(GameObject::Position(0, 0), "Testing");
-	//root->addChild(label);
 
 	Menu *mainMenu = new Menu();
 	getRootObject()->addChild(mainMenu);
@@ -40,15 +46,13 @@ int main() {
 	Button *quitButton = new Button(GameObject::Position(0, 2), "Quit");
 	mainMenu->addChild(quitButton);
 
-	Display display(width, height);
-
 	// ActionListener for the play button
 	class : public ActionListener {
 
 	public:
 
 		Maze *maze;
-		Menu *menu;
+		Menu *menus[2];
 
 		void performAction() {
 
@@ -57,44 +61,96 @@ int main() {
 
 			maze = new Maze(GameObject::Position(0, 0), width, height);
 			getRootObject()->addChild(maze);
+			setMaze(maze);
 
 			maze->addChild(new Player(maze->getStart(), Maze::Type::PLAYER));
-			menu->setVisible(false);
+
+			for (int i = 0; i < 2; i++) {
+
+				menus[i]->setVisible(false);
+			}
 		}
 
-		Maze* getMaze() {
+		void setMenu(Menu *menu, int index) {
 
-			return maze;
-		}
-
-		void setMenu(Menu *menu) {
-
-			this->menu = menu;
+			this->menus[index] = menu;
 		}
 	} playGameAction;
 
-	// ActionListener for quiting the game
+	// ActionListener for the quit button
 	class : public ActionListener {
 
 	public:
 
-		bool quit = false;
+		bool *running;
 
 		void performAction() {
 
-			quit = true;
+			*running = false;
 		}
 
-		bool hasQuit() {
+		void setRunning(bool *running) {
 
-			return quit;
+			this->running = running;
 		}
 	} quitGameAction;
 
+	quitGameAction.setRunning(&running);
+
 	playButton->setActionListener(&playGameAction);
-	playGameAction.setMenu(mainMenu);
+	playGameAction.setMenu(mainMenu, 0);
 
 	quitButton->setActionListener(&quitGameAction);
+
+	// Menu displayed after the maze is completed
+
+	Menu *completionMenu = new Menu();
+	getRootObject()->addChild(completionMenu);
+
+	Label *resultMessage = new Label(GameObject::Position(0, 0), "");
+	completionMenu->addChild(resultMessage);
+
+	Button *playAgainButton = new Button(GameObject::Position(0, 1), "Play Again?");
+	completionMenu->addChild(playAgainButton);
+
+	Button *mainMenuButton = new Button(GameObject::Position(0, 2), "Main Menu");
+	completionMenu->addChild(mainMenuButton);
+
+	// ActionListener for the main menu button
+	class : public ActionListener {
+
+	public:
+
+		Menu *mainMenu;
+		Menu *currentMenu;
+
+		void performAction() {
+
+			currentMenu->setVisible(false);
+			mainMenu->setVisible(true);
+		}
+
+		void setMainMenu(Menu *mainMenu) {
+
+			this->mainMenu = mainMenu;
+		}
+
+		void setCurrentMenu(Menu *currentMenu) {
+
+			this->currentMenu = currentMenu;
+		}
+	} mainMenuAction;
+
+	playAgainButton->setActionListener(&playGameAction);
+	playGameAction.setMenu(completionMenu, 1);
+
+	mainMenuButton->setActionListener(&mainMenuAction);
+	mainMenuAction.setMainMenu(mainMenu);
+	mainMenuAction.setCurrentMenu(completionMenu);
+
+	completionMenu->setVisible(false);
+
+	Display display(width, height);
 
 	// Map pixels
 	display.setPixel(Maze::Type::WALL, Display::Pixel((char)219, FOREGROUND_GREEN));
@@ -103,10 +159,25 @@ int main() {
 	display.setPixel(Maze::Type::EXIT, Display::Pixel('E', FOREGROUND_RED | FOREGROUND_INTENSITY));
 	display.setPixel(Maze::Type::PLAYER, Display::Pixel('P', FOREGROUND_RED | FOREGROUND_INTENSITY));
 
-	while (!quitGameAction.hasQuit()) {
+	while (running) {
 
 		display.clearScreen();
 		getRootObject()->update();
+
+		if (maze != nullptr && maze->getStatus() != GameObject::Status::RUNNING) {
+
+			if (maze->getStatus() == GameObject::Status::SUCCESS) {
+
+				resultMessage->setString("You Win!");
+			} else if (maze->getStatus() == GameObject::Status::FAILURE) {
+
+				resultMessage->setString("You Lose");
+			}
+
+			completionMenu->setVisible(true);
+			getRootObject()->removeChild(maze);
+			maze = nullptr;
+		}
 
 		getRootObject()->draw(display);
 		display.swapBuffers();
