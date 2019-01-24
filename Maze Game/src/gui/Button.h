@@ -15,7 +15,6 @@ Due Date: 1/23/19
 #include <string>
 #include <vector>
 #include <windows.h>
-#include <vld.h>
 
 #include "actionListener.h"
 #include "../display.h"

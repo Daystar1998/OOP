@@ -32,7 +32,7 @@ void Label::draw(Display &display) {
 
 void Label::setString(string label) {
 
-	Label::label = label;
+	this->label = label;
 
 	GameObject::setWidth(label.size());
 
