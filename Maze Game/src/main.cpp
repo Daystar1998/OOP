@@ -40,10 +40,7 @@ int main() {
 	Button *playButton = new Button(GameObject::Position(0, 0), "Play");
 	mainMenu->addChild(playButton);
 
-	Button *settingsButton = new Button(GameObject::Position(0, 1), "Settings");
-	mainMenu->addChild(settingsButton);
-
-	Button *quitButton = new Button(GameObject::Position(0, 2), "Quit");
+	Button *quitButton = new Button(GameObject::Position(0, 1), "Quit");
 	mainMenu->addChild(quitButton);
 
 	// ActionListener for the play button
@@ -51,13 +48,13 @@ int main() {
 
 	public:
 
+		int width;
+		int height;
+
 		Maze *maze;
 		Menu *menus[2];
 
 		void performAction() {
-
-			int width = 5;
-			int height = 5;
 
 			maze = new Maze(GameObject::Position(0, 0), width, height);
 			getRootObject()->addChild(maze);
@@ -75,7 +72,20 @@ int main() {
 
 			this->menus[index] = menu;
 		}
+
+		void setWidth(int &width) {
+
+			this->width = width;
+		}
+
+		void setHeight(int &height) {
+
+			this->height = height;
+		}
 	} playGameAction;
+
+	playGameAction.setWidth(width);
+	playGameAction.setHeight(height);
 
 	// ActionListener for the quit button
 	class : public ActionListener {
