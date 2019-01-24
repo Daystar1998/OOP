@@ -31,11 +31,11 @@ int main() {
 	Menu *mainMenu = new Menu();
 	getRootObject()->addChild(mainMenu);
 
-	Button *settingsButton = new Button(GameObject::Position(0, 0), "Play");
+	Button *playButton = new Button(GameObject::Position(0, 0), "Play");
 	mainMenu->addChild(playButton);
 
-	Button *button2 = new Button(GameObject::Position(0, 1), "Settings");
-	mainMenu->addChild(button2);
+	Button *settingsButton = new Button(GameObject::Position(0, 1), "Settings");
+	mainMenu->addChild(settingsButton);
 
 	Button *quitButton = new Button(GameObject::Position(0, 2), "Quit");
 	mainMenu->addChild(quitButton);
