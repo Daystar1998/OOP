@@ -15,6 +15,7 @@ Due Date: 1/23/19
 #include <string>
 #include <vector>
 #include <windows.h>
+#include <vld.h>
 
 #include "actionListener.h"
 #include "../display.h"
@@ -34,8 +35,6 @@ public:
 
 	Button(GameObject::Position position, string label, int color = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY, int selectedColor = FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_RED | FOREGROUND_INTENSITY | BACKGROUND_BLUE);
 
-	~Button();
-
 	void update() override;
 
 	void draw(Display &display) override;
@@ -47,11 +46,11 @@ public:
 
 	inline void setSelectedColor(int selectedColor) {
 
-		Button::selectedColor = selectedColor;
+		this->selectedColor = selectedColor;
 	}
 
 	inline void setActionListener(ActionListener *actionListener) {
 
-		Button::actionListener = actionListener;
+		this->actionListener = actionListener;
 	}
 };

@@ -16,11 +16,6 @@ Button::Button(GameObject::Position position, string label, int color, int selec
 	setString(label);
 }
 
-Button::~Button() {
-
-	delete actionListener;
-}
-
 void Button::update() {
 
 	if (getStatus() == Status::FOCUSED && actionListener != nullptr && Input::getKey(Input::Key::ENTER)) {
