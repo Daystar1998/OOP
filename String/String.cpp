@@ -4,28 +4,33 @@
 
 using namespace std;
 
+// Author: Dana Steil
 String::String() {
 
 	pString = NULL;
 }
 
+// Author: Dana Steil
 String::String(const char* const newString) {
 
 	pString = NULL;
 	set(newString);
 }
 
+// Author: Dana Steil
 String::String(const String& newString) {
 
 	pString = NULL;
 	set(newString.pString);
 }
 
+// Author: Dana Steil
 String::~String() {
 
 	destroy();
 }
 
+// Author: Dana Steil
 void String::destroy() {
 
 	if (pString != NULL) {
@@ -35,6 +40,7 @@ void String::destroy() {
 	}
 }
 
+// Author: Dana Steil
 void String::set(const char* const newString) {
 
 	destroy();
@@ -49,17 +55,20 @@ void String::set(const char* const newString) {
 	}
 }
 
+// Author: Dana Steil
 void String::set(const String& newString) {
 
 	set(newString.pString);
 }
 
+// Author: Dana Steil
 bool String::isEmpty() {
 
 	//when pString is null the condition will short circuit
 	return (pString == NULL || strlen(pString) == 0);
 }
 
+// Author: Dana Steil
 void String::write(ostream& out) {
 
 	if (pString != NULL) {
