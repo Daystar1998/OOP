@@ -27,6 +27,13 @@ String::String(const char* const newString) {
 }
 
 // Author: Dana Steil
+String::String(char c) {
+
+	pString = NULL;
+	set(c);
+}
+
+// Author: Dana Steil
 String::~String() {
 
 	destroy();
