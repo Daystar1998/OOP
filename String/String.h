@@ -27,7 +27,7 @@ public:
 
 	//void set( int i );
 
-	//void set( char c );
+	void set( char c );
 
 	void write(std::ostream& out);
 

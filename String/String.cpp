@@ -1,3 +1,5 @@
+// Author: Matthew Day
+
 #include<iostream>
 #include<string>
 #include"String.h"
@@ -59,6 +61,16 @@ void String::set(const char* const newString) {
 void String::set(const String& newString) {
 
 	set(newString.pString);
+}
+
+void String::set(char c) {
+
+	destroy();
+
+	pString = new char[2];
+
+	pString[0] = c;
+	pString[1] = '\0';
 }
 
 // Author: Dana Steil
