@@ -13,17 +13,17 @@ String::String() {
 }
 
 // Author: Dana Steil
-String::String(const char* const newString) {
-
-	pString = NULL;
-	set(newString);
-}
-
-// Author: Dana Steil
 String::String(const String& newString) {
 
 	pString = NULL;
 	set(newString.pString);
+}
+
+// Author: Dana Steil
+String::String(const char* const newString) {
+
+	pString = NULL;
+	set(newString);
 }
 
 // Author: Dana Steil
@@ -74,17 +74,17 @@ void String::set(char c) {
 }
 
 // Author: Dana Steil
-bool String::isEmpty() {
-
-	//when pString is null the condition will short circuit
-	return (pString == NULL || strlen(pString) == 0);
-}
-
-// Author: Dana Steil
 void String::write(ostream& out) {
 
 	if (pString != NULL) {
 
 		out << pString;
 	}
+}
+
+// Author: Dana Steil
+bool String::isEmpty() {
+
+	//when pString is null the condition will short circuit
+	return (pString == NULL || strlen(pString) == 0);
 }

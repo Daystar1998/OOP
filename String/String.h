@@ -17,7 +17,7 @@ public:
 
 	//String( int i );
 
-	//String( char c );
+	String( char c );
 
 	~String();
 
