@@ -1,10 +1,6 @@
 // Author: Matthew Day
 
-#include<iostream>
-#include<string>
 #include"String.h"
-
-using namespace std;
 
 // Author: Dana Steil
 String::String() {
