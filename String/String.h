@@ -19,9 +19,9 @@ public:
 
 	String(const char* const newString);
 
-	//String( int i );
+	//String(int i);
 
-	String( char c );
+	String(char c);
 
 	~String();
 
@@ -29,22 +29,22 @@ public:
 
 	void set(const String& newString);
 
-	void set( int i );
+	void set(int i);
 
-	void set( char c );
+	void set(char c);
 
 	void write(std::ostream& out);
 
 	// append takes an int, char, char* or String&
 	// prepend takes an int, char , char* or String&
 
-	// bool contains( char c);
+	// bool contains(char c);
 
-	// bool contains( String s );
+	// bool contains(String s);
 
-	// bool contains( const char* const s );
+	// bool contains(const char *const s);
 
-	// bool contains( int i );
+	// bool contains(int i);
 
 	// void insert String, char*, int, char, at an index
 
