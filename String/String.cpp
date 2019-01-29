@@ -134,5 +134,12 @@ bool String::isEmpty() {
 
 int String::length() {
 
-	return strlen(pString);
+	int result = 0;
+
+	if (!isEmpty()) {
+
+		result = strlen(pString);
+	}
+
+	return result;
 }
