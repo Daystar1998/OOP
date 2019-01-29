@@ -35,6 +35,8 @@ public:
 
 	void write(std::ostream& out);
 
+	void append(const String &other);
+
 	// append takes an int, char, char* or String&
 	// prepend takes an int, char , char* or String&
 

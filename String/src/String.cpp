@@ -127,6 +127,23 @@ void String::write(ostream& out) {
 	}
 }
 
+void String::append(const String &other) {
+
+	char *result = new char[this->length() + other.length() + 1];
+
+	if (!this->isEmpty()) {
+
+		strcpy_s(result, this->length() + 1, this->pString);
+	}
+
+	if (!other.isEmpty()) {
+
+		strcpy_s(result + this->length(), other.length() + 1, other.pString);
+	}
+
+	set(result);
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 
