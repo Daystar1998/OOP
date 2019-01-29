@@ -19,7 +19,7 @@ public:
 
 	String(const char* const newString);
 
-	//String(int i);
+	String(int i);
 
 	String(char c);
 

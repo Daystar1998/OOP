@@ -22,6 +22,12 @@ String::String(const char* const newString) {
 	set(newString);
 }
 
+String::String(int i) {
+
+	pString = NULL;
+	set(i);
+}
+
 String::String(char c) {
 
 	pString = NULL;
