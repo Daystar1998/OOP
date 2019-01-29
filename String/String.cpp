@@ -22,7 +22,6 @@ String::String(const char* const newString) {
 	set(newString);
 }
 
-// Author: Dana Steil
 String::String(char c) {
 
 	pString = NULL;
