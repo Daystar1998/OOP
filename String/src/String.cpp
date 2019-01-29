@@ -128,13 +128,13 @@ void String::write(ostream& out) {
 }
 
 // Author: Dana Steil
-bool String::isEmpty() {
+bool String::isEmpty() const {
 
 	//when pString is null the condition will short circuit
 	return (pString == NULL || strlen(pString) == 0);
 }
 
-int String::length() {
+int String::length() const {
 
 	int result = 0;
 

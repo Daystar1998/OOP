@@ -48,9 +48,9 @@ public:
 
 	// void insert String, char*, int, char, at an index
 
-	bool isEmpty(); // empty when the pointer is null or the first character is \0
+	bool isEmpty() const; // empty when the pointer is null or the first character is \0
 	
-	int length();
+	int length() const;
 private:
 
 	void destroy();
