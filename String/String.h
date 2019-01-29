@@ -1,6 +1,7 @@
 #pragma once
 
 #include<iostream>
+#include<stack>
 #include<string>
 
 using namespace std;
@@ -28,7 +29,7 @@ public:
 
 	void set(const String& newString);
 
-	//void set( int i );
+	void set( int i );
 
 	void set( char c );
 
