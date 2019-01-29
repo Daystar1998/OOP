@@ -43,4 +43,8 @@ int main(){
 	copyTest.append(copyTest);
 	copyTest.write(cout);
 	cout << endl;
+
+	intTest.prepend(charTest);
+	intTest.write(cout);
+	cout << endl;
 }

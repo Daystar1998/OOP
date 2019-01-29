@@ -159,6 +159,15 @@ void String::append(char c) {
 	this->append(String(c));
 }
 
+void String::prepend(const String &other) {
+
+	String result(other);
+
+	result.append(*this);
+
+	this->set(result);
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

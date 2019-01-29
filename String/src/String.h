@@ -43,7 +43,8 @@ public:
 
 	void append(char c);
 
-	// append takes an int, char, char* or String&
+	void prepend(const String &other);
+
 	// prepend takes an int, char , char* or String&
 
 	// bool contains(char c);
