@@ -183,6 +183,29 @@ void String::prepend(char c) {
 	this->prepend(String(c));
 }
 
+bool String::contains(char c) {
+
+	bool result = false;
+
+	if (!isEmpty()) {
+
+		int i = 0;
+
+		while (pString[i] != '\0') {
+
+			if (pString[i] == c) {
+
+				result = true;
+				break;
+			}
+
+			i++;
+		}
+	}
+
+	return result;
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

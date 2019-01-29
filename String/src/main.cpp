@@ -63,4 +63,9 @@ int main(){
 	intTest.prepend(intTest);
 	intTest.write(cout);
 	cout << endl;
+
+	String s1(70);
+
+	cout << s1.contains('7') << endl;
+	cout << s1.contains('8') << endl;
 }

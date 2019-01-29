@@ -51,9 +51,7 @@ public:
 
 	void prepend(char c);
 
-	// prepend takes an int, char , char* or String&
-
-	// bool contains(char c);
+	bool contains(char c);
 
 	// bool contains(String s);
 
