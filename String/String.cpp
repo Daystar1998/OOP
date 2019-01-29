@@ -51,6 +51,7 @@ void String::destroy() {
 }
 
 // Author: Dana Steil
+// Edited by Matthew Day to use strcpy_s instead of the depreciated strcpy
 void String::set(const char* const newString) {
 
 	destroy();
