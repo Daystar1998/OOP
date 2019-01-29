@@ -47,4 +47,20 @@ int main(){
 	intTest.prepend(charTest);
 	intTest.write(cout);
 	cout << endl;
+
+	intTest.prepend("char* test");
+	intTest.write(cout);
+	cout << endl;
+
+	intTest.prepend('c');
+	intTest.write(cout);
+	cout << endl;
+
+	intTest.prepend(783);
+	intTest.write(cout);
+	cout << endl;
+
+	intTest.prepend(intTest);
+	intTest.write(cout);
+	cout << endl;
 }

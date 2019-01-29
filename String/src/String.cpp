@@ -168,6 +168,21 @@ void String::prepend(const String &other) {
 	this->set(result);
 }
 
+void String::prepend(const char *other) {
+
+	this->prepend(String(other));
+}
+
+void String::prepend(int i) {
+
+	this->prepend(String(i));
+}
+
+void String::prepend(char c) {
+
+	this->prepend(String(c));
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

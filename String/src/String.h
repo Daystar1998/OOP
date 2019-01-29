@@ -45,6 +45,12 @@ public:
 
 	void prepend(const String &other);
 
+	void prepend(const char *other);
+
+	void prepend(int i);
+
+	void prepend(char c);
+
 	// prepend takes an int, char , char* or String&
 
 	// bool contains(char c);
