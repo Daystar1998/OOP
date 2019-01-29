@@ -17,11 +17,11 @@ public:
 
 	String(const String& newString);
 
-	String(const char* const newString);
+	explicit String(const char* const newString);
 
-	String(int i);
+	explicit String(int i);
 
-	String(char c);
+	explicit String(char c);
 
 	~String();
 
