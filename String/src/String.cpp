@@ -58,8 +58,9 @@ void String::set(const char* const newString) {
 
 	if (newString != NULL) {
 
-		pString = new char[strlen(newString) + 1];
-		strcpy_s(pString, length(), newString);
+		int length = strlen(newString) + 1;
+		pString = new char[length];
+		strcpy_s(pString, length, newString);
 	} else {
 
 		pString = NULL;
