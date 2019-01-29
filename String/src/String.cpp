@@ -149,14 +149,14 @@ void String::append(const char *other) {
 	this->append(String(other));
 }
 
-void String::append(char c) {
-
-	this->append(String(c));
-}
-
 void String::append(int i) {
 
 	this->append(String(i));
+}
+
+void String::append(char c) {
+
+	this->append(String(c));
 }
 
 // Author: Dana Steil

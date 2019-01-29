@@ -39,9 +39,9 @@ public:
 
 	void append(const char *other);
 
-	void append(char c);
-
 	void append(int i);
+
+	void append(char c);
 
 	// append takes an int, char, char* or String&
 	// prepend takes an int, char , char* or String&
