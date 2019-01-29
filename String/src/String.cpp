@@ -144,6 +144,21 @@ void String::append(const String &other) {
 	set(result);
 }
 
+void String::append(const char *other) {
+
+	this->append(String(other));
+}
+
+void String::append(char c) {
+
+	this->append(String(c));
+}
+
+void String::append(int i) {
+
+	this->append(String(i));
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

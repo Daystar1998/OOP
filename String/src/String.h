@@ -37,6 +37,12 @@ public:
 
 	void append(const String &other);
 
+	void append(const char *other);
+
+	void append(char c);
+
+	void append(int i);
+
 	// append takes an int, char, char* or String&
 	// prepend takes an int, char , char* or String&
 
