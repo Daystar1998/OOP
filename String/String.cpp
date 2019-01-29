@@ -131,3 +131,8 @@ bool String::isEmpty() {
 	//when pString is null the condition will short circuit
 	return (pString == NULL || strlen(pString) == 0);
 }
+
+int String::length() {
+
+	return strlen(pString);
+}
