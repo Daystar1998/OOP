@@ -51,13 +51,13 @@ public:
 
 	void prepend(char c);
 
-	bool contains(String s);
+	bool contains(const String &other) const;
 
-	bool contains(const char *const s);
+	bool contains(const char *const s) const;
 
-	bool contains(int i);
+	bool contains(int i) const;
 
-	bool contains(char c);
+	bool contains(char c) const;
 
 	void insert(const String &other, int index);
 
@@ -67,10 +67,8 @@ public:
 
 	void insert(char c, int index);
 
-	// void insert String, char*, int, char, at an index
-
 	bool isEmpty() const; // empty when the pointer is null or the first character is \0
-	
+
 	int length() const;
 private:
 

@@ -183,21 +183,21 @@ void String::prepend(char c) {
 	this->prepend(String(c));
 }
 
-bool String::contains(String s) {
+bool String::contains(const String &other) const {
 
 	bool result = false;
 
-	if (!isEmpty() && !s.isEmpty()) {
+	if (!this->isEmpty() && !other.isEmpty()) {
 
-		for (int i = 0; i < this->length() && this->length() - i >= s.length(); i++) {
+		for (int i = 0; this->length() - i >= other.length(); i++) {
 
-			if (pString[i] == s.pString[0]) {
+			if (this->pString[i] == other.pString[0]) {
 
 				bool matching = true;
 
-				for (int j = 1; j < s.length(); j++) {
+				for (int j = 1; j < other.length(); j++) {
 
-					if (pString[++i] != s.pString[j]) {
+					if (this->pString[++i] != other.pString[j]) {
 
 						matching = false;
 						break;
@@ -216,17 +216,17 @@ bool String::contains(String s) {
 	return result;
 }
 
-bool String::contains(const char *const s) {
+bool String::contains(const char *const s) const {
 
 	return contains(String(s));
 }
 
-bool String::contains(int i) {
+bool String::contains(int i) const {
 
 	return contains(String(i));
 }
 
-bool String::contains(char c) {
+bool String::contains(char c) const {
 
 	return contains(String(c));
 }
