@@ -267,6 +267,21 @@ void String::insert(const String &other, int index) {
 	}
 }
 
+bool String::insert(const char *const s, int index) {
+
+	insert(String(s), index);
+}
+
+bool String::insert(int i, int index) {
+
+	insert(String(i), index);
+}
+
+bool String::insert(char c, int index) {
+
+	insert(String(c), index);
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 
