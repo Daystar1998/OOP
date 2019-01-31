@@ -61,11 +61,11 @@ public:
 
 	void insert(const String &other, int index);
 
-	bool insert(const char *const s, int index);
+	void insert(const char *const s, int index);
 
-	bool insert(int i, int index);
+	void insert(int i, int index);
 
-	bool insert(char c, int index);
+	void insert(char c, int index);
 
 	// void insert String, char*, int, char, at an index
 
