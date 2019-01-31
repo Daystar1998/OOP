@@ -216,6 +216,16 @@ bool String::contains(String s) {
 	return result;
 }
 
+bool String::contains(const char *const s) {
+
+	return contains(String(s));
+}
+
+bool String::contains(int i) {
+
+	return contains(String(i));
+}
+
 bool String::contains(char c) {
 
 	bool result = false;

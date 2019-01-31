@@ -53,9 +53,9 @@ public:
 
 	bool contains(String s);
 
-	// bool contains(const char *const s);
+	bool contains(const char *const s);
 
-	// bool contains(int i);
+	bool contains(int i);
 
 	bool contains(char c);
 
