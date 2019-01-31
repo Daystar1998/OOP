@@ -263,6 +263,18 @@ String String::subString(int start, int length) const {
 	return result;
 }
 
+char String::at(int index) const {
+
+	char result = '\0';
+
+	if (!this->isEmpty() && index >= 0 && index < this->length()) {
+
+		result = this->pString[index];
+	}
+
+	return result;
+}
+
 bool String::equals(const String &other) const {
 
 	bool result = false;

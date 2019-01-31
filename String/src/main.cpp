@@ -147,4 +147,13 @@ int main(){
 	s3.set("1: Equality test begin false");
 	s4.set("2: Equality test begin false");
 	cout << s3.equals(s4) << endl;
+
+	s3.set("At below zero test");
+	cout << s3.at(-1) << endl;
+
+	s3.set("At above length test");
+	cout << s3.at(100) << endl;
+
+	s3.set("At get 'v' test");
+	cout << s3.at(8) << endl;
 }
