@@ -263,6 +263,35 @@ String String::subString(int start, int length) const {
 	return result;
 }
 
+bool String::equals(const String &other) const {
+
+	bool result = false;
+
+	if (this->isEmpty() && other.isEmpty()) {
+
+		result = true;
+	} else if (this->length() == other.length()) {
+
+		bool matching = true;
+
+		for (int i = 0; i < this->length(); i++) {
+
+			if (this->pString[i] != other.pString[i]) {
+
+				matching = false;
+				break;
+			}
+		}
+
+		if (matching) {
+
+			result = true;
+		}
+	}
+
+	return result;
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

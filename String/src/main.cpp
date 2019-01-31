@@ -135,4 +135,16 @@ int main(){
 	s5.set(s3.subString(-2, 100));
 	s5.write(cout);
 	cout << endl;
+
+	s3.set("Equality test end false: 1");
+	s4.set("Equality test end false: 2");
+	cout << s3.equals(s4) << endl;
+
+	s3.set("Equality test true");
+	s4.set("Equality test true");
+	cout << s3.equals(s4) << endl;
+
+	s3.set("1: Equality test begin false");
+	s4.set("2: Equality test begin false");
+	cout << s3.equals(s4) << endl;
 }

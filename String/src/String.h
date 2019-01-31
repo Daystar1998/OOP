@@ -45,6 +45,8 @@ public:
 
 	String subString(int start, int length) const;
 
+	bool equals(const String &other) const;
+
 	bool isEmpty() const; // empty when the pointer is null or the first character is \0
 
 	int length() const;
