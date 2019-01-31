@@ -59,6 +59,8 @@ public:
 
 	bool contains(char c);
 
+	void insert(const String &other, int index);
+
 	// void insert String, char*, int, char, at an index
 
 	bool isEmpty() const; // empty when the pointer is null or the first character is \0

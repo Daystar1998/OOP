@@ -231,6 +231,42 @@ bool String::contains(char c) {
 	return contains(String(c));
 }
 
+void String::insert(const String &other, int index) {
+
+	if (!other.isEmpty()) {
+
+		if (index < 0) {
+
+			this->prepend(other);
+		} else if (index >= this->length()) {
+
+			this->append(other);
+		} else {
+
+			char *result = new char[this->length() + other.length() + 1];
+
+			int i = 0;
+
+			for (; i < index; i++) {
+
+				result[i] = this->pString[i];
+			}
+
+			for (; i < index + other.length(); i++) {
+
+				result[i] = other.pString[i - index];
+			}
+
+			for (; i < this->length() + other.length() + 1; i++) {
+
+				result[i] = this->pString[i - other.length()];
+			}
+
+			this->set(result);
+		}
+	}
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

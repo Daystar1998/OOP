@@ -84,4 +84,29 @@ int main(){
 
 	cout << s2.contains(s3) << endl;
 	cout << s2.contains(s4) << endl;
+
+	s3.set("Insert negative position");
+	s3.insert(s4, -1);
+	s3.write(cout);
+	cout << endl;
+
+	s3.set("Insert after length position");
+	s3.insert(s4, 100);
+	s3.write(cout);
+	cout << endl;
+
+	s3.set("Insert after 'Insert'");
+	s3.insert(s4, 6);
+	s3.write(cout);
+	cout << endl;
+
+	s3.set("Insert at 0 index");
+	s3.insert(s4, 0);
+	s3.write(cout);
+	cout << endl;
+
+	s3.set("Insert at end");
+	s3.insert(s4, s3.length());
+	s3.write(cout);
+	cout << endl;
 }
