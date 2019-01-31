@@ -142,6 +142,8 @@ void String::append(const String &other) {
 	}
 
 	set(result);
+
+	delete[] result;
 }
 
 void String::prepend(const String &other) {
@@ -218,6 +220,8 @@ void String::insert(const String &other, int index) {
 			}
 
 			this->set(result);
+
+			delete[] result;
 		}
 	}
 }
@@ -242,7 +246,7 @@ String String::subString(int start, int length) const {
 			end = this->length();
 		}
 
-		char *data = new char[end - begin];
+		char *data = new char[end - begin + 1];
 
 		for (int i = begin; i < end; i++) {
 
@@ -252,6 +256,8 @@ String String::subString(int start, int length) const {
 		data[end - begin] = '\0';
 
 		result.set(data);
+
+		delete[] data;
 	}
 
 	return result;
