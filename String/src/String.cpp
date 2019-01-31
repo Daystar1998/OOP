@@ -89,13 +89,8 @@ void String::set(int i) {
 
 	stack<char> convertedChars;
 
-	int current = i;
-
-	if (i < 0) {
-
-		convertedChars.push('-');
-		current = -i;
-	}
+	// Convert to unsigned int because turning INT_MIN positive results in too large a number for a regular int to hold and just returned the same value as INT_MIN
+	unsigned int current = (unsigned int)i;
 
 	do {
 
@@ -104,6 +99,11 @@ void String::set(int i) {
 
 		current /= 10;
 	} while (current > 0);
+
+	if (i < 0) {
+
+		convertedChars.push('-');
+	}
 
 	int size = convertedChars.size();
 

@@ -12,6 +12,15 @@ int main(){
 	String intTest(7874);
 	String copyTest(intTest);
 
+	String intTestMin(INT_MIN);
+	String intTestMax(INT_MAX);
+
+	intTestMin.write(cout);
+	cout << endl;
+
+	intTestMax.write(cout);
+	cout << endl;
+
 	stringTest.write(cout);
 	cout << endl;
 
