@@ -222,6 +222,41 @@ void String::insert(const String &other, int index) {
 	}
 }
 
+String String::subString(int start, int length) const {
+
+	String result;
+
+	if (!this->isEmpty() && length > 0 && start < this->length()) {
+
+		int begin = start;
+
+		if (begin < 0) {
+
+			begin = 0;
+		}
+
+		int end = begin + length;
+
+		if (this->length() < end) {
+
+			end = this->length();
+		}
+
+		char *data = new char[end - begin];
+
+		for (int i = begin; i < end; i++) {
+
+			data[i - begin] = this->pString[i];
+		}
+
+		data[end - begin] = '\0';
+
+		result.set(data);
+	}
+
+	return result;
+}
+
 // Author: Dana Steil
 bool String::isEmpty() const {
 

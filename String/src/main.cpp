@@ -109,4 +109,29 @@ int main(){
 	s3.insert(s4, s3.length());
 	s3.write(cout);
 	cout << endl;
+
+	s3.set("Substring below zero start test");
+	String s5 = s3.subString(-1, 5);
+	s5.write(cout);
+	cout << endl;
+
+	s3.set("Substring past length start test");
+	s5.set(s3.subString(100, 5));
+	s5.write(cout);
+	cout << endl;
+
+	s3.set("Substring past string length test");
+	s5.set(s3.subString(0, 100));
+	s5.write(cout);
+	cout << endl;
+
+	s3.set("Substring inside string test");
+	s5.set(s3.subString(5, 6));
+	s5.write(cout);
+	cout << endl;
+
+	s3.set("Substring both outside string test");
+	s5.set(s3.subString(-2, 100));
+	s5.write(cout);
+	cout << endl;
 }
