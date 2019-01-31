@@ -228,25 +228,7 @@ bool String::contains(int i) {
 
 bool String::contains(char c) {
 
-	bool result = false;
-
-	if (!isEmpty()) {
-
-		int i = 0;
-
-		while (pString[i] != '\0') {
-
-			if (pString[i] == c) {
-
-				result = true;
-				break;
-			}
-
-			i++;
-		}
-	}
-
-	return result;
+	return contains(String(c));
 }
 
 // Author: Dana Steil
