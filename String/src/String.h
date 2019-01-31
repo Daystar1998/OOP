@@ -51,13 +51,13 @@ public:
 
 	void prepend(char c);
 
-	bool contains(char c);
-
-	// bool contains(String s);
+	bool contains(String s);
 
 	// bool contains(const char *const s);
 
 	// bool contains(int i);
+
+	bool contains(char c);
 
 	// void insert String, char*, int, char, at an index
 

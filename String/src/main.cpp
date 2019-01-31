@@ -68,4 +68,11 @@ int main(){
 
 	cout << s1.contains('7') << endl;
 	cout << s1.contains('8') << endl;
+
+	String s2("Comparison string test");
+	String s3("Comparison string test");
+	String s4("string");
+
+	cout << s2.contains(s3) << endl;
+	cout << s2.contains(s4) << endl;
 }

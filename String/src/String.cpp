@@ -183,6 +183,39 @@ void String::prepend(char c) {
 	this->prepend(String(c));
 }
 
+bool String::contains(String s) {
+
+	bool result = false;
+
+	if (!isEmpty() && !s.isEmpty()) {
+
+		for (int i = 0; i < this->length() && this->length() - i >= s.length(); i++) {
+
+			if (pString[i] == s.pString[0]) {
+
+				bool matching = true;
+
+				for (int j = 1; j < s.length(); j++) {
+
+					if (pString[++i] != s.pString[j]) {
+
+						matching = false;
+						break;
+					}
+				}
+
+				if (matching) {
+
+					result = true;
+					break;
+				}
+			}
+		}
+	}
+
+	return result;
+}
+
 bool String::contains(char c) {
 
 	bool result = false;
