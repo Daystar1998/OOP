@@ -144,21 +144,6 @@ void String::append(const String &other) {
 	set(result);
 }
 
-void String::append(const char *other) {
-
-	this->append(String(other));
-}
-
-void String::append(int i) {
-
-	this->append(String(i));
-}
-
-void String::append(char c) {
-
-	this->append(String(c));
-}
-
 void String::prepend(const String &other) {
 
 	String result(other);
@@ -166,21 +151,6 @@ void String::prepend(const String &other) {
 	result.append(*this);
 
 	this->set(result);
-}
-
-void String::prepend(const char *other) {
-
-	this->prepend(String(other));
-}
-
-void String::prepend(int i) {
-
-	this->prepend(String(i));
-}
-
-void String::prepend(char c) {
-
-	this->prepend(String(c));
 }
 
 bool String::contains(const String &other) const {
@@ -214,21 +184,6 @@ bool String::contains(const String &other) const {
 	}
 
 	return result;
-}
-
-bool String::contains(const char *const s) const {
-
-	return contains(String(s));
-}
-
-bool String::contains(int i) const {
-
-	return contains(String(i));
-}
-
-bool String::contains(char c) const {
-
-	return contains(String(c));
 }
 
 void String::insert(const String &other, int index) {
@@ -265,21 +220,6 @@ void String::insert(const String &other, int index) {
 			this->set(result);
 		}
 	}
-}
-
-void String::insert(const char *const s, int index) {
-
-	insert(String(s), index);
-}
-
-void String::insert(int i, int index) {
-
-	insert(String(i), index);
-}
-
-void String::insert(char c, int index) {
-
-	insert(String(c), index);
 }
 
 // Author: Dana Steil
