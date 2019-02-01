@@ -161,4 +161,9 @@ int main(){
 	s3.toUpper();
 	s3.write(cout);
 	cout << endl;
+
+	s3.set("TOlOWER TEST: 123, %#Y((@");
+	s3.toLower();
+	s3.write(cout);
+	cout << endl;
 }

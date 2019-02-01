@@ -47,6 +47,8 @@ public:
 
 	void toUpper();
 
+	void toLower();
+
 	char at(int index) const;
 
 	bool equals(const String &other) const;

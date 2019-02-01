@@ -289,6 +289,32 @@ void String::toUpper() {
 	}
 }
 
+void String::toLower() {
+
+	if (!this->isEmpty()) {
+
+		int length = this->length();
+		char *result = new char[length + 1];
+
+		for (int i = 0; i < length; i++) {
+
+			if (this->pString[i] >= 65 && this->pString[i] <= 90) {
+
+				result[i] = this->pString[i] + 32;
+			} else {
+
+				result[i] = this->pString[i];
+			}
+		}
+
+		result[length] = '\0';
+
+		this->set(result);
+
+		delete[] result;
+	}
+}
+
 char String::at(int index) const {
 
 	char result = '\0';
