@@ -156,4 +156,9 @@ int main(){
 
 	s3.set("At get 'v' test");
 	cout << s3.at(8) << endl;
+
+	s3.set("toUpper test: 123, %#Y((@");
+	s3.toUpper();
+	s3.write(cout);
+	cout << endl;
 }

@@ -263,6 +263,32 @@ String String::subString(int start, int length) const {
 	return result;
 }
 
+void String::toUpper() {
+
+	if (!this->isEmpty()) {
+
+		int length = this->length();
+		char *result = new char[length + 1];
+
+		for (int i = 0; i < length; i++) {
+
+			if (this->pString[i] >= 97 && this->pString[i] <= 122) {
+
+				result[i] = this->pString[i] - 32;
+			} else {
+
+				result[i] = this->pString[i];
+			}
+		}
+
+		result[length] = '\0';
+
+		this->set(result);
+
+		delete[] result;
+	}
+}
+
 char String::at(int index) const {
 
 	char result = '\0';

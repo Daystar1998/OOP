@@ -45,6 +45,8 @@ public:
 
 	String subString(int start, int length) const;
 
+	void toUpper();
+
 	char at(int index) const;
 
 	bool equals(const String &other) const;
