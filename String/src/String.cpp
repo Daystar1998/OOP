@@ -249,11 +249,14 @@ String String::subString(int start, int length) const {
 			begin = 0;
 		}
 
-		int end = begin + length;
+		int end = start + length;
 
 		if (this->length() < end) {
 
 			end = this->length();
+		} else if (end < 0) {
+
+			end = 0;
 		}
 
 		char *data = new char[end - begin + 1];
