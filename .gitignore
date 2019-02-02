@@ -23,3 +23,8 @@
 /String/String.vcxproj
 /String/Debug/String.tlog
 /String/Debug
+/String/intermediates
+/StringUnitTests/x64/Debug
+/StringUnitTests/StringUnitTests.vcxproj.user
+/StringUnitTests/StringUnitTests.vcxproj.filters
+/StringUnitTests/StringUnitTests.vcxproj
