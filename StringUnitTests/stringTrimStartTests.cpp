@@ -23,7 +23,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartOneSpace) {
+	TEST_METHOD(StringTrimStartOneSpaceAtBeginning) {
 
 		String s = String(" This is an example string");
 
@@ -35,7 +35,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartFiveSpaces) {
+	TEST_METHOD(StringTrimStartFiveSpacesAtBeginning) {
 
 		String s = String("     This is an example string");
 
@@ -47,7 +47,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartOneTab) {
+	TEST_METHOD(StringTrimStartOneTabAtBeginning) {
 
 		String s = String("	This is an example string");
 
@@ -59,7 +59,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartFiveTabs) {
+	TEST_METHOD(StringTrimStartFiveTabsAtBeginning) {
 
 		String s = String("					This is an example string");
 
@@ -71,7 +71,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartCarriageReturn) {
+	TEST_METHOD(StringTrimStartCarriageReturnAtBeginning) {
 
 		String s = String("\rThis is an example string");
 
@@ -83,7 +83,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartVerticalTab) {
+	TEST_METHOD(StringTrimStartVerticalTabAtBeginning) {
 
 		String s = String("\vThis is an example string");
 
@@ -95,7 +95,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartMultipleTypesWhitespace) {
+	TEST_METHOD(StringTrimStartMultipleTypesWhitespaceAtBeginning) {
 
 		String s = String("\v\r\t  This is an example string");
 
@@ -107,7 +107,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartCharacterBeforeSpace) {
+	TEST_METHOD(StringTrimStartCharacterBeforeSpaceAtBeginning) {
 
 		String s = String("T his is an example string");
 

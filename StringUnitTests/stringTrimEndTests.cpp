@@ -107,7 +107,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndCharacterAfterSpace) {
+	TEST_METHOD(StringTrimEndCharacterAfterSpaceAtEnd) {
 
 		String s = String("This is an example strin g");
 
@@ -119,7 +119,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndOneSpace) {
+	TEST_METHOD(StringTrimEndOneSpaceAtEnd) {
 
 		String s = String("This is an example string ");
 
@@ -131,7 +131,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndFiveSpace) {
+	TEST_METHOD(StringTrimEndFiveSpacesAtEnd) {
 
 		String s = String("This is an example string     ");
 
@@ -143,7 +143,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndOneTab) {
+	TEST_METHOD(StringTrimEndOneTabAtEnd) {
 
 		String s = String("This is an example string	");
 
@@ -155,7 +155,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndFiveTab) {
+	TEST_METHOD(StringTrimEndFiveTabsAtEnd) {
 
 		String s = String("This is an example string					");
 
@@ -167,7 +167,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndCarriageReturn) {
+	TEST_METHOD(StringTrimEndCarriageReturnAtEnd) {
 
 		String s = String("This is an example string\r");
 
@@ -179,7 +179,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndVerticalTab) {
+	TEST_METHOD(StringTrimEndVerticalTabAtEnd) {
 
 		String s = String("This is an example string\v");
 
@@ -191,7 +191,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimEndMultipleTypesWhitespace) {
+	TEST_METHOD(StringTrimEndMultipleTypesWhitespaceAtEnd) {
 
 		String s = String("This is an example string\v\r\t  ");
 
