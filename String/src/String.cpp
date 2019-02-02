@@ -68,9 +68,13 @@ void String::set(const char* const newString) {
 }
 
 // Author: Dana Steil
+// Edited by Matthew Day to make it "this" safe
 void String::set(const String& newString) {
 
-	set(newString.pString);
+	if (this != &newString) {
+
+		set(newString.pString);
+	}
 }
 
 void String::set(char c) {
