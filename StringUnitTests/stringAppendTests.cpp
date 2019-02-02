@@ -130,5 +130,17 @@ public:
 			Assert::Fail();
 		}
 	}
+
+	TEST_METHOD(StringAppendThis) {
+
+		String s = String("Test");
+
+		s.append(s);
+
+		if (!s.equals(String("TestTest"))) {
+
+			Assert::Fail();
+		}
+	}
 	};
 }

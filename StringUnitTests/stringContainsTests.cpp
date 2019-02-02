@@ -101,6 +101,16 @@ public:
 		}
 	}
 
+	TEST_METHOD(StringContainsThisSuccess) {
+
+		String s = String("Test");
+
+		if (!s.contains(s)) {
+
+			Assert::Fail();
+		}
+	}
+
 	TEST_METHOD(StringEmptyContainsStringFailure) {
 
 		String s1 = String();

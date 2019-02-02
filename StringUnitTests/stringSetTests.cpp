@@ -120,5 +120,17 @@ public:
 			Assert::Fail();
 		}
 	}
+
+	TEST_METHOD(StringSetThis) {
+
+		String s = String("Previous");
+
+		s.set(s);
+
+		if (!s.equals(String("Previous"))) {
+
+			Assert::Fail();
+		}
+	}
 	};
 }

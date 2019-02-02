@@ -615,5 +615,16 @@ public:
 			Assert::Fail();
 		}
 	}
+
+	TEST_METHOD(StringInsertThisInMiddle) {
+
+		String s = String("This is an example string");
+		s.insert(s, 11);
+
+		if (!s.equals(String("This is an This is an example stringexample string"))) {
+
+			Assert::Fail();
+		}
+	}
 	};
 }

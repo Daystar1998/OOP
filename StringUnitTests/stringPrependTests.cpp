@@ -130,5 +130,17 @@ public:
 			Assert::Fail();
 		}
 	}
+
+	TEST_METHOD(StringPrependThis) {
+
+		String s = String("Original");
+
+		s.prepend(s);
+
+		if (!s.equals(String("OriginalOriginal"))) {
+
+			Assert::Fail();
+		}
+	}
 	};
 }
