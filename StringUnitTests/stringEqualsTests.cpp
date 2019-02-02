@@ -5,65 +5,70 @@
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 
-namespace StringUnitTests
-{		
-	TEST_CLASS(EqualsTests)
-	{
-	public:
-		
-		TEST_METHOD(StringEqualsSuccess)
-		{
-			String s = String("Test");
+namespace StringUnitTests {
 
-			if (!s.equals(String("Test"))) {
+	TEST_CLASS(EqualsTests) {
 
-				Assert::Fail();
-			}
+public:
+
+	TEST_METHOD(StringEqualsSuccess) {
+
+		String s = String("Test");
+
+		if (!s.equals(String("Test"))) {
+
+			Assert::Fail();
 		}
+	}
 
-		TEST_METHOD(StringEqualsFailBeginning) {
-			String s = String("Test");
+	TEST_METHOD(StringEqualsFailBeginning) {
 
-			if (s.equals(String("fTest"))) {
+		String s = String("Test");
 
-				Assert::Fail();
-			}
+		if (s.equals(String("fTest"))) {
+
+			Assert::Fail();
 		}
+	}
 
-		TEST_METHOD(StringEqualsFailEnding) {
-			String s = String("Test");
+	TEST_METHOD(StringEqualsFailEnding) {
 
-			if (s.equals(String("Testf"))) {
+		String s = String("Test");
 
-				Assert::Fail();
-			}
+		if (s.equals(String("Testf"))) {
+
+			Assert::Fail();
 		}
+	}
 
-		TEST_METHOD(StringEqualsFailMiddle) {
-			String s = String("Test");
+	TEST_METHOD(StringEqualsFailMiddle) {
 
-			if (s.equals(String("Tefst"))) {
+		String s = String("Test");
 
-				Assert::Fail();
-			}
+		if (s.equals(String("Tefst"))) {
+
+			Assert::Fail();
 		}
+	}
 
-		TEST_METHOD(StringEqualsFailBothEnds) {
-			String s = String("Test");
+	TEST_METHOD(StringEqualsFailBothEnds) {
 
-			if (s.equals(String("fTestf"))) {
+		String s = String("Test");
 
-				Assert::Fail();
-			}
+		if (s.equals(String("fTestf"))) {
+
+			Assert::Fail();
 		}
+	}
 
-		TEST_METHOD(StringEqualsFailBothEndsAndMiddle) {
-			String s = String("Test");
+	TEST_METHOD(StringEqualsFailBothEndsAndMiddle) {
 
-			if (s.equals(String("fTefstf"))) {
+		String s = String("Test");
 
-				Assert::Fail();
-			}
+		if (s.equals(String("fTefstf"))) {
+
+			Assert::Fail();
 		}
+	}
 	};
 }
