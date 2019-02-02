@@ -53,6 +53,8 @@ public:
 
 	void trimEnd();
 
+	void trim();
+
 	char at(int index) const;
 
 	bool equals(const String &other) const;

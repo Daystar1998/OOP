@@ -196,4 +196,19 @@ int main(){
 	s3.trimEnd();
 	s3.write(cout);
 	cout << endl;
+
+	s3.set("	Trim tab test	");
+	s3.trim();
+	s3.write(cout);
+	cout << endl;
+
+	s3.set("   Trim space test   ");
+	s3.trim();
+	s3.write(cout);
+	cout << endl;
+
+	s3.set("t Trim one character off space test t");
+	s3.trim();
+	s3.write(cout);
+	cout << endl;
 }

@@ -351,6 +351,12 @@ void String::trimEnd() {
 	}
 }
 
+void String::trim() {
+
+	this->trimStart();
+	this->trimEnd();
+}
+
 bool String::isWhiteSpace(char c) {
 
 	bool result = false;
