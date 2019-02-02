@@ -172,6 +172,10 @@ bool String::contains(const String &other) const {
 					if (this->pString[++i] != other.pString[j]) {
 
 						matching = false;
+
+						// Subtract one from i to avoid having the current value skipped over for further testing
+						i--;
+
 						break;
 					}
 				}

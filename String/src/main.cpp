@@ -86,7 +86,13 @@ int main(){
 	cout << s2.contains(s3) << endl;
 	cout << s2.contains(s4) << endl;
 
+	s3.set("CoComparison partial match immediately followed by actual match");
+	s4.set("Comparison partial match immediately followed by actual match");
+	s3.write(cout);
+	cout << endl << s3.contains(s4) << endl;
+
 	s3.set("Insert negative position");
+	s4.set("test insert");
 	s3.insert(s4, -1);
 	s3.write(cout);
 	cout << endl;
