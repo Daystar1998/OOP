@@ -21,6 +21,16 @@ public:
 		}
 	}
 
+	TEST_METHOD(StringEqualsEmptySuccess) {
+
+		String s = String();
+
+		if (!s.equals(String())) {
+
+			Assert::Fail();
+		}
+	}
+
 	TEST_METHOD(StringEqualsFailBeginning) {
 
 		String s = String("Test");
