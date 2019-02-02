@@ -162,7 +162,10 @@ bool String::contains(const String &other) const {
 
 	bool result = false;
 
-	if (!this->isEmpty() && !other.isEmpty()) {
+	if (other.isEmpty()) {
+
+		result = true;
+	} else if (!this->isEmpty()) {
 
 		for (int i = 0; this->length() - i >= other.length(); i++) {
 
