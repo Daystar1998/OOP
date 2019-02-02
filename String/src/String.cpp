@@ -333,6 +333,24 @@ void String::trimStart() {
 	}
 }
 
+void String::trimEnd() {
+
+	if (!this->isEmpty()) {
+
+		int end;
+
+		for (end = this->length(); end >= 0; end--) {
+
+			if (!isWhiteSpace(this->pString[end])) {
+
+				break;
+			}
+		}
+
+		this->set(this->subString(0, end));
+	}
+}
+
 bool String::isWhiteSpace(char c) {
 
 	bool result = false;

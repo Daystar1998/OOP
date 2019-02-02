@@ -51,6 +51,8 @@ public:
 
 	void trimStart();
 
+	void trimEnd();
+
 	char at(int index) const;
 
 	bool equals(const String &other) const;
