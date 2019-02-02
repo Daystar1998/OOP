@@ -15,80 +15,56 @@ public:
 
 		String s = String("Test");
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringEqualsEmptySuccess) {
 
 		String s = String();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringEqualsThisSuccess) {
 
 		String s = String("Test");
 
-		if (!s.equals(s)) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(s));
 	}
 
-	TEST_METHOD(StringEqualsFailBeginning) {
+	TEST_METHOD(StringEqualsFailureBeginning) {
 
 		String s = String("Test");
 
-		if (s.equals(String("fTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s.equals(String("fTest")));
 	}
 
-	TEST_METHOD(StringEqualsFailEnding) {
+	TEST_METHOD(StringEqualsFailureEnding) {
 
 		String s = String("Test");
 
-		if (s.equals(String("Testf"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s.equals(String("Testf")));
 	}
 
-	TEST_METHOD(StringEqualsFailMiddle) {
+	TEST_METHOD(StringEqualsFailureMiddle) {
 
 		String s = String("Test");
 
-		if (s.equals(String("Tefst"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s.equals(String("Tefst")));
 	}
 
-	TEST_METHOD(StringEqualsFailBothEnds) {
+	TEST_METHOD(StringEqualsFailureBothEnds) {
 
 		String s = String("Test");
 
-		if (s.equals(String("fTestf"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s.equals(String("fTestf")));
 	}
 
-	TEST_METHOD(StringEqualsFailBothEndsAndMiddle) {
+	TEST_METHOD(StringEqualsFailureBothEndsAndMiddle) {
 
 		String s = String("Test");
 
-		if (s.equals(String("fTefstf"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s.equals(String("fTefstf")));
 	}
 	};
 }

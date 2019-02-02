@@ -17,10 +17,7 @@ public:
 
 		String subString = original.subString(0, 4);
 
-		if (!subString.equals(String("This"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String("This")));
 	}
 
 	TEST_METHOD(StringSubStringEnd) {
@@ -29,10 +26,7 @@ public:
 
 		String subString = original.subString(19, 6);
 
-		if (!subString.equals(String("string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String("string")));
 	}
 
 	TEST_METHOD(StringSubStringStartOneBeforeZero) {
@@ -41,10 +35,7 @@ public:
 
 		String subString = original.subString(-1, 4);
 
-		if (!subString.equals(String("Thi"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String("Thi")));
 	}
 
 	TEST_METHOD(StringSubStringStartFarBeforeZero) {
@@ -53,10 +44,7 @@ public:
 
 		String subString = original.subString(-100, 101);
 
-		if (!subString.equals(String("T"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String("T")));
 	}
 
 	TEST_METHOD(StringSubStringEndBeforeZero) {
@@ -65,10 +53,7 @@ public:
 
 		String subString = original.subString(-100, 4);
 
-		if (!subString.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String()));
 	}
 
 	TEST_METHOD(StringSubStringStartAfterEnd) {
@@ -77,10 +62,7 @@ public:
 
 		String subString = original.subString(25, 4);
 
-		if (!subString.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String()));
 	}
 
 	TEST_METHOD(StringSubStringEndAfterEnd) {
@@ -89,10 +71,7 @@ public:
 
 		String subString = original.subString(0, 27);
 
-		if (!subString.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringSubStringStartBeforeZeroAndEndAfterEnd) {
@@ -101,10 +80,7 @@ public:
 
 		String subString = original.subString(-1, 27);
 
-		if (!subString.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringSubStringEmpty) {
@@ -113,10 +89,7 @@ public:
 
 		String subString = original.subString(-1, 27);
 
-		if (!subString.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String()));
 	}
 
 	TEST_METHOD(StringSubStringLengthZero) {
@@ -125,10 +98,7 @@ public:
 
 		String subString = original.subString(0, 0);
 
-		if (!subString.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String()));
 	}
 
 	TEST_METHOD(StringSubStringLengthNegative) {
@@ -137,10 +107,7 @@ public:
 
 		String subString = original.subString(0, -1);
 
-		if (!subString.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(subString.equals(String()));
 	}
 	};
 }

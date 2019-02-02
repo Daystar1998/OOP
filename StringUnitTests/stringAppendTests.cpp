@@ -17,10 +17,7 @@ public:
 
 		s.append(String("Test"));
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringAppendCharPointerToEmpty) {
@@ -29,10 +26,7 @@ public:
 
 		s.append("Test");
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringAppendCharToEmpty) {
@@ -41,10 +35,7 @@ public:
 
 		s.append('t');
 
-		if (!s.equals(String('t'))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String('t')));
 	}
 
 	TEST_METHOD(StringAppendIntToEmpty) {
@@ -53,10 +44,7 @@ public:
 
 		s.append(100);
 
-		if (!s.equals(String("100"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("100")));
 	}
 
 	TEST_METHOD(StringAppendEmptyToEmpty) {
@@ -65,10 +53,7 @@ public:
 
 		s.append(String());
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringAppendStringToString) {
@@ -77,10 +62,7 @@ public:
 
 		s.append(String("Test"));
 
-		if (!s.equals(String("OriginalTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("OriginalTest")));
 	}
 
 	TEST_METHOD(StringAppendCharPointerToString) {
@@ -89,10 +71,7 @@ public:
 
 		s.append("Test");
 
-		if (!s.equals(String("OriginalTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("OriginalTest")));
 	}
 
 	TEST_METHOD(StringAppendCharToString) {
@@ -101,10 +80,7 @@ public:
 
 		s.append('t');
 
-		if (!s.equals(String("Originalt"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Originalt")));
 	}
 
 	TEST_METHOD(StringAppendIntToString) {
@@ -113,10 +89,7 @@ public:
 
 		s.append(100);
 
-		if (!s.equals(String("Original100"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Original100")));
 	}
 
 	TEST_METHOD(StringAppendEmptyToString) {
@@ -125,10 +98,7 @@ public:
 
 		s.append(String());
 
-		if (!s.equals(String("Original"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Original")));
 	}
 
 	TEST_METHOD(StringAppendThis) {
@@ -137,10 +107,7 @@ public:
 
 		s.append(s);
 
-		if (!s.equals(String("TestTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("TestTest")));
 	}
 	};
 }

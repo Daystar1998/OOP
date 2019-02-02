@@ -15,160 +15,112 @@ public:
 
 		String s1 = String("This is an example string");
 
-		if (!s1.contains(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(String("example")));
 	}
 
 	TEST_METHOD(StringContainsCharPointerSuccess) {
 
 		String s1 = String("This is an example string");
 
-		if (!s1.contains("example")) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains("example"));
 	}
 
 	TEST_METHOD(StringContainsCharSuccess) {
 
 		String s1 = String("This is an example string");
 
-		if (!s1.contains('i')) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains('i'));
 	}
 
 	TEST_METHOD(StringContainsIntSuccess) {
 
 		String s1 = String("1 2 3 4");
 
-		if (!s1.contains(2)) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(2));
 	}
 
 	TEST_METHOD(StringEmptyContainsEmptySuccess) {
 
 		String s1 = String();
 
-		if (!s1.contains(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(String()));
 	}
 
 	TEST_METHOD(StringContainsStringFollowingPartialMatchSuccess) {
 
 		String s1 = String("This is an exexample string");
 
-		if (!s1.contains(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(String("example")));
 	}
 
 	TEST_METHOD(StringContainsStringAtStartSuccess) {
 
 		String s1 = String("This is an example string");
 
-		if (!s1.contains(String("This"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(String("This")));
 	}
 
 	TEST_METHOD(StringContainsStringAtEndSuccess) {
 
 		String s1 = String("This is an example string");
 
-		if (!s1.contains(String("string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(String("string")));
 	}
 
 	TEST_METHOD(StringContainsEmptySuccess) {
 
 		String s1 = String("This is an example string");
 
-		if (!s1.contains(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.contains(String()));
 	}
 
 	TEST_METHOD(StringContainsThisSuccess) {
 
 		String s = String("Test");
 
-		if (!s.contains(s)) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.contains(s));
 	}
 
 	TEST_METHOD(StringEmptyContainsStringFailure) {
 
 		String s1 = String();
 
-		if (s1.contains(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s1.contains(String("example")));
 	}
 
 	TEST_METHOD(StringContainsStringFailure) {
 
 		String s1 = String("This is an example string");
 
-		if (s1.contains(String("random"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s1.contains(String("random")));
 	}
 
 	TEST_METHOD(StringContainsCharPointerFailure) {
 
 		String s1 = String("This is an example string");
 
-		if (s1.contains("random")) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s1.contains("random"));
 	}
 
 	TEST_METHOD(StringContainsCharFailure) {
 
 		String s1 = String("This is an example string");
 
-		if (s1.contains('z')) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s1.contains('z'));
 	}
 
 	TEST_METHOD(StringContainsIntFailure) {
 
 		String s1 = String("This is an example string");
 
-		if (s1.contains(6)) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s1.contains(6));
 	}
 
 	TEST_METHOD(StringContainsPartialMatchFailure) {
 
 		String s1 = String("This is an example string");
 
-		if (s1.contains(String("exampleTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsFalse(s1.contains(String("exampleTest")));
 	}
 	};
 }

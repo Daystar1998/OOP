@@ -17,10 +17,7 @@ public:
 
 		s.prepend(String("Test"));
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringPrependCharPointerToEmpty) {
@@ -29,10 +26,7 @@ public:
 
 		s.prepend("Test");
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringPrependCharToEmpty) {
@@ -41,10 +35,7 @@ public:
 
 		s.prepend('t');
 
-		if (!s.equals(String('t'))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String('t')));
 	}
 
 	TEST_METHOD(StringPrependIntToEmpty) {
@@ -53,10 +44,7 @@ public:
 
 		s.prepend(100);
 
-		if (!s.equals(String("100"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("100")));
 	}
 
 	TEST_METHOD(StringPrependEmptyToEmpty) {
@@ -65,10 +53,7 @@ public:
 
 		s.prepend(String());
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringPrependStringToString) {
@@ -77,10 +62,7 @@ public:
 
 		s.prepend(String("Test"));
 
-		if (!s.equals(String("TestOriginal"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("TestOriginal")));
 	}
 
 	TEST_METHOD(StringPrependCharPointerToString) {
@@ -89,10 +71,7 @@ public:
 
 		s.prepend("Test");
 
-		if (!s.equals(String("TestOriginal"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("TestOriginal")));
 	}
 
 	TEST_METHOD(StringPrependCharToString) {
@@ -101,10 +80,7 @@ public:
 
 		s.prepend('t');
 
-		if (!s.equals(String("tOriginal"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("tOriginal")));
 	}
 
 	TEST_METHOD(StringPrependIntToString) {
@@ -113,10 +89,7 @@ public:
 
 		s.prepend(100);
 
-		if (!s.equals(String("100Original"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("100Original")));
 	}
 
 	TEST_METHOD(StringPrependEmptyToString) {
@@ -125,10 +98,7 @@ public:
 
 		s.prepend(String());
 
-		if (!s.equals(String("Original"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Original")));
 	}
 
 	TEST_METHOD(StringPrependThis) {
@@ -137,10 +107,7 @@ public:
 
 		s.prepend(s);
 
-		if (!s.equals(String("OriginalOriginal"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("OriginalOriginal")));
 	}
 	};
 }

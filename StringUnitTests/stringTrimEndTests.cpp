@@ -17,10 +17,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndOneSpaceAtBeginning) {
@@ -29,10 +26,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String(" This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String(" This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndFiveSpacesAtBeginning) {
@@ -41,10 +35,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("     This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("     This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndOneTabAtBeginning) {
@@ -53,10 +44,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("	This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("	This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndFiveTabsAtBeginning) {
@@ -65,10 +53,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("					This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("					This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndCarriageReturnAtBeginning) {
@@ -77,10 +62,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("\rThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("\rThis is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndVerticalTabAtBeginning) {
@@ -89,10 +71,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("\vThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("\vThis is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndMultipleTypesWhitespaceAtBeginning) {
@@ -101,10 +80,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("\v\r\t  This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("\v\r\t  This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndCharacterAfterSpaceAtEnd) {
@@ -113,10 +89,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example strin g"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example strin g")));
 	}
 
 	TEST_METHOD(StringTrimEndOneSpaceAtEnd) {
@@ -125,10 +98,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndFiveSpacesAtEnd) {
@@ -137,10 +107,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndOneTabAtEnd) {
@@ -149,10 +116,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndFiveTabsAtEnd) {
@@ -161,10 +125,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndCarriageReturnAtEnd) {
@@ -173,10 +134,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndVerticalTabAtEnd) {
@@ -185,10 +143,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimEndMultipleTypesWhitespaceAtEnd) {
@@ -197,10 +152,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringEmptyTrimEnd) {
@@ -209,10 +161,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringTrimEndOnlyWhitespace) {
@@ -221,10 +170,7 @@ public:
 
 		s.trimEnd();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 	};
 }

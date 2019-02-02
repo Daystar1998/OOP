@@ -16,10 +16,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String("Test "), -1);
 
-		if (!s.equals(String("Test This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertStringFarBelowZero) {
@@ -27,10 +24,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String("Test "), -100);
 
-		if (!s.equals(String("Test This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertStringZero) {
@@ -38,10 +32,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String("Test "), 0);
 
-		if (!s.equals(String("Test This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertStringOneAboveLength) {
@@ -49,10 +40,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(" Test"), 25);
 
-		if (!s.equals(String("This is an example string Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string Test")));
 	}
 
 	TEST_METHOD(StringInsertStringFarAboveLength) {
@@ -60,10 +48,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(" Test"), 1000);
 
-		if (!s.equals(String("This is an example string Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string Test")));
 	}
 
 	TEST_METHOD(StringInsertStringMiddle) {
@@ -71,10 +56,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String("Test"), 11);
 
-		if (!s.equals(String("This is an Testexample string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an Testexample string")));
 	}
 
 	TEST_METHOD(StringInsertCharPointerOneBelowZero) {
@@ -82,10 +64,7 @@ public:
 		String s = String("This is an example string");
 		s.insert("Test", -1);
 
-		if (!s.equals(String("TestThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("TestThis is an example string")));
 	}
 
 	TEST_METHOD(StringInsertCharPointerFarBelowZero) {
@@ -93,10 +72,7 @@ public:
 		String s = String("This is an example string");
 		s.insert("Test", -100);
 
-		if (!s.equals(String("TestThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("TestThis is an example string")));
 	}
 
 	TEST_METHOD(StringInsertCharPointerZero) {
@@ -104,10 +80,7 @@ public:
 		String s = String("This is an example string");
 		s.insert("Test", 0);
 
-		if (!s.equals(String("TestThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("TestThis is an example string")));
 	}
 
 	TEST_METHOD(StringInsertCharPointerOneAboveLength) {
@@ -115,10 +88,7 @@ public:
 		String s = String("This is an example string");
 		s.insert("Test", 25);
 
-		if (!s.equals(String("This is an example stringTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example stringTest")));
 	}
 
 	TEST_METHOD(StringInsertCharPointerFarAboveLength) {
@@ -126,10 +96,7 @@ public:
 		String s = String("This is an example string");
 		s.insert("Test", 1000);
 
-		if (!s.equals(String("This is an example stringTest"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example stringTest")));
 	}
 
 	TEST_METHOD(StringInsertCharPointerMiddle) {
@@ -137,10 +104,7 @@ public:
 		String s = String("This is an example string");
 		s.insert("Test", 11);
 
-		if (!s.equals(String("This is an Testexample string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an Testexample string")));
 	}
 
 	TEST_METHOD(StringInsertCharOneBelowZero) {
@@ -148,10 +112,7 @@ public:
 		String s = String("This is an example string");
 		s.insert('t', -1);
 
-		if (!s.equals(String("tThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("tThis is an example string")));
 	}
 
 	TEST_METHOD(StringInsertCharFarBelowZero) {
@@ -159,10 +120,7 @@ public:
 		String s = String("This is an example string");
 		s.insert('t', -100);
 
-		if (!s.equals(String("tThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("tThis is an example string")));
 	}
 
 	TEST_METHOD(StringInsertCharZero) {
@@ -170,10 +128,7 @@ public:
 		String s = String("This is an example string");
 		s.insert('t', 0);
 
-		if (!s.equals(String("tThis is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("tThis is an example string")));
 	}
 
 	TEST_METHOD(StringInsertCharOneAboveLength) {
@@ -181,10 +136,7 @@ public:
 		String s = String("This is an example string");
 		s.insert('t', 25);
 
-		if (!s.equals(String("This is an example stringt"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example stringt")));
 	}
 
 	TEST_METHOD(StringInsertCharFarAboveLength) {
@@ -192,10 +144,7 @@ public:
 		String s = String("This is an example string");
 		s.insert('t', 1000);
 
-		if (!s.equals(String("This is an example stringt"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example stringt")));
 	}
 
 	TEST_METHOD(StringInsertCharMiddle) {
@@ -203,10 +152,7 @@ public:
 		String s = String("This is an example string");
 		s.insert('t', 11);
 
-		if (!s.equals(String("This is an texample string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an texample string")));
 	}
 
 	TEST_METHOD(StringInsertIntOneBelowZero) {
@@ -214,10 +160,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(10, -1);
 
-		if (!s.equals(String("10This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertIntFarBelowZero) {
@@ -225,10 +168,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(10, -100);
 
-		if (!s.equals(String("10This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertIntZero) {
@@ -236,10 +176,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(10, 0);
 
-		if (!s.equals(String("10This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertIntOneAboveLength) {
@@ -247,10 +184,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(10, 25);
 
-		if (!s.equals(String("This is an example string10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string10")));
 	}
 
 	TEST_METHOD(StringInsertIntFarAboveLength) {
@@ -258,10 +192,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(10, 1000);
 
-		if (!s.equals(String("This is an example string10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string10")));
 	}
 
 	TEST_METHOD(StringInsertIntMiddle) {
@@ -269,10 +200,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(10, 11);
 
-		if (!s.equals(String("This is an 10example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an 10example string")));
 	}
 
 	TEST_METHOD(StringInsertEmptyOneBelowZero) {
@@ -280,10 +208,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(), -1);
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertEmptyFarBelowZero) {
@@ -291,10 +216,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(), -100);
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertEmptyZero) {
@@ -302,10 +224,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(), 0);
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertEmptyOneAboveLength) {
@@ -313,10 +232,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(), 25);
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertEmptyFarAboveLength) {
@@ -324,10 +240,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(), 1000);
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringInsertEmptyMiddle) {
@@ -335,10 +248,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(String(), 11);
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringEmptyInsertEmptyOneBelowZero) {
@@ -346,10 +256,7 @@ public:
 		String s = String();
 		s.insert(String(), -1);
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringEmptyInsertEmptyFarBelowZero) {
@@ -357,10 +264,7 @@ public:
 		String s = String();
 		s.insert(String(), -100);
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringEmptyInsertEmptyZero) {
@@ -368,10 +272,7 @@ public:
 		String s = String();
 		s.insert(String(), 0);
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringEmptyInsertEmptyOneAboveLength) {
@@ -379,10 +280,7 @@ public:
 		String s = String();
 		s.insert(String(), 1);
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringEmptyInsertEmptyFarAboveLength) {
@@ -390,10 +288,7 @@ public:
 		String s = String();
 		s.insert(String(), 1000);
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringEmptyInsertStringOneBelowZero) {
@@ -401,10 +296,7 @@ public:
 		String s = String();
 		s.insert(String("example"), -1);
 
-		if (!s.equals(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("example")));
 	}
 
 	TEST_METHOD(StringEmptyInsertStringFarBelowZero) {
@@ -412,10 +304,7 @@ public:
 		String s = String();
 		s.insert(String("example"), -100);
 
-		if (!s.equals(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("example")));
 	}
 
 	TEST_METHOD(StringEmptyInsertStringZero) {
@@ -423,10 +312,7 @@ public:
 		String s = String();
 		s.insert(String("example"), 0);
 
-		if (!s.equals(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("example")));
 	}
 
 	TEST_METHOD(StringEmptyInsertStringOneAboveLength) {
@@ -434,10 +320,7 @@ public:
 		String s = String();
 		s.insert(String("example"), 1);
 
-		if (!s.equals(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("example")));
 	}
 
 	TEST_METHOD(StringEmptyInsertStringFarAboveLength) {
@@ -445,10 +328,7 @@ public:
 		String s = String();
 		s.insert(String("example"), 1000);
 
-		if (!s.equals(String("example"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("example")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharPointerOneBelowZero) {
@@ -456,10 +336,7 @@ public:
 		String s = String();
 		s.insert("Test", -1);
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharPointerFarBelowZero) {
@@ -467,10 +344,7 @@ public:
 		String s = String();
 		s.insert("Test", -100);
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharPointerZero) {
@@ -478,10 +352,7 @@ public:
 		String s = String();
 		s.insert("Test", 0);
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharPointerOneAboveLength) {
@@ -489,10 +360,7 @@ public:
 		String s = String();
 		s.insert("Test", 1);
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharPointerFarAboveLength) {
@@ -500,10 +368,7 @@ public:
 		String s = String();
 		s.insert("Test", 1000);
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharOneBelowZero) {
@@ -511,10 +376,7 @@ public:
 		String s = String();
 		s.insert('t', -1);
 
-		if (!s.equals(String("t"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("t")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharFarBelowZero) {
@@ -522,10 +384,7 @@ public:
 		String s = String();
 		s.insert('t', -100);
 
-		if (!s.equals(String("t"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("t")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharZero) {
@@ -533,10 +392,7 @@ public:
 		String s = String();
 		s.insert('t', 0);
 
-		if (!s.equals(String("t"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("t")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharOneAboveLength) {
@@ -544,10 +400,7 @@ public:
 		String s = String();
 		s.insert('t', 1);
 
-		if (!s.equals(String("t"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("t")));
 	}
 
 	TEST_METHOD(StringEmptyInsertCharFarAboveLength) {
@@ -555,10 +408,7 @@ public:
 		String s = String();
 		s.insert('t', 1000);
 
-		if (!s.equals(String("t"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("t")));
 	}
 
 	TEST_METHOD(StringEmptyInsertIntOneBelowZero) {
@@ -566,10 +416,7 @@ public:
 		String s = String();
 		s.insert(10, -1);
 
-		if (!s.equals(String("10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10")));
 	}
 
 	TEST_METHOD(StringEmptyInsertIntFarBelowZero) {
@@ -577,10 +424,7 @@ public:
 		String s = String();
 		s.insert(10, -100);
 
-		if (!s.equals(String("10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10")));
 	}
 
 	TEST_METHOD(StringEmptyInsertIntZero) {
@@ -588,10 +432,7 @@ public:
 		String s = String();
 		s.insert(10, 0);
 
-		if (!s.equals(String("10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10")));
 	}
 
 	TEST_METHOD(StringEmptyInsertIntOneAboveLength) {
@@ -599,10 +440,7 @@ public:
 		String s = String();
 		s.insert(10, 1);
 
-		if (!s.equals(String("10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10")));
 	}
 
 	TEST_METHOD(StringEmptyInsertIntFarAboveLength) {
@@ -610,10 +448,7 @@ public:
 		String s = String();
 		s.insert(10, 1000);
 
-		if (!s.equals(String("10"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("10")));
 	}
 
 	TEST_METHOD(StringInsertThisInMiddle) {
@@ -621,10 +456,7 @@ public:
 		String s = String("This is an example string");
 		s.insert(s, 11);
 
-		if (!s.equals(String("This is an This is an example stringexample string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an This is an example stringexample string")));
 	}
 	};
 }

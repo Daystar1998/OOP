@@ -17,10 +17,7 @@ public:
 
 		s.set("Test");
 
-		if (!s.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringSetEmptyToChar) {
@@ -29,10 +26,7 @@ public:
 
 		s.set('t');
 
-		if (!s.equals(String('t'))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String('t')));
 	}
 
 	TEST_METHOD(StringSetEmptyToIntMin) {
@@ -41,10 +35,7 @@ public:
 
 		s.set(INT_MIN);
 
-		if (!s.equals(String(std::to_string(INT_MIN).c_str()))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String(std::to_string(INT_MIN).c_str())));
 	}
 
 	TEST_METHOD(StringSetEmptyToIntMax) {
@@ -53,10 +44,7 @@ public:
 
 		s.set(INT_MAX);
 
-		if (!s.equals(String(std::to_string(INT_MAX).c_str()))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String(std::to_string(INT_MAX).c_str())));
 	}
 
 	TEST_METHOD(StringSetEmptyToIntZero) {
@@ -65,10 +53,7 @@ public:
 
 		s.set(0);
 
-		if (!s.equals(String("0"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("0")));
 	}
 
 	TEST_METHOD(StringSetEmptyToString) {
@@ -78,10 +63,7 @@ public:
 
 		s1.set(s2);
 
-		if (!s1.equals(String("Test"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.equals(String("Test")));
 	}
 
 	TEST_METHOD(StringSetStringToString) {
@@ -91,10 +73,7 @@ public:
 
 		s1.set("Second");
 
-		if (!s1.equals(String("Second"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s1.equals(String("Second")));
 	}
 
 	TEST_METHOD(StringSetStringToChar) {
@@ -103,10 +82,7 @@ public:
 
 		s.set('t');
 
-		if (!s.equals(String('t'))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String('t')));
 	}
 
 	TEST_METHOD(StringSetStringToInt) {
@@ -115,10 +91,7 @@ public:
 
 		s.set(0);
 
-		if (!s.equals(String(0))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String(0)));
 	}
 
 	TEST_METHOD(StringSetThis) {
@@ -127,10 +100,7 @@ public:
 
 		s.set(s);
 
-		if (!s.equals(String("Previous"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("Previous")));
 	}
 	};
 }

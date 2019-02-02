@@ -17,10 +17,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartOneSpaceAtBeginning) {
@@ -29,10 +26,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartFiveSpacesAtBeginning) {
@@ -41,10 +35,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartOneTabAtBeginning) {
@@ -53,10 +44,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartFiveTabsAtBeginning) {
@@ -65,10 +53,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartCarriageReturnAtBeginning) {
@@ -77,10 +62,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartVerticalTabAtBeginning) {
@@ -89,10 +71,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartMultipleTypesWhitespaceAtBeginning) {
@@ -101,10 +80,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartCharacterBeforeSpaceAtBeginning) {
@@ -113,10 +89,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("T his is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("T his is an example string")));
 	}
 
 	TEST_METHOD(StringTrimStartOneSpaceAtEnd) {
@@ -125,10 +98,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string "))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string ")));
 	}
 
 	TEST_METHOD(StringTrimStartFiveSpacesAtEnd) {
@@ -137,10 +107,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string     "))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string     ")));
 	}
 
 	TEST_METHOD(StringTrimStartOneTabAtEnd) {
@@ -149,10 +116,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string	"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string	")));
 	}
 
 	TEST_METHOD(StringTrimStartFiveTabsAtEnd) {
@@ -161,10 +125,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string					"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string					")));
 	}
 
 	TEST_METHOD(StringTrimStartCarriageReturnAtEnd) {
@@ -173,10 +134,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string\r"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string\r")));
 	}
 
 	TEST_METHOD(StringTrimStartVerticalTabAtEnd) {
@@ -185,10 +143,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string\v"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string\v")));
 	}
 
 	TEST_METHOD(StringTrimStartMultipleTypesWhitespaceAtEnd) {
@@ -197,10 +152,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String("This is an example string\v\r\t  "))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("This is an example string\v\r\t  ")));
 	}
 
 	TEST_METHOD(StringEmptyTrimStart) {
@@ -209,10 +161,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringTrimStartOnlyWhitespace) {
@@ -221,10 +170,7 @@ public:
 
 		s.trimStart();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 	};
 }

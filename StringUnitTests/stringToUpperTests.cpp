@@ -17,10 +17,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String("THIS IS AN EXAMPLE STRING"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("THIS IS AN EXAMPLE STRING")));
 	}
 
 	TEST_METHOD(StringEmptyToUpper) {
@@ -29,10 +26,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringToUpperWithNumbersOnEnds) {
@@ -41,10 +35,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String("1THIS IS AN EXAMPLE STRING1"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("1THIS IS AN EXAMPLE STRING1")));
 	}
 
 	TEST_METHOD(StringToUpperWithNumberInMiddle) {
@@ -53,10 +44,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String("THIS IS AN 1EXAMPLE STRING"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("THIS IS AN 1EXAMPLE STRING")));
 	}
 
 	TEST_METHOD(StringToUpperWithSymbolsOnEnds) {
@@ -65,10 +53,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String("!@#$%^&*()THIS IS AN EXAMPLE STRING!@#$%^&*()"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("!@#$%^&*()THIS IS AN EXAMPLE STRING!@#$%^&*()")));
 	}
 
 	TEST_METHOD(StringToUpperWithSymbolsInMiddle) {
@@ -77,10 +62,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String("THIS IS AN !@#$%^&*()EXAMPLE STRING"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("THIS IS AN !@#$%^&*()EXAMPLE STRING")));
 	}
 
 	TEST_METHOD(StringToUpperAlreadyUppercase) {
@@ -89,10 +71,7 @@ public:
 
 		s.toUpper();
 
-		if (!s.equals(String("THIS IS AN EXAMPLE STRING"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("THIS IS AN EXAMPLE STRING")));
 	}
 	};
 }

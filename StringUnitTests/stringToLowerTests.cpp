@@ -17,10 +17,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String("this is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("this is an example string")));
 	}
 
 	TEST_METHOD(StringEmptyToLower) {
@@ -29,10 +26,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String())) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String()));
 	}
 
 	TEST_METHOD(StringToLowerWithNumbersOnEnds) {
@@ -41,10 +35,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String("1this is an example string1"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("1this is an example string1")));
 	}
 
 	TEST_METHOD(StringToLowerWithNumberInMiddle) {
@@ -53,10 +44,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String("this is an 1example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("this is an 1example string")));
 	}
 
 	TEST_METHOD(StringToLowerWithSymbolsOnEnds) {
@@ -65,10 +53,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String("!@#$%^&*()this is an example string!@#$%^&*()"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("!@#$%^&*()this is an example string!@#$%^&*()")));
 	}
 
 	TEST_METHOD(StringToLowerWithSymbolsInMiddle) {
@@ -77,10 +62,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String("this is an !@#$%^&*()example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("this is an !@#$%^&*()example string")));
 	}
 
 	TEST_METHOD(StringToLowerAlreadyLowercase) {
@@ -89,10 +71,7 @@ public:
 
 		s.toLower();
 
-		if (!s.equals(String("this is an example string"))) {
-
-			Assert::Fail();
-		}
+		Assert::IsTrue(s.equals(String("this is an example string")));
 	}
 	};
 }
