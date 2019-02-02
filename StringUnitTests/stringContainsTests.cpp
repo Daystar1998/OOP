@@ -13,65 +13,65 @@ public:
 
 	TEST_METHOD(StringContainsStringSuccess) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsTrue(s1.contains(String("example")));
+		Assert::IsTrue(s.contains(String("example")));
 	}
 
 	TEST_METHOD(StringContainsCharPointerSuccess) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsTrue(s1.contains("example"));
+		Assert::IsTrue(s.contains("example"));
 	}
 
 	TEST_METHOD(StringContainsCharSuccess) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsTrue(s1.contains('i'));
+		Assert::IsTrue(s.contains('i'));
 	}
 
 	TEST_METHOD(StringContainsIntSuccess) {
 
-		String s1 = String("1 2 3 4");
+		String s = String("1 2 3 4");
 
-		Assert::IsTrue(s1.contains(2));
+		Assert::IsTrue(s.contains(2));
 	}
 
 	TEST_METHOD(StringEmptyContainsEmptySuccess) {
 
-		String s1 = String();
+		String s = String();
 
-		Assert::IsTrue(s1.contains(String()));
+		Assert::IsTrue(s.contains(String()));
 	}
 
 	TEST_METHOD(StringContainsStringFollowingPartialMatchSuccess) {
 
-		String s1 = String("This is an exexample string");
+		String s = String("This is an exexample string");
 
-		Assert::IsTrue(s1.contains(String("example")));
+		Assert::IsTrue(s.contains(String("example")));
 	}
 
 	TEST_METHOD(StringContainsStringAtStartSuccess) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsTrue(s1.contains(String("This")));
+		Assert::IsTrue(s.contains(String("This")));
 	}
 
 	TEST_METHOD(StringContainsStringAtEndSuccess) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsTrue(s1.contains(String("string")));
+		Assert::IsTrue(s.contains(String("string")));
 	}
 
 	TEST_METHOD(StringContainsEmptySuccess) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsTrue(s1.contains(String()));
+		Assert::IsTrue(s.contains(String()));
 	}
 
 	TEST_METHOD(StringContainsThisSuccess) {
@@ -83,44 +83,44 @@ public:
 
 	TEST_METHOD(StringEmptyContainsStringFailure) {
 
-		String s1 = String();
+		String s = String();
 
-		Assert::IsFalse(s1.contains(String("example")));
+		Assert::IsFalse(s.contains(String("example")));
 	}
 
 	TEST_METHOD(StringContainsStringFailure) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsFalse(s1.contains(String("random")));
+		Assert::IsFalse(s.contains(String("random")));
 	}
 
 	TEST_METHOD(StringContainsCharPointerFailure) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsFalse(s1.contains("random"));
+		Assert::IsFalse(s.contains("random"));
 	}
 
 	TEST_METHOD(StringContainsCharFailure) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsFalse(s1.contains('z'));
+		Assert::IsFalse(s.contains('z'));
 	}
 
 	TEST_METHOD(StringContainsIntFailure) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsFalse(s1.contains(6));
+		Assert::IsFalse(s.contains(6));
 	}
 
 	TEST_METHOD(StringContainsPartialMatchFailure) {
 
-		String s1 = String("This is an example string");
+		String s = String("This is an example string");
 
-		Assert::IsFalse(s1.contains(String("exampleTest")));
+		Assert::IsFalse(s.contains(String("exampleTest")));
 	}
 	};
 }
