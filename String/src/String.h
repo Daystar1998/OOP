@@ -49,6 +49,8 @@ public:
 
 	void toLower();
 
+	void trimStart();
+
 	char at(int index) const;
 
 	bool equals(const String &other) const;
@@ -59,4 +61,6 @@ public:
 private:
 
 	void destroy();
+
+	bool isWhiteSpace(char c);
 };

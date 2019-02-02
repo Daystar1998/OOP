@@ -315,6 +315,43 @@ void String::toLower() {
 	}
 }
 
+void String::trimStart() {
+
+	if (!this->isEmpty()) {
+
+		int start;
+
+		for (start = 0; start < this->length(); start++) {
+
+			if (!isWhiteSpace(this->pString[start])) {
+
+				break;
+			}
+		}
+
+		this->set(this->subString(start, this->length() - start));
+	}
+}
+
+bool String::isWhiteSpace(char c) {
+
+	bool result = false;
+
+	switch (c) {
+
+		case ' ':
+		case '\n':
+		case '\r':
+		case '\t':
+		case '\v':
+
+			result = true;
+			break;
+	}
+
+	return result;
+}
+
 char String::at(int index) const {
 
 	char result = '\0';
