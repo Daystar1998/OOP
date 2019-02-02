@@ -91,6 +91,16 @@ public:
 		}
 	}
 
+	TEST_METHOD(StringContainsEmptySuccess) {
+
+		String s1 = String("This is an example string");
+
+		if (!s1.contains(String())) {
+
+			Assert::Fail();
+		}
+	}
+
 	TEST_METHOD(StringEmptyContainsStringFailure) {
 
 		String s1 = String();
