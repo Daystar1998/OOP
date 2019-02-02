@@ -119,7 +119,7 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartSpaceAtEnd) {
+	TEST_METHOD(StringTrimStartOneSpaceAtEnd) {
 
 		String s = String("This is an example string ");
 
@@ -131,13 +131,37 @@ public:
 		}
 	}
 
-	TEST_METHOD(StringTrimStartTabAtEnd) {
+	TEST_METHOD(StringTrimStartFiveSpacesAtEnd) {
+
+		String s = String("This is an example string     ");
+
+		s.trimStart();
+
+		if (!s.equals(String("This is an example string     "))) {
+
+			Assert::Fail();
+		}
+	}
+
+	TEST_METHOD(StringTrimStartOneTabAtEnd) {
 
 		String s = String("This is an example string	");
 
 		s.trimStart();
 
 		if (!s.equals(String("This is an example string	"))) {
+
+			Assert::Fail();
+		}
+	}
+
+	TEST_METHOD(StringTrimStartFiveTabsAtEnd) {
+
+		String s = String("This is an example string					");
+
+		s.trimStart();
+
+		if (!s.equals(String("This is an example string					"))) {
 
 			Assert::Fail();
 		}
