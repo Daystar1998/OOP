@@ -1,8 +1,6 @@
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
-#include <string>
-
 #include "../String/src/String.h"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
