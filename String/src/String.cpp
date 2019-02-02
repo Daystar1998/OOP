@@ -58,7 +58,7 @@ void String::set(const char* const newString) {
 
 	if (newString != NULL) {
 
-		int length = strlen(newString) + 1;
+		int length = (int)strlen(newString) + 1;
 		pString = new char[length];
 		strcpy_s(pString, length, newString);
 	} else {
@@ -105,7 +105,7 @@ void String::set(int i) {
 		convertedChars.push('-');
 	}
 
-	int size = convertedChars.size();
+	int size = (int)convertedChars.size();
 
 	pString = new char[size + 1];
 
@@ -443,7 +443,7 @@ int String::length() const {
 
 	if (!isEmpty()) {
 
-		result = strlen(pString);
+		result = (int)strlen(pString);
 	}
 
 	return result;
