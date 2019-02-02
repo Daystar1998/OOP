@@ -352,7 +352,7 @@ void String::trimEnd() {
 
 		int end;
 
-		for (end = this->length(); end >= 0; end--) {
+		for (end = this->length() - 1; end >= 0; end--) {
 
 			if (!isWhiteSpace(this->pString[end])) {
 
@@ -360,7 +360,7 @@ void String::trimEnd() {
 			}
 		}
 
-		this->set(this->subString(0, end));
+		this->set(this->subString(0, end + 1));
 	}
 }
 
