@@ -629,6 +629,7 @@ public:
 		String *s2 = nullptr;
 		String *s3 = nullptr;
 
+#pragma warning(suppress: 6011)
 		s1.replace(*s2, *s3);
 
 		Assert::IsTrue(s1.equals(String("test")));

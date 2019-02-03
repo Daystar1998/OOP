@@ -80,6 +80,7 @@ public:
 
 		String *s2 = nullptr;
 
+#pragma warning(suppress: 6011)
 		Assert::IsFalse(s1.equals(*s2));
 	}
 	};

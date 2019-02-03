@@ -126,6 +126,7 @@ public:
 		String s1 = String("Test");
 		String *s2 = nullptr;
 
+#pragma warning(suppress: 6011)
 		s1.set(*s2);
 
 		Assert::IsTrue(s1.equals(String()));

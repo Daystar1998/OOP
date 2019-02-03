@@ -94,6 +94,7 @@ public:
 
 		String *s2 = nullptr;
 
+#pragma warning(suppress: 6011)
 		Assert::IsTrue(s1.contains(*s2));
 	}
 

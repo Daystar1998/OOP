@@ -472,6 +472,7 @@ public:
 		String s1 = String("This is an example string");
 		String *s2 = nullptr;
 
+#pragma warning(suppress: 6011)
 		s1.insert(*s2, 0);
 
 		Assert::IsTrue(s1.equals(String("This is an example string")));
