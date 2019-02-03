@@ -10,7 +10,7 @@ String::String() {
 
 // Author: Dana Steil
 // Edited by Matthew Day to make null safe
-String::String(const String& newString) {
+String::String(const String &newString) {
 
 	pString = NULL;
 
@@ -74,7 +74,7 @@ void String::set(const char* const newString) {
 
 // Author: Dana Steil
 // Edited by Matthew Day to make null safe and "this" safe
-void String::set(const String& newString) {
+void String::set(const String &newString) {
 
 	if (&newString == nullptr) {
 
@@ -131,7 +131,7 @@ void String::set(int i) {
 }
 
 // Author: Dana Steil
-void String::write(ostream& out) {
+void String::write(ostream &out) {
 
 	if (pString != NULL) {
 

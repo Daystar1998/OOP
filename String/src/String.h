@@ -15,7 +15,7 @@ public:
 
 	String();
 
-	String(const String& newString);
+	String(const String &newString);
 
 	String(const char* const newString);
 
@@ -27,13 +27,13 @@ public:
 
 	void set(const char* const newString);
 
-	void set(const String& newString);
+	void set(const String &newString);
 
 	void set(int i);
 
 	void set(char c);
 
-	void write(std::ostream& out);
+	void write(std::ostream &out);
 
 	void append(const String &other);
 
