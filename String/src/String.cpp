@@ -9,10 +9,15 @@ String::String() {
 }
 
 // Author: Dana Steil
+// Edited by Matthew Day to make null safe
 String::String(const String& newString) {
 
 	pString = NULL;
-	set(newString.pString);
+
+	if (&newString != nullptr) {
+
+		set(newString.pString);
+	}
 }
 
 // Author: Dana Steil
