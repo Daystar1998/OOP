@@ -102,5 +102,59 @@ public:
 
 		Assert::IsTrue(s.equals(String("Previous")));
 	}
+
+	TEST_METHOD(StringSetStringEmpty) {
+
+		String s = String();
+
+		s.set(String());
+
+		Assert::IsTrue(s.equals(String()));
+	}
+
+	TEST_METHOD(StringSetThisFailure) {
+
+		String s = String("Test");
+
+		s.set(s);
+
+		Assert::IsFalse(s.equals(String()));
+	}
+
+	TEST_METHOD(StringSetIntFailure) {
+
+		String s = String();
+
+		s.set(12345);
+
+		Assert::IsFalse(s.equals(String()));
+	}
+
+	TEST_METHOD(StringSetCharFailure) {
+
+		String s = String();
+
+		s.set('t');
+
+		Assert::IsFalse(s.equals(String()));
+	}
+
+	TEST_METHOD(StringSetCharPointerFailure) {
+
+		String s = String();
+
+		s.set("Test");
+
+		Assert::IsFalse(s.equals(String()));
+	}
+
+	TEST_METHOD(StringSetStringFailure) {
+
+		String s = String();
+
+		s.set(String("Test"));
+
+		Assert::IsFalse(s.equals(String()));
+	}
 	};
 }
