@@ -62,6 +62,8 @@ public:
 	bool isEmpty() const; // empty when the pointer is null or the first character is \0
 
 	int length() const;
+
+	void replace(const String &previous, const String &next);
 private:
 
 	void destroy();

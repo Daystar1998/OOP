@@ -452,3 +452,55 @@ int String::length() const {
 
 	return result;
 }
+
+void String::replace(const String &previous, const String &next) {
+
+	if (this == &previous) {
+
+		this->set(next);
+	} else if (!this->isEmpty() && !previous.isEmpty()) {
+
+		int end = 0;
+
+		for (int i = 0; this->length() - i >= previous.length(); i++) {
+
+			if (this->pString[i] == previous.pString[0]) {
+
+				bool matching = true;
+
+				end = i;
+
+				for (int j = 1; j < previous.length(); j++) {
+
+					if (this->pString[++i] != previous.pString[j]) {
+
+						matching = false;
+
+						// Subtract one from i to avoid having the current value skipped over for further testing
+						i--;
+
+						break;
+					}
+				}
+
+				if (matching) {
+
+					String beforeMatch(this->subString(0, end));
+
+					beforeMatch.append(next);
+
+					int endOfMatch = end + previous.length();
+					String afterMatch(this->subString(endOfMatch, this->length() - endOfMatch));
+
+					afterMatch.replace(previous, next);
+
+					beforeMatch.append(afterMatch);
+
+					this->set(beforeMatch);
+
+					break;
+				}
+			}
+		}
+	}
+}
