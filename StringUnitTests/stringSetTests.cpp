@@ -105,25 +105,25 @@ public:
 
 	TEST_METHOD(StringSetStringEmpty) {
 
-		String s = String();
+		String s = String("Test");
 
 		s.set(String());
 
 		Assert::IsTrue(s.equals(String()));
 	}
 
-	TEST_METHOD(StringSetNull) {
+	TEST_METHOD(StringSetStringNull) {
 
-		String s = String();
+		String s = String("Test");
 
 		s.set(nullptr);
 
 		Assert::IsTrue(s.equals(String()));
 	}
 
-	TEST_METHOD(StringSetNullPointer) {
+	TEST_METHOD(StringSetStringNullPointer) {
 
-		String s1 = String();
+		String s1 = String("Test");
 		String *s2 = nullptr;
 
 		s1.set(*s2);
