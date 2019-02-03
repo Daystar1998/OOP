@@ -112,6 +112,25 @@ public:
 		Assert::IsTrue(s.equals(String()));
 	}
 
+	TEST_METHOD(StringSetNull) {
+
+		String s = String();
+
+		s.set(nullptr);
+
+		Assert::IsTrue(s.equals(String()));
+	}
+
+	TEST_METHOD(StringSetNullPointer) {
+
+		String s1 = String();
+		String *s2 = nullptr;
+
+		s1.set(*s2);
+
+		Assert::IsTrue(s1.equals(String()));
+	}
+
 	TEST_METHOD(StringSetThisFailure) {
 
 		String s = String("Test");

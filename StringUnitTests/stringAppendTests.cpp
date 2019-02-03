@@ -109,5 +109,25 @@ public:
 
 		Assert::IsTrue(s.equals(String("TestTest")));
 	}
+
+	TEST_METHOD(StringAppendNull) {
+
+		String s = String("Test");
+
+		s.append(nullptr);
+
+		Assert::IsTrue(s.equals(String("Test")));
+	}
+
+	TEST_METHOD(StringAppendNullPointer) {
+
+		String s1 = String("Test");
+
+		String *s2 = nullptr;
+
+		s1.append(*s2);
+
+		Assert::IsTrue(s1.equals(String("Test")));
+	}
 	};
 }

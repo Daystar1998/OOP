@@ -109,5 +109,25 @@ public:
 
 		Assert::IsTrue(s.equals(String("OriginalOriginal")));
 	}
+
+	TEST_METHOD(StringPrependNull) {
+
+		String s = String("Original");
+
+		s.prepend(nullptr);
+
+		Assert::IsTrue(s.equals(String("Original")));
+	}
+
+	TEST_METHOD(StringPrependNullPointer) {
+
+		String s1 = String("Original");
+
+		String *s2 = nullptr;
+
+		s1.prepend(*s2);
+
+		Assert::IsTrue(s1.equals(String("Original")));
+	}
 	};
 }

@@ -613,5 +613,25 @@ public:
 
 		Assert::IsTrue(s.equals(String("test")));
 	}
+
+	TEST_METHOD(StringReplaceNullToNull) {
+
+		String s = String("test");
+
+		s.replace(nullptr, nullptr);
+
+		Assert::IsTrue(s.equals(String("test")));
+	}
+
+	TEST_METHOD(StringReplaceNullPointerToNullPointer) {
+
+		String s1 = String("test");
+		String *s2 = nullptr;
+		String *s3 = nullptr;
+
+		s1.replace(*s2, *s3);
+
+		Assert::IsTrue(s1.equals(String("test")));
+	}
 	};
 }

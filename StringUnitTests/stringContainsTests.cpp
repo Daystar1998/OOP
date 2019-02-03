@@ -81,6 +81,22 @@ public:
 		Assert::IsTrue(s.contains(s));
 	}
 
+	TEST_METHOD(StringContainsNullSuccess) {
+
+		String s = String("Test");
+
+		Assert::IsTrue(s.contains(nullptr));
+	}
+
+	TEST_METHOD(StringContainsNullPointerSuccess) {
+
+		String s1 = String("Test");
+
+		String *s2 = nullptr;
+
+		Assert::IsTrue(s1.contains(*s2));
+	}
+
 	TEST_METHOD(StringEmptyContainsStringFailure) {
 
 		String s = String();

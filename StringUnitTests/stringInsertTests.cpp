@@ -458,5 +458,23 @@ public:
 
 		Assert::IsTrue(s.equals(String("This is an This is an example stringexample string")));
 	}
+
+	TEST_METHOD(StringInsertNull) {
+
+		String s = String("This is an example string");
+		s.insert(nullptr, 0);
+
+		Assert::IsTrue(s.equals(String("This is an example string")));
+	}
+
+	TEST_METHOD(StringInsertNullPointer) {
+
+		String s1 = String("This is an example string");
+		String *s2 = nullptr;
+
+		s1.insert(*s2, 0);
+
+		Assert::IsTrue(s1.equals(String("This is an example string")));
+	}
 	};
 }

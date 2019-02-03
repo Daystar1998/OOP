@@ -66,5 +66,21 @@ public:
 
 		Assert::IsFalse(s.equals(String("fTefstf")));
 	}
+
+	TEST_METHOD(StringEqualsNullFailure) {
+
+		String s = String("Test");
+
+		Assert::IsFalse(s.equals(nullptr));
+	}
+
+	TEST_METHOD(StringEqualsNullPointerFailure) {
+
+		String s1 = String("Test");
+
+		String *s2 = nullptr;
+
+		Assert::IsFalse(s1.equals(*s2));
+	}
 	};
 }
