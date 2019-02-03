@@ -155,7 +155,7 @@ public:
 		Assert::IsTrue(s.equals(String("This is an example string")));
 	}
 
-	TEST_METHOD(StringEmptyTrimEnd) {
+	TEST_METHOD(StringTrimEndEmpty) {
 
 		String s = String();
 

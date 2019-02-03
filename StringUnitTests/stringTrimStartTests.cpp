@@ -155,7 +155,7 @@ public:
 		Assert::IsTrue(s.equals(String("This is an example string\v\r\t  ")));
 	}
 
-	TEST_METHOD(StringEmptyTrimStart) {
+	TEST_METHOD(StringTrimStartEmpty) {
 
 		String s = String();
 
