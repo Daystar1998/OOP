@@ -73,10 +73,13 @@ void String::set(const char* const newString) {
 }
 
 // Author: Dana Steil
-// Edited by Matthew Day to make it "this" safe
+// Edited by Matthew Day to make null safe and "this" safe
 void String::set(const String& newString) {
 
-	if (this != &newString) {
+	if (&newString == nullptr) {
+
+		set("");
+	} else if (this != &newString) {
 
 		set(newString.pString);
 	}
@@ -138,7 +141,7 @@ void String::write(ostream& out) {
 
 void String::append(const String &other) {
 
-	if (!this->isEmpty() || !other.isEmpty()) {
+	if (&other != nullptr && (!this->isEmpty() || !other.isEmpty())) {
 
 		char *result = new char[this->length() + other.length() + 1];
 
@@ -171,7 +174,7 @@ bool String::contains(const String &other) const {
 
 	bool result = false;
 
-	if (other.isEmpty()) {
+	if (&other == nullptr || other.isEmpty()) {
 
 		result = true;
 	} else if (!this->isEmpty()) {
@@ -209,7 +212,7 @@ bool String::contains(const String &other) const {
 
 void String::insert(const String &other, int index) {
 
-	if (!other.isEmpty()) {
+	if (&other != nullptr && !other.isEmpty()) {
 
 		if (index < 0) {
 
@@ -414,10 +417,10 @@ bool String::equals(const String &other) const {
 
 	bool result = false;
 
-	if (this->isEmpty() && other.isEmpty()) {
+	if (this->isEmpty() && (&other == nullptr || other.isEmpty())) {
 
 		result = true;
-	} else if (this->length() == other.length()) {
+	} else if (&other != nullptr && this->length() == other.length()) {
 
 		bool matching = true;
 
@@ -463,7 +466,7 @@ void String::replace(const String &previous, const String &next) {
 	if (this == &previous) {
 
 		this->set(next);
-	} else if (!this->isEmpty() && !previous.isEmpty()) {
+	} else if (!this->isEmpty() && &previous != nullptr && !previous.isEmpty()) {
 
 		int end = 0;
 
