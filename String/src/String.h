@@ -4,7 +4,8 @@
 #include<stack>
 #include<string>
 
-using namespace std;
+using std::ostream;
+using std::stack;
 
 class String {
 
