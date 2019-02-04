@@ -67,6 +67,20 @@ public:
 		Assert::IsFalse(s.equals(String("fTefstf")));
 	}
 
+	TEST_METHOD(StringEqualsFailureSameLengthFirstDifferent) {
+
+		String s = String("1Test");
+
+		Assert::IsFalse(s.equals(String("2Test")));
+	}
+
+	TEST_METHOD(StringEqualsFailureSameLengthLastDifferent) {
+
+		String s = String("Test1");
+
+		Assert::IsFalse(s.equals(String("Test2")));
+	}
+
 	TEST_METHOD(StringEqualsNullFailure) {
 
 		String s = String("Test");
