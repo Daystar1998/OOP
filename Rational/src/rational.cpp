@@ -1,5 +1,11 @@
 #include "rational.h"
 
+Rational::Rational(int numerator, int denominator)
+	: numerator(numerator), denominator(denominator) {
+
+	reduce();
+}
+
 // Author: Dana Steil
 const Rational& Rational::operator=(const Rational &rValue) {
 
