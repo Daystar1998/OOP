@@ -4,30 +4,18 @@
 
 /.vs
 /Debug
-/Maze Game/.vs/Maze Game/v15
-/Maze Game/Debug/Maze Game.tlog
-/Maze Game/Debug
-/Maze Game/Maze Game.vcxproj.user
-/Maze Game/Maze Game.vcxproj.filters
-/Maze Game/Maze Game.vcxproj
-/OOP.sln
+/*/.vs
+*.sln
 <<<<<<< HEAD
-/Maze Game/x64/Debug
+/*/x64/Debug
 /x64/Debug
 =======
 >>>>>>> 143d9cc... Drawing to the command prompt and generating the maze
 /intermediates
 /Win32/Debug
-/String/String.vcxproj.user
-/String/String.vcxproj.filters
-/String/String.vcxproj
-/String/Debug/String.tlog
-/String/Debug
-/String/intermediates
-/StringUnitTests/x64/Debug
-/StringUnitTests/StringUnitTests.vcxproj.user
-/StringUnitTests/StringUnitTests.vcxproj.filters
-/StringUnitTests/StringUnitTests.vcxproj
-/TestResults/cc96c48e-6f80-41cf-8fb0-537b687d8f23
-/String/bin
-/TestResults/cbe8cb8f-c7b1-4884-8de8-f083fdccc0ce
+/*/Debug
+/*/bin
+/TestResults
+*.vcxproj.user
+*.vcxproj.filters
+*.vcxproj
