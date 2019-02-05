@@ -1,3 +1,5 @@
+// Author: Matthew Day
+
 #ifdef _DEBUG
 // Visual leak detector program to check for memory leaks
 #include <vld.h>
