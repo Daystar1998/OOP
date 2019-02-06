@@ -3,14 +3,26 @@
 Rational::Rational(int numerator, int denominator)
 	: numerator(numerator), denominator(denominator) {
 
+	if (denominator == 0) {
+
+		throw "Error: Divide by zero";
+	}
+
 	reduce();
 }
 
 // Author: Dana Steil
+// Edited by Matthew Day to check for a denominator of zero
 const Rational& Rational::operator=(const Rational &rValue) {
 
 	numerator = rValue.numerator;
 	denominator = rValue.denominator;
+
+	if (denominator == 0) {
+
+		throw "Error: Divide by zero";
+	}
+
 	reduce();
 
 	return *this;
