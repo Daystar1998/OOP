@@ -48,6 +48,14 @@ Rational Rational::operator++(int) {
 	return result;
 }
 
+Rational& Rational::operator--() {
+
+	numerator -= denominator;
+	reduce();
+
+	return *this;
+}
+
 // Author: Dana Steil
 bool Rational::operator==(const Rational & rValue) const {
 

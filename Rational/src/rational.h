@@ -22,6 +22,8 @@ public:
 
 	Rational operator++(int);
 
+	Rational& operator--();
+
 	bool operator==(const Rational & rValue) const;
 
 	string operator()() const;
