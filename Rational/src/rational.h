@@ -24,6 +24,8 @@ public:
 
 	Rational& operator--();
 
+	Rational operator--(int);
+
 	bool operator==(const Rational & rValue) const;
 
 	string operator()() const;
