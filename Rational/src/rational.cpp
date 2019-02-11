@@ -141,9 +141,15 @@ void Rational::reduce() {
 }
 
 // Author: Dana Steil
+// Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
 ostream &operator<<(ostream & out, const Rational &rational) {
 
-	out << rational.getNumerator() << "\\" << rational.getDenominator();
+	out << rational.getNumerator();
+
+	if (rational.getDenominator() != 1) {
+
+		out << "/" << rational.getDenominator();
+	}
 
 	return out;
 }
