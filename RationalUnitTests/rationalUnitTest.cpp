@@ -55,5 +55,31 @@ namespace RationalUnitTests
 
 			Assert::AreEqual("7/8", result.c_str());
 		}
+
+		TEST_METHOD(ConstructorReductionNumeratorHigher) {
+
+			Rational rational(16, 8);
+
+			stringstream stream;
+
+			stream << rational;
+
+			string result = stream.str();
+
+			Assert::AreEqual("2", result.c_str());
+		}
+
+		TEST_METHOD(ConstructorReductionDenominatorHigher) {
+
+			Rational rational(5, 50);
+
+			stringstream stream;
+
+			stream << rational;
+
+			string result = stream.str();
+
+			Assert::AreEqual("1/10", result.c_str());
+		}
 	};
 }
