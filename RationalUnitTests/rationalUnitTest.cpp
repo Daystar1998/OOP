@@ -92,5 +92,24 @@ namespace RationalUnitTests
 				
 			}
 		}
+
+		TEST_METHOD(AssignmentOperator) {
+
+			Rational rational1(20, 5);
+			Rational rational2(10, 50);
+
+			rational2 = rational1;
+
+			stringstream stream1;
+			stringstream stream2;
+
+			stream1 << rational1;
+			stream2 << rational2;
+
+			string result1 = stream1.str();
+			string result2 = stream2.str();
+
+			Assert::AreEqual(result1.c_str(), result2.c_str());
+		}
 	};
 }
