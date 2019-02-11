@@ -111,5 +111,18 @@ namespace RationalUnitTests
 
 			Assert::AreEqual(result1.c_str(), result2.c_str());
 		}
+
+		TEST_METHOD(PreIncrementationOperator) {
+
+			Rational rational(10, 7);
+
+			stringstream stream;
+
+			stream << ++rational;
+
+			string result = stream.str();
+
+			Assert::AreEqual("17/7", result.c_str());
+		}
 	};
 }
