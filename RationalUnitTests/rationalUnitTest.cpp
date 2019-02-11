@@ -81,5 +81,16 @@ namespace RationalUnitTests
 
 			Assert::AreEqual("1/10", result.c_str());
 		}
+
+		TEST_METHOD(ConstructorDenominatorZero) {
+
+			try {
+
+				Rational rational(5, 0);
+				Assert::Fail();
+			} catch (const char* msg) {
+				
+			}
+		}
 	};
 }
