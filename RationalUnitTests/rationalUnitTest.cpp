@@ -88,7 +88,7 @@ namespace RationalUnitTests
 
 				Rational rational(5, 0);
 				Assert::Fail();
-			} catch (const char* msg) {
+			} catch (...) {
 				
 			}
 		}
