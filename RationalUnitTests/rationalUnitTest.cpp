@@ -123,12 +123,25 @@ namespace RationalUnitTests
 
 		TEST_METHOD(ConstructorDenominatorZero) {
 
+			bool threwException = false;
+
 			try {
 
 				Rational rational(5, 0);
 				Assert::Fail();
-			} catch (...) {
+			} catch (const char *message) {
 				
+				if (message != "Error: Divide by zero") {
+
+					Assert::Fail(L"Incorrect exception thrown");
+				}
+
+				threwException = true;
+			}
+
+			if (!threwException) {
+
+				Assert::Fail(L"Exception not thrown");
 			}
 		}
 
