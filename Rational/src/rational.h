@@ -26,7 +26,7 @@ public:
 
 	Rational operator--(int);
 
-	bool operator==(const Rational & rValue) const;
+	bool operator==(const Rational &rValue) const;
 
 	string operator()() const;
 
@@ -43,4 +43,4 @@ public:
 	long getDenominator() const;
 };
 
-ostream &operator<<(ostream & out, const Rational &rational);
+ostream& operator<<(ostream &out, const Rational &rational);

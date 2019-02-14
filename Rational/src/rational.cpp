@@ -67,7 +67,7 @@ Rational Rational::operator--(int) {
 }
 
 // Author: Dana Steil
-bool Rational::operator==(const Rational & rValue) const {
+bool Rational::operator==(const Rational &rValue) const {
 
 	bool result = true;
 
@@ -142,7 +142,7 @@ void Rational::reduce() {
 
 // Author: Dana Steil
 // Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
-ostream &operator<<(ostream & out, const Rational &rational) {
+ostream& operator<<(ostream &out, const Rational &rational) {
 
 	out << rational.getNumerator();
 
