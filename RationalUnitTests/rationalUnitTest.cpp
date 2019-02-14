@@ -224,13 +224,22 @@ namespace RationalUnitTests
 			Assert::AreEqual("3/7", result.c_str());
 		}
 
-		TEST_METHOD(LeastCommonMultiple) {
+		TEST_METHOD(LeastCommonMultiple1) {
 
 			Rational r;
 
 			long result = r.leastCommonMultiple(10, 24);
 
 			Assert::AreEqual(120L, result);
+		}
+
+		TEST_METHOD(LeastCommonMultiple2) {
+
+			Rational r;
+
+			long result = r.leastCommonMultiple(9, 5);
+
+			Assert::AreEqual(45L, result);
 		}
 
 		TEST_METHOD(GreatestCommonDivisor1) {
