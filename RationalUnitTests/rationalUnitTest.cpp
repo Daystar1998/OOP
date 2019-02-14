@@ -232,5 +232,23 @@ namespace RationalUnitTests
 
 			Assert::AreEqual(120, result);
 		}
+
+		TEST_METHOD(GreatestCommonDivisor1) {
+
+			Rational r;
+
+			long result = r.greatestCommonDivisor(10, 24);
+
+			Assert::AreEqual(2L, result);
+		}
+
+		TEST_METHOD(GreatestCommonDivisor2) {
+
+			Rational r;
+
+			long result = r.greatestCommonDivisor(33, 11);
+
+			Assert::AreEqual(11L, result);
+		}
 	};
 }
