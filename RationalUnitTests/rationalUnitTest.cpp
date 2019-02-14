@@ -228,9 +228,9 @@ namespace RationalUnitTests
 
 			Rational r;
 
-			int result = r.leastCommonMultiple(10, 24);
+			long result = r.leastCommonMultiple(10, 24);
 
-			Assert::AreEqual(120, result);
+			Assert::AreEqual(120L, result);
 		}
 
 		TEST_METHOD(GreatestCommonDivisor1) {
