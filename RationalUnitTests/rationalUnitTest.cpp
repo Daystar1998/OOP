@@ -11,8 +11,8 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using std::stringstream;
 using std::string;
 
-namespace RationalUnitTests
-{		
+namespace RationalUnitTests {		
+
 	TEST_CLASS(RationalUnitTests) {
 
 	public:
@@ -54,6 +54,32 @@ namespace RationalUnitTests
 			string result = stream.str();
 
 			Assert::AreEqual("7/8", result.c_str());
+		}
+
+		TEST_METHOD(ConstructorImplicit1) {
+
+			Rational rational = 5;
+
+			stringstream stream;
+
+			stream << rational;
+
+			string result = stream.str();
+
+			Assert::AreEqual("5", result.c_str());
+		}
+
+		TEST_METHOD(ConstructorImplicit2) {
+
+			Rational rational = 0;
+
+			stringstream stream;
+
+			stream << rational;
+
+			string result = stream.str();
+
+			Assert::AreEqual("0", result.c_str());
 		}
 
 		TEST_METHOD(ConstructorNegativeNumerator) {
