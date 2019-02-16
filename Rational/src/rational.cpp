@@ -140,6 +140,33 @@ void Rational::reduce() {
 	denominator = denominator / GCD;
 }
 
+Rational operator+(const Rational left, const Rational &right) {
+
+	long leastCommonMultiple = left.leastCommonMultiple(left.getDenominator(), right.getDenominator());
+
+	long numerator = 0;
+
+	if (left.getDenominator() != leastCommonMultiple) {
+
+		numerator += left.getNumerator() * leastCommonMultiple;
+	} else {
+
+		numerator += left.getNumerator();
+	}
+
+	if (right.getDenominator() != leastCommonMultiple) {
+
+		numerator += right.getNumerator() * leastCommonMultiple;
+	} else {
+
+		numerator += right.getNumerator();
+	}
+
+	Rational result(numerator, leastCommonMultiple);
+
+	return result;
+}
+
 // Author: Dana Steil
 // Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
 ostream& operator<<(ostream &out, const Rational &rational) {
