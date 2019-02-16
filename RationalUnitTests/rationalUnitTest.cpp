@@ -285,5 +285,33 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual(11L, result);
 		}
+
+		TEST_METHOD(PlusOperatorRationalRational) {
+
+			Rational r1(10, 5);
+			Rational r2(9, 8);
+
+			Rational result = r1 + r2;
+
+			Assert::IsTrue(Rational(25, 8) == result);
+		}
+
+		TEST_METHOD(PlusOperatorRationalNumber) {
+
+			Rational r(10, 5);
+
+			Rational result = r + 8;
+
+			Assert::IsTrue(Rational(10, 1) == result);
+		}
+
+		TEST_METHOD(PlusOperatorNumberRational) {
+
+			Rational r(7, 5);
+
+			Rational result = 5 + r;
+
+			Assert::IsTrue(Rational(32, 5) == result);
+		}
 	};
 }
