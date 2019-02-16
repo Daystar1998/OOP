@@ -424,5 +424,24 @@ namespace RationalUnitTests {
 				Assert::Fail(L"Exception not thrown");
 			}
 		}
+
+		TEST_METHOD(AdditionAssignmentOperatorRationalRational) {
+
+			Rational r1(10, 5);
+			Rational r2(9, 8);
+
+			r1 += r2;
+
+			Assert::IsTrue(Rational(25, 8) == r1);
+		}
+
+		TEST_METHOD(AdditionAssignmentOperatorRationalNumber) {
+
+			Rational r(10, 5);
+
+			r += 8;
+
+			Assert::IsTrue(Rational(10, 1) == r);
+		}
 	};
 }
