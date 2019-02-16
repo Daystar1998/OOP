@@ -202,6 +202,14 @@ Rational operator*(const Rational left, const Rational &right) {
 	return Rational(numerator, denominator);
 }
 
+Rational operator/(const Rational left, const Rational &right) {
+
+	long numerator = left.getNumerator() * right.getDenominator();
+	long denominator = left.getDenominator() * right.getNumerator();
+
+	return Rational(numerator, denominator);
+}
+
 // Author: Dana Steil
 // Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
 ostream& operator<<(ostream &out, const Rational &rational) {
