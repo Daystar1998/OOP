@@ -26,6 +26,8 @@ public:
 
 	Rational operator--(int);
 
+	Rational& operator+=(const Rational &other);
+
 	bool operator==(const Rational &rValue) const;
 
 	string operator()() const;
@@ -43,12 +45,12 @@ public:
 	long getDenominator() const;
 };
 
-Rational operator+(const Rational left, const Rational &right);
+Rational operator+(const Rational &left, const Rational &right);
 
-Rational operator-(const Rational left, const Rational &right);
+Rational operator-(const Rational &left, const Rational &right);
 
-Rational operator*(const Rational left, const Rational &right);
+Rational operator*(const Rational &left, const Rational &right);
 
-Rational operator/(const Rational left, const Rational &right);
+Rational operator/(const Rational &left, const Rational &right);
 
 ostream& operator<<(ostream &out, const Rational &rational);

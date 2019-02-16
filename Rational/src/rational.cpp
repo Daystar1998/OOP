@@ -66,6 +66,13 @@ Rational Rational::operator--(int) {
 	return result;
 }
 
+Rational& Rational::operator+=(const Rational &other) {
+
+	*this = *this + other;
+
+	return *this;
+}
+
 // Author: Dana Steil
 bool Rational::operator==(const Rational &rValue) const {
 
@@ -140,7 +147,7 @@ void Rational::reduce() {
 	denominator = denominator / GCD;
 }
 
-Rational operator+(const Rational left, const Rational &right) {
+Rational operator+(const Rational &left, const Rational &right) {
 
 	long leastCommonMultiple = left.leastCommonMultiple(left.getDenominator(), right.getDenominator());
 
@@ -167,7 +174,7 @@ Rational operator+(const Rational left, const Rational &right) {
 	return result;
 }
 
-Rational operator-(const Rational left, const Rational &right) {
+Rational operator-(const Rational &left, const Rational &right) {
 
 	long leastCommonMultiple = left.leastCommonMultiple(left.getDenominator(), right.getDenominator());
 
@@ -194,7 +201,7 @@ Rational operator-(const Rational left, const Rational &right) {
 	return result;
 }
 
-Rational operator*(const Rational left, const Rational &right) {
+Rational operator*(const Rational &left, const Rational &right) {
 
 	long numerator = left.getNumerator() * right.getNumerator();
 	long denominator = left.getDenominator() * right.getDenominator();
@@ -202,7 +209,7 @@ Rational operator*(const Rational left, const Rational &right) {
 	return Rational(numerator, denominator);
 }
 
-Rational operator/(const Rational left, const Rational &right) {
+Rational operator/(const Rational &left, const Rational &right) {
 
 	long numerator = left.getNumerator() * right.getDenominator();
 	long denominator = left.getDenominator() * right.getNumerator();
