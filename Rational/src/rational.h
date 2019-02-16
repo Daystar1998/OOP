@@ -45,4 +45,6 @@ public:
 
 Rational operator+(const Rational left, const Rational &right);
 
+Rational operator-(const Rational left, const Rational &right);
+
 ostream& operator<<(ostream &out, const Rational &rational);

@@ -313,5 +313,33 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(32, 5) == result);
 		}
+
+		TEST_METHOD(MinusOperatorRationalRational) {
+
+			Rational r1(10, 5);
+			Rational r2(9, 8);
+
+			Rational result = r1 - r2;
+
+			Assert::IsTrue(Rational(7, 8) == result);
+		}
+
+		TEST_METHOD(MinusOperatorRationalNumber) {
+
+			Rational r(7, 5);
+
+			Rational result = r - 8;
+
+			Assert::IsTrue(Rational(-33, 5) == result);
+		}
+
+		TEST_METHOD(MinusOperatorNumberRational) {
+
+			Rational r(7, 5);
+
+			Rational result = 5 - r;
+
+			Assert::IsTrue(Rational(18, 5) == result);
+		}
 	};
 }
