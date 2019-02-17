@@ -911,4 +911,42 @@ namespace RationalUnitTests {
 			Assert::IsTrue(r <= r);
 		}
 	};
+
+	TEST_CLASS(StreamExtractionOperatorTests) {
+
+	public:
+
+		TEST_METHOD(StreamExtractionOperator1) {
+
+			Rational rational;
+
+			stringstream stream("123/789");
+
+			stream >> rational;
+
+			Assert::IsTrue(Rational(123, 789) == rational);
+		}
+
+		TEST_METHOD(StreamExtractionOperator2) {
+
+			Rational rational;
+
+			stringstream stream("6/8");
+
+			stream >> rational;
+
+			Assert::IsTrue(Rational(6, 8) == rational);
+		}
+
+		TEST_METHOD(StreamExtractionOperatorNoDenominator) {
+
+			Rational rational;
+
+			stringstream stream("789");
+
+			stream >> rational;
+
+			Assert::IsTrue(Rational(789) == rational);
+		}
+	};
 }
