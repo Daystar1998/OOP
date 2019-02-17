@@ -30,6 +30,8 @@ public:
 
 	Rational& operator-=(const Rational &other);
 
+	Rational& operator*=(const Rational &other);
+
 	bool operator==(const Rational &rValue) const;
 
 	string operator()() const;
