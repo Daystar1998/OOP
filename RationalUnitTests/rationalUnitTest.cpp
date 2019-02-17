@@ -13,7 +13,7 @@ using std::string;
 
 namespace RationalUnitTests {		
 
-	TEST_CLASS(RationalUnitTests) {
+	TEST_CLASS(StreamInsertionTests) {
 
 	public:
 		
@@ -55,6 +55,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual("7/8", result.c_str());
 		}
+	};
+
+	TEST_CLASS(ConstructorTests) {
+
+	public:
 
 		TEST_METHOD(ConstructorImplicit1) {
 
@@ -170,6 +175,11 @@ namespace RationalUnitTests {
 				Assert::Fail(L"Exception not thrown");
 			}
 		}
+	};
+
+	TEST_CLASS(AssignmentTests) {
+
+	public:
 
 		TEST_METHOD(AssignmentOperator) {
 
@@ -189,6 +199,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual(result1.c_str(), result2.c_str());
 		}
+	};
+
+	TEST_CLASS(PreIncrementationTests) {
+
+	public:
 
 		TEST_METHOD(PreIncrementationOperator) {
 
@@ -202,6 +217,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual("17/7", result.c_str());
 		}
+	};
+
+	TEST_CLASS(PostIncrementationTests) {
+
+	public:
 
 		TEST_METHOD(PostIncrementationOperator) {
 
@@ -219,6 +239,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual("17/7", result.c_str());
 		}
+	};
+
+	TEST_CLASS(PreDecrementationTests) {
+
+	public:
 
 		TEST_METHOD(PreDecrementationOperator) {
 
@@ -232,6 +257,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual("3/7", result.c_str());
 		}
+	};
+
+	TEST_CLASS(PostDecrementationTests) {
+
+	public:
 
 		TEST_METHOD(PostDecrementationOperator) {
 
@@ -249,6 +279,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual("3/7", result.c_str());
 		}
+	};
+
+	TEST_CLASS(LeastCommonMultipleTests) {
+
+	public:
 
 		TEST_METHOD(LeastCommonMultiple1) {
 
@@ -267,6 +302,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual(45L, result);
 		}
+	};
+
+	TEST_CLASS(GreatestCommonDivisorTests) {
+
+	public:
 
 		TEST_METHOD(GreatestCommonDivisor1) {
 
@@ -285,6 +325,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual(11L, result);
 		}
+	};
+
+	TEST_CLASS(AdditionOperatorTests) {
+
+	public:
 
 		TEST_METHOD(AdditionOperatorRationalRational) {
 
@@ -313,6 +358,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(32, 5) == result);
 		}
+	};
+
+	TEST_CLASS(SubtractionOperatorTests) {
+
+	public:
 
 		TEST_METHOD(SubtractionOperatorRationalRational) {
 
@@ -341,6 +391,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(18, 5) == result);
 		}
+	};
+
+	TEST_CLASS(MultiplicationOperatorTests) {
+
+	public:
 
 		TEST_METHOD(MultiplicationOperatorRationalRational) {
 
@@ -369,6 +424,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(7, 1) == result);
 		}
+	};
+
+	TEST_CLASS(DivisionOperatorTests) {
+
+	public:
 
 		TEST_METHOD(DivisionOperatorRationalRational) {
 
@@ -424,6 +484,11 @@ namespace RationalUnitTests {
 				Assert::Fail(L"Exception not thrown");
 			}
 		}
+	};
+
+	TEST_CLASS(AdditionAssignmentOperatorTests) {
+
+	public:
 
 		TEST_METHOD(AdditionAssignmentOperatorRationalRational) {
 
@@ -443,6 +508,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(10, 1) == r);
 		}
+	};
+
+	TEST_CLASS(SubtractionAssignmentOperatorTests) {
+
+	public:
 
 		TEST_METHOD(SubtractionAssignmentOperatorRationalRational) {
 
@@ -462,6 +532,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(-33, 5) == r);
 		}
+	};
+
+	TEST_CLASS(MultiplicationAssignmentOperatorTests) {
+
+	public:
 
 		TEST_METHOD(MultiplicationAssignmentOperatorRationalRational) {
 
@@ -481,6 +556,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(56, 5) == r);
 		}
+	};
+
+	TEST_CLASS(DivisionAssignmentOperatorTests) {
+
+	public:
 
 		TEST_METHOD(DivisionAssignmentOperatorRationalRational) {
 
@@ -527,6 +607,11 @@ namespace RationalUnitTests {
 				Assert::Fail(L"Exception not thrown");
 			}
 		}
+	};
+
+	TEST_CLASS(CastDoubleTests) {
+
+	public:
 
 		TEST_METHOD(CastDouble1) {
 
@@ -541,6 +626,11 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual(10.0, (double)r);
 		}
+	};
+
+	TEST_CLASS(EqualityOperatorTests) {
+
+	public:
 
 		TEST_METHOD(EqualityOperatorRationalRationalSuccess) {
 
@@ -578,6 +668,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(r == r);
 		}
+	};
+
+	TEST_CLASS(InequalityOperatorTests) {
+
+	public:
 
 		TEST_METHOD(InequalityOperatorRationalRationalFailure) {
 
@@ -615,6 +710,11 @@ namespace RationalUnitTests {
 
 			Assert::IsFalse(r != r);
 		}
+	};
+
+	TEST_CLASS(GreaterThanOperatorTests) {
+
+	public:
 
 		TEST_METHOD(GreaterThanOperatorRationalRationalEqual) {
 
@@ -660,6 +760,11 @@ namespace RationalUnitTests {
 
 			Assert::IsFalse(r > r);
 		}
+	};
+
+	TEST_CLASS(GreaterThanOrEqualOperatorTests) {
+
+	public:
 
 		TEST_METHOD(GreaterThanOrEqualOperatorRationalRationalEqual) {
 
@@ -705,6 +810,11 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(r >= r);
 		}
+	};
+
+	TEST_CLASS(LessThanOperatorTests) {
+
+	public:
 
 		TEST_METHOD(LessThanOperatorRationalRationalEqual) {
 
@@ -750,6 +860,11 @@ namespace RationalUnitTests {
 
 			Assert::IsFalse(r < r);
 		}
+	};
+
+	TEST_CLASS(LessThanOrEqualOperatorTests) {
+
+	public:
 
 		TEST_METHOD(LessThanOrEqualOperatorRationalRationalEqual) {
 
