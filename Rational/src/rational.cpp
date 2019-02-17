@@ -256,6 +256,36 @@ bool operator!=(const Rational &left, const Rational &right) {
 	return result;
 }
 
+bool operator>(const Rational &left, const Rational &right) {
+
+	bool result = true;
+
+	long leastCommonMultiple = left.leastCommonMultiple(left.getDenominator(), right.getDenominator());
+
+	long numeratorLeft;
+	long numeratorRight;
+
+	if (leastCommonMultiple == left.getDenominator()) {
+
+		numeratorLeft = left.getNumerator();
+	} else {
+
+		numeratorLeft = leastCommonMultiple * left.getNumerator();
+	}
+
+	if (leastCommonMultiple == right.getDenominator()) {
+
+		numeratorRight = right.getNumerator();
+	} else {
+
+		numeratorRight = leastCommonMultiple * right.getNumerator();
+	}
+
+	result = numeratorLeft > numeratorRight;
+
+	return result;
+}
+
 // Author: Dana Steil
 // Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
 ostream& operator<<(ostream &out, const Rational &rational) {
