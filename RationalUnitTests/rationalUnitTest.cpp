@@ -750,5 +750,50 @@ namespace RationalUnitTests {
 
 			Assert::IsFalse(r < r);
 		}
+
+		TEST_METHOD(LessThanOrEqualOperatorRationalRationalEqual) {
+
+			Rational r1(7, 5);
+			Rational r2(7, 5);
+
+			Assert::IsTrue(r1 <= r2);
+		}
+
+		TEST_METHOD(LessThanOrEqualOperatorRationalRationalSuccess) {
+
+			Rational r1(7, 5);
+			Rational r2(20, 3);
+
+			Assert::IsTrue(r1 <= r2);
+		}
+
+		TEST_METHOD(LessThanOrEqualOperatorRationalRationalFailure) {
+
+			Rational r1(20, 3);
+			Rational r2(7, 5);
+
+			Assert::IsFalse(r1 <= r2);
+		}
+
+		TEST_METHOD(LessThanOrEqualOperatorRationalNumber) {
+
+			Rational r(7, 2);
+
+			Assert::IsTrue(r <= (Rational)5);
+		}
+
+		TEST_METHOD(LessThanOrEqualOperatorNumberRational) {
+
+			Rational r(33, 2);
+
+			Assert::IsTrue((Rational)4 <= r);
+		}
+
+		TEST_METHOD(LessThanOrEqualOperatorThis) {
+
+			Rational r(5, 7);
+
+			Assert::IsTrue(r <= r);
+		}
 	};
 }
