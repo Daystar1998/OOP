@@ -19,14 +19,6 @@ public:
 
 	const Rational& operator=(const Rational &rValue);
 
-	Rational& operator++();
-
-	Rational operator++(int);
-
-	Rational& operator--();
-
-	Rational operator--(int);
-
 	Rational& operator+=(const Rational &other);
 
 	Rational& operator-=(const Rational &other);
@@ -34,6 +26,14 @@ public:
 	Rational& operator*=(const Rational &other);
 
 	Rational& operator/=(const Rational &other);
+
+	Rational& operator++();
+
+	Rational operator++(int);
+
+	Rational& operator--();
+
+	Rational operator--(int);
 
 	operator double();
 

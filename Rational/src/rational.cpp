@@ -28,6 +28,34 @@ const Rational& Rational::operator=(const Rational &rValue) {
 	return *this;
 }
 
+Rational& Rational::operator+=(const Rational &other) {
+
+	*this = *this + other;
+
+	return *this;
+}
+
+Rational& Rational::operator-=(const Rational &other) {
+
+	*this = *this - other;
+
+	return *this;
+}
+
+Rational& Rational::operator*=(const Rational &other) {
+
+	*this = *this * other;
+
+	return *this;
+}
+
+Rational& Rational::operator/=(const Rational &other) {
+
+	*this = *this / other;
+
+	return *this;
+}
+
 // Author: Dana Steil
 Rational& Rational::operator++() {
 
@@ -64,34 +92,6 @@ Rational Rational::operator--(int) {
 	reduce();
 
 	return result;
-}
-
-Rational& Rational::operator+=(const Rational &other) {
-
-	*this = *this + other;
-
-	return *this;
-}
-
-Rational& Rational::operator-=(const Rational &other) {
-
-	*this = *this - other;
-
-	return *this;
-}
-
-Rational& Rational::operator*=(const Rational &other) {
-
-	*this = *this * other;
-
-	return *this;
-}
-
-Rational& Rational::operator/=(const Rational &other) {
-
-	*this = *this / other;
-
-	return *this;
 }
 
 Rational::operator double() {
