@@ -527,5 +527,19 @@ namespace RationalUnitTests {
 				Assert::Fail(L"Exception not thrown");
 			}
 		}
+
+		TEST_METHOD(CastDouble1) {
+
+			Rational r(1, 10);
+
+			Assert::AreEqual(0.1, (double)r);
+		}
+
+		TEST_METHOD(CastDouble2) {
+
+			Rational r(50, 5);
+
+			Assert::AreEqual(10.0, (double)r);
+		}
 	};
 }
