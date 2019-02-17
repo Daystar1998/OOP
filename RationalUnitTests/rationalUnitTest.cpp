@@ -286,7 +286,7 @@ namespace RationalUnitTests {
 			Assert::AreEqual(11L, result);
 		}
 
-		TEST_METHOD(PlusOperatorRationalRational) {
+		TEST_METHOD(AdditionOperatorRationalRational) {
 
 			Rational r1(10, 5);
 			Rational r2(9, 8);
@@ -296,7 +296,7 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(25, 8) == result);
 		}
 
-		TEST_METHOD(PlusOperatorRationalNumber) {
+		TEST_METHOD(AdditionOperatorRationalNumber) {
 
 			Rational r(10, 5);
 
@@ -305,7 +305,7 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(10, 1) == result);
 		}
 
-		TEST_METHOD(PlusOperatorNumberRational) {
+		TEST_METHOD(AdditionOperatorNumberRational) {
 
 			Rational r(7, 5);
 
@@ -314,7 +314,7 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(32, 5) == result);
 		}
 
-		TEST_METHOD(MinusOperatorRationalRational) {
+		TEST_METHOD(SubtractionOperatorRationalRational) {
 
 			Rational r1(10, 5);
 			Rational r2(9, 8);
@@ -324,7 +324,7 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(7, 8) == result);
 		}
 
-		TEST_METHOD(MinusOperatorRationalNumber) {
+		TEST_METHOD(SubtractionOperatorRationalNumber) {
 
 			Rational r(7, 5);
 
@@ -333,7 +333,7 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(-33, 5) == result);
 		}
 
-		TEST_METHOD(MinusOperatorNumberRational) {
+		TEST_METHOD(SubtractionOperatorNumberRational) {
 
 			Rational r(7, 5);
 
