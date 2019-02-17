@@ -462,5 +462,24 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(-33, 5) == r);
 		}
+
+		TEST_METHOD(MultiplicationAssignmentOperatorRationalRational) {
+
+			Rational r1(10, 5);
+			Rational r2(9, 8);
+
+			r1 *= r2;
+
+			Assert::IsTrue(Rational(9, 4) == r1);
+		}
+
+		TEST_METHOD(MultiplicationAssignmentOperatorRationalNumber) {
+
+			Rational r(7, 5);
+
+			r *= 8;
+
+			Assert::IsTrue(Rational(56, 5) == r);
+		}
 	};
 }
