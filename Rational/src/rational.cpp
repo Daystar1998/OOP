@@ -73,6 +73,13 @@ Rational& Rational::operator+=(const Rational &other) {
 	return *this;
 }
 
+Rational& Rational::operator-=(const Rational &other) {
+
+	*this = *this - other;
+
+	return *this;
+}
+
 // Author: Dana Steil
 bool Rational::operator==(const Rational &rValue) const {
 
