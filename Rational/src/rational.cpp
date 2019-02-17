@@ -335,3 +335,34 @@ ostream& operator<<(ostream &out, const Rational &rational) {
 
 	return out;
 }
+
+istream& operator>>(istream &in, Rational &rational) {
+
+	string data;
+
+	std::getline(in, data);
+
+	int i;
+
+	for (i = 0; i < data.size(); i++) {
+
+		if (data[i] == '/') {
+
+			break;
+		}
+	}
+
+	string numerator = data.substr(0, i);
+
+	if (i < data.size()) {
+
+		string denominator = data.substr(i + 1, data.size() - i);
+
+		rational = Rational(stol(numerator), stol(denominator));
+	} else {
+
+		rational = Rational(stol(numerator));
+	}
+
+	return in;
+}

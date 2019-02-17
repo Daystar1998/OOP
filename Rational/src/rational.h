@@ -4,6 +4,7 @@
 #include <string>
 
 using std::ostream;
+using std::istream;
 using std::string;
 
 class Rational {
@@ -72,3 +73,5 @@ bool operator<(const Rational &left, const Rational &right);
 bool operator<=(const Rational &left, const Rational &right);
 
 ostream& operator<<(ostream &out, const Rational &rational);
+
+istream& operator>>(istream &in, Rational &rational);
