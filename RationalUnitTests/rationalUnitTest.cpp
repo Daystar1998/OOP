@@ -949,4 +949,72 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(789) == rational);
 		}
 	};
+
+	TEST_CLASS(ExponentialOperatorTests) {
+
+	public:
+
+		TEST_METHOD(ExponentialOperatorWholeNumber1) {
+		
+			Rational r(5);
+
+			Rational result = r ^ 3;
+
+			Assert::IsTrue(Rational(125) == result);
+		}
+
+		TEST_METHOD(ExponentialOperatorWholeNumber2) {
+
+			Rational r(12);
+
+			Rational result = r ^ 7;
+
+			Assert::IsTrue(Rational(35831808) == result);
+		}
+
+		TEST_METHOD(ExponentialOperatorWholeNumber3) {
+
+			Rational r(-12);
+
+			Rational result = r ^ 7;
+
+			Assert::IsTrue(Rational(-35831808) == result);
+		}
+
+		TEST_METHOD(ExponentialOperatorWholeNumber4) {
+
+			Rational r(8);
+
+			Rational result = r ^ -3;
+
+			Assert::IsTrue(Rational(1953125, 1000000000) == result);
+		}
+
+		TEST_METHOD(ExponentialOperatorFraction1) {
+
+			Rational r(8, 3);
+
+			Rational result = r ^ 3;
+
+			Assert::IsTrue(Rational(512, 27) == result);
+		}
+
+		TEST_METHOD(ExponentialOperatorFraction2) {
+
+			Rational r(1, 2);
+
+			Rational result = r ^ -3;
+
+			Assert::IsTrue(Rational(8) == result);
+		}
+
+		TEST_METHOD(ExponentialOperatorZeroExponent) {
+
+			Rational r(1, 2);
+
+			Rational result = r ^ 0;
+
+			Assert::IsTrue(Rational(1) == result);
+		}
+	};
 }
