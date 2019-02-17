@@ -578,5 +578,42 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(r == r);
 		}
+
+		TEST_METHOD(InequalityOperatorRationalRationalFailure) {
+
+			Rational r1(7, 5);
+			Rational r2(7, 5);
+
+			Assert::IsFalse(r1 != r2);
+		}
+
+		TEST_METHOD(InequalityOperatorRationalRationalSuccess) {
+
+			Rational r1(7, 5);
+			Rational r2(20, 3);
+
+			Assert::IsTrue(r1 != r2);
+		}
+
+		TEST_METHOD(InequalityOperatorRationalNumber) {
+
+			Rational r(5, 1);
+
+			Assert::IsFalse(r != (Rational)5);
+		}
+
+		TEST_METHOD(InequalityOperatorNumberRational) {
+
+			Rational r(9, 1);
+
+			Assert::IsFalse((Rational)9 != r);
+		}
+
+		TEST_METHOD(InequalityOperatorThis) {
+
+			Rational r(5, 7);
+
+			Assert::IsFalse(r != r);
+		}
 	};
 }
