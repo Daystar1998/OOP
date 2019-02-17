@@ -94,7 +94,7 @@ Rational Rational::operator--(int) {
 	return result;
 }
 
-Rational::operator double() {
+Rational::operator double() const {
 
 	return (double)this->getNumerator() / (double)this->getDenominator();
 }

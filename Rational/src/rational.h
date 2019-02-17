@@ -35,7 +35,7 @@ public:
 
 	Rational operator--(int);
 
-	operator double();
+	operator double() const;
 
 	string operator()() const;
 
