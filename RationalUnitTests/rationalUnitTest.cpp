@@ -300,7 +300,7 @@ namespace RationalUnitTests {
 
 			Rational r(10, 5);
 
-			Rational result = r + 8;
+			Rational result = r + (Rational)8;
 
 			Assert::IsTrue(Rational(10, 1) == result);
 		}
@@ -309,7 +309,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = 5 + r;
+			Rational result = (Rational)5 + r;
 
 			Assert::IsTrue(Rational(32, 5) == result);
 		}
@@ -328,7 +328,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = r - 8;
+			Rational result = r - (Rational)8;
 
 			Assert::IsTrue(Rational(-33, 5) == result);
 		}
@@ -337,7 +337,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = 5 - r;
+			Rational result = (Rational)5 - r;
 
 			Assert::IsTrue(Rational(18, 5) == result);
 		}
@@ -356,7 +356,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = r * 8;
+			Rational result = r * (Rational)8;
 
 			Assert::IsTrue(Rational(56, 5) == result);
 		}
@@ -365,7 +365,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = 5 * r;
+			Rational result = (Rational)5 * r;
 
 			Assert::IsTrue(Rational(7, 1) == result);
 		}
@@ -384,7 +384,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = r / 8;
+			Rational result = r / (Rational)8;
 
 			Assert::IsTrue(Rational(7, 40) == result);
 		}
@@ -393,7 +393,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = 5 / r;
+			Rational result = (Rational)5 / r;
 
 			Assert::IsTrue(Rational(25, 7) == result);
 		}
@@ -407,7 +407,7 @@ namespace RationalUnitTests {
 			try {
 
 
-				Rational result = r / 0;
+				Rational result = r / (Rational)0;
 				Assert::Fail();
 			} catch (const char *message) {
 
