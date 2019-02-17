@@ -443,5 +443,24 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(10, 1) == r);
 		}
+
+		TEST_METHOD(SubtractionAssignmentOperatorRationalRational) {
+
+			Rational r1(10, 5);
+			Rational r2(9, 8);
+
+			r1 -= r2;
+
+			Assert::IsTrue(Rational(7, 8) == r1);
+		}
+
+		TEST_METHOD(SubtractionAssignmentOperatorRationalNumber) {
+
+			Rational r(7, 5);
+
+			r -= 8;
+
+			Assert::IsTrue(Rational(-33, 5) == r);
+		}
 	};
 }
