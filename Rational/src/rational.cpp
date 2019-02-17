@@ -244,6 +244,18 @@ bool operator==(const Rational &left, const Rational &right) {
 	return result;
 }
 
+bool operator!=(const Rational &left, const Rational &right) {
+
+	bool result = true;
+
+	if (left.getNumerator() == right.getNumerator() && left.getDenominator() == right.getDenominator()) {
+
+		result = false;
+	}
+
+	return result;
+}
+
 // Author: Dana Steil
 // Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
 ostream& operator<<(ostream &out, const Rational &rational) {
