@@ -3,8 +3,8 @@
 #include <sstream>
 #include <string>
 
-using std::ostream;
 using std::istream;
+using std::ostream;
 using std::string;
 
 class Rational {
@@ -34,6 +34,8 @@ public:
 	Rational& operator--();
 
 	Rational operator--(int);
+
+	Rational operator^(int exponent);
 
 	operator double() const;
 

@@ -230,6 +230,31 @@ Rational operator/(const Rational &left, const Rational &right) {
 	return Rational(numerator, denominator);
 }
 
+Rational Rational::operator^(int exponent) {
+
+	Rational result(*this);
+
+	if (exponent == 0) {
+
+		result = Rational(1);
+	} else if (exponent > 0) {
+
+		for (int i = 1; i < exponent; i++) {
+
+			result *= *this;
+		}
+	} else {
+
+		for (int i = 1; i > exponent; i--) {
+
+			result /= *this;
+		}
+	}
+
+
+	return result;
+}
+
 // Author: Dana Steil
 // Edited by Matthew Day to not require the left value to be a Rational object
 bool operator==(const Rational &left, const Rational &right) {
