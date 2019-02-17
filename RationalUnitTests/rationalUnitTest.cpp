@@ -481,5 +481,51 @@ namespace RationalUnitTests {
 
 			Assert::IsTrue(Rational(56, 5) == r);
 		}
+
+		TEST_METHOD(DivisionAssignmentOperatorRationalRational) {
+
+			Rational r1(10, 5);
+			Rational r2(9, 8);
+
+			r1 /= r2;
+
+			Assert::IsTrue(Rational(16, 9) == r1);
+		}
+
+		TEST_METHOD(DivisionAssignmentOperatorRationalNumber) {
+
+			Rational r(7, 5);
+
+			r /= 8;
+
+			Assert::IsTrue(Rational(7, 40) == r);
+		}
+
+		TEST_METHOD(DivisionAssignmentOperatorRationalZero) {
+
+			Rational r(7, 5);
+
+			bool threwException = false;
+
+			try {
+
+
+				r /= 0;
+				Assert::Fail();
+			} catch (const char *message) {
+
+				if (message != "Error: Divide by zero") {
+
+					Assert::Fail(L"Incorrect exception thrown");
+				}
+
+				threwException = true;
+			}
+
+			if (!threwException) {
+
+				Assert::Fail(L"Exception not thrown");
+			}
+		}
 	};
 }
