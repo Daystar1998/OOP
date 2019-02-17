@@ -310,6 +310,18 @@ bool operator<(const Rational &left, const Rational &right) {
 	return result;
 }
 
+bool operator<=(const Rational &left, const Rational &right) {
+
+	bool result = false;
+
+	if (!(left > right)) {
+
+		result = true;
+	}
+
+	return result;
+}
+
 // Author: Dana Steil
 // Edited by Matthew Day to only show '/' and the denominator if the denominator is not equal to 1
 ostream& operator<<(ostream &out, const Rational &rational) {
