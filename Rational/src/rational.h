@@ -36,8 +36,6 @@ public:
 
 	operator double();
 
-	bool operator==(const Rational &rValue) const;
-
 	string operator()() const;
 
 	long leastCommonMultiple(long x, long y) const;
@@ -60,5 +58,7 @@ Rational operator-(const Rational &left, const Rational &right);
 Rational operator*(const Rational &left, const Rational &right);
 
 Rational operator/(const Rational &left, const Rational &right);
+
+bool operator==(const Rational &left, const Rational &right);
 
 ostream& operator<<(ostream &out, const Rational &rational);

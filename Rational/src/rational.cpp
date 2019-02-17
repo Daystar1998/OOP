@@ -100,19 +100,6 @@ Rational::operator double() {
 }
 
 // Author: Dana Steil
-bool Rational::operator==(const Rational &rValue) const {
-
-	bool result = true;
-
-	if (numerator != rValue.numerator || denominator != rValue.denominator) {
-
-		result = false;
-	}
-
-	return result;
-}
-
-// Author: Dana Steil
 string Rational::operator()() const {
 
 	std::stringstream stream;
@@ -241,6 +228,20 @@ Rational operator/(const Rational &left, const Rational &right) {
 	long denominator = left.getDenominator() * right.getNumerator();
 
 	return Rational(numerator, denominator);
+}
+
+// Author: Dana Steil
+// Edited by Matthew Day to not require the left value to be a Rational object
+bool operator==(const Rational &left, const Rational &right) {
+
+	bool result = true;
+
+	if (left.getNumerator() != right.getNumerator() || left.getDenominator() != right.getDenominator()) {
+
+		result = false;
+	}
+
+	return result;
 }
 
 // Author: Dana Steil
