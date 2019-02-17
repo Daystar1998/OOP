@@ -94,6 +94,11 @@ Rational& Rational::operator/=(const Rational &other) {
 	return *this;
 }
 
+Rational::operator double() {
+
+	return (double)this->getNumerator() / (double)this->getDenominator();
+}
+
 // Author: Dana Steil
 bool Rational::operator==(const Rational &rValue) const {
 

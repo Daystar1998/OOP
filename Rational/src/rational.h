@@ -34,6 +34,8 @@ public:
 
 	Rational& operator/=(const Rational &other);
 
+	operator double();
+
 	bool operator==(const Rational &rValue) const;
 
 	string operator()() const;
