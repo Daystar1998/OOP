@@ -541,5 +541,42 @@ namespace RationalUnitTests {
 
 			Assert::AreEqual(10.0, (double)r);
 		}
+
+		TEST_METHOD(EqualityOperatorRationalRationalSuccess) {
+
+			Rational r1(7, 5);
+			Rational r2(7, 5);
+
+			Assert::IsTrue(r1 == r2);
+		}
+
+		TEST_METHOD(EqualityOperatorRationalRationalFailure) {
+
+			Rational r1(7, 5);
+			Rational r2(20, 3);
+
+			Assert::IsFalse(r1 == r2);
+		}
+
+		TEST_METHOD(EqualityOperatorRationalNumber) {
+
+			Rational r(5, 1);
+
+			Assert::IsTrue(r == (Rational)5);
+		}
+
+		TEST_METHOD(EqualityOperatorNumberRational) {
+
+			Rational r(9, 1);
+
+			Assert::IsTrue((Rational)9 == r);
+		}
+
+		TEST_METHOD(EqualityOperatorThis) {
+
+			Rational r(5, 7);
+
+			Assert::IsTrue(r == r);
+		}
 	};
 }
