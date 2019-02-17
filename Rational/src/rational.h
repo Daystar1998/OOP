@@ -67,4 +67,6 @@ bool operator>(const Rational &left, const Rational &right);
 
 bool operator>=(const Rational &left, const Rational &right);
 
+bool operator<(const Rational &left, const Rational &right);
+
 ostream& operator<<(ostream &out, const Rational &rational);
