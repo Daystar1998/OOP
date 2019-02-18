@@ -331,10 +331,20 @@ namespace RationalUnitTests {
 
 	public:
 
-		TEST_METHOD(AdditionOperatorRationalRational) {
+		TEST_METHOD(AdditionOperatorRationalRational1) {
 
 			Rational r1(10, 5);
 			Rational r2(9, 8);
+
+			Rational result = r1 + r2;
+
+			Assert::IsTrue(Rational(25, 8) == result);
+		}
+
+		TEST_METHOD(AdditionOperatorRationalRational2) {
+
+			Rational r1(9, 8);
+			Rational r2(10, 5);
 
 			Rational result = r1 + r2;
 
