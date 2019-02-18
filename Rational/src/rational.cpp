@@ -1,6 +1,6 @@
 #include "rational.h"
 
-Rational::Rational(int numerator, int denominator)
+Rational::Rational(long numerator, long denominator)
 	: numerator(numerator), denominator(denominator) {
 
 	if (denominator == 0) {

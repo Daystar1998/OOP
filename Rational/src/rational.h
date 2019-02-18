@@ -15,7 +15,7 @@ private:
 	long denominator;
 public:
 
-	Rational(int numerator = 0, int denominator = 1);
+	Rational(long numerator = 0, long denominator = 1);
 
 	const Rational& operator=(const Rational &rValue);
 
