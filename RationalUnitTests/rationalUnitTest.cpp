@@ -355,7 +355,7 @@ namespace RationalUnitTests {
 
 			Rational r(10, 5);
 
-			Rational result = r + (Rational)8;
+			Rational result = r + 8;
 
 			Assert::IsTrue(Rational(10, 1) == result);
 		}
@@ -364,7 +364,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = (Rational)5 + r;
+			Rational result = 5 + r;
 
 			Assert::IsTrue(Rational(32, 5) == result);
 		}
@@ -388,7 +388,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = r - (Rational)8;
+			Rational result = r - 8;
 
 			Assert::IsTrue(Rational(-33, 5) == result);
 		}
@@ -397,7 +397,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = (Rational)5 - r;
+			Rational result = 5 - r;
 
 			Assert::IsTrue(Rational(18, 5) == result);
 		}
@@ -421,7 +421,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = r * (Rational)8;
+			Rational result = r * 8;
 
 			Assert::IsTrue(Rational(56, 5) == result);
 		}
@@ -430,7 +430,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = (Rational)5 * r;
+			Rational result = 5 * r;
 
 			Assert::IsTrue(Rational(7, 1) == result);
 		}
@@ -454,7 +454,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = r / (Rational)8;
+			Rational result = r / 8;
 
 			Assert::IsTrue(Rational(7, 40) == result);
 		}
@@ -463,7 +463,7 @@ namespace RationalUnitTests {
 
 			Rational r(7, 5);
 
-			Rational result = (Rational)5 / r;
+			Rational result = 5 / r;
 
 			Assert::IsTrue(Rational(25, 7) == result);
 		}
@@ -477,7 +477,7 @@ namespace RationalUnitTests {
 			try {
 
 
-				Rational result = r / (Rational)0;
+				Rational result = r / 0;
 				Assert::Fail();
 			} catch (const char *message) {
 
@@ -662,14 +662,14 @@ namespace RationalUnitTests {
 
 			Rational r(5, 1);
 
-			Assert::IsTrue(r == (Rational)5);
+			Assert::IsTrue(r == 5);
 		}
 
 		TEST_METHOD(EqualityOperatorNumberRational) {
 
 			Rational r(9, 1);
 
-			Assert::IsTrue((Rational)9 == r);
+			Assert::IsTrue(9 == r);
 		}
 
 		TEST_METHOD(EqualityOperatorThis) {
@@ -704,14 +704,14 @@ namespace RationalUnitTests {
 
 			Rational r(5, 1);
 
-			Assert::IsFalse(r != (Rational)5);
+			Assert::IsFalse(r != 5);
 		}
 
 		TEST_METHOD(InequalityOperatorNumberRational) {
 
 			Rational r(9, 1);
 
-			Assert::IsFalse((Rational)9 != r);
+			Assert::IsFalse(9 != r);
 		}
 
 		TEST_METHOD(InequalityOperatorThis) {
@@ -754,14 +754,14 @@ namespace RationalUnitTests {
 
 			Rational r(7, 1);
 
-			Assert::IsTrue(r > (Rational)5);
+			Assert::IsTrue(r > 5);
 		}
 
 		TEST_METHOD(GreaterThanOperatorNumberRational) {
 
 			Rational r(5, 1);
 
-			Assert::IsTrue((Rational)9 > r);
+			Assert::IsTrue(9 > r);
 		}
 
 		TEST_METHOD(GreaterThanOperatorThis) {
@@ -804,14 +804,14 @@ namespace RationalUnitTests {
 
 			Rational r(7, 1);
 
-			Assert::IsTrue(r >= (Rational)5);
+			Assert::IsTrue(r >= 5);
 		}
 
 		TEST_METHOD(GreaterThanOrEqualOperatorNumberRational) {
 
 			Rational r(5, 1);
 
-			Assert::IsTrue((Rational)9 >= r);
+			Assert::IsTrue(9 >= r);
 		}
 
 		TEST_METHOD(GreaterThanOrEqualOperatorThis) {
@@ -854,14 +854,14 @@ namespace RationalUnitTests {
 
 			Rational r(7, 2);
 
-			Assert::IsTrue(r < (Rational)5);
+			Assert::IsTrue(r < 5);
 		}
 
 		TEST_METHOD(LessThanOperatorNumberRational) {
 
 			Rational r(33, 2);
 
-			Assert::IsTrue((Rational)4 < r);
+			Assert::IsTrue(4 < r);
 		}
 
 		TEST_METHOD(LessThanOperatorThis) {
@@ -904,14 +904,14 @@ namespace RationalUnitTests {
 
 			Rational r(7, 2);
 
-			Assert::IsTrue(r <= (Rational)5);
+			Assert::IsTrue(r <= 5);
 		}
 
 		TEST_METHOD(LessThanOrEqualOperatorNumberRational) {
 
 			Rational r(33, 2);
 
-			Assert::IsTrue((Rational)4 <= r);
+			Assert::IsTrue(4 <= r);
 		}
 
 		TEST_METHOD(LessThanOrEqualOperatorThis) {
