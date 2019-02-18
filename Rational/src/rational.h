@@ -37,7 +37,7 @@ public:
 
 	Rational operator^(int exponent) const;
 
-	operator double() const;
+	explicit operator double() const;
 
 	string operator()() const;
 
