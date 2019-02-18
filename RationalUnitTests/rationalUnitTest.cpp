@@ -1017,4 +1017,37 @@ namespace RationalUnitTests {
 			Assert::IsTrue(Rational(1) == result);
 		}
 	};
+
+	TEST_CLASS(FunctionOperatorTests) {
+
+	public:
+
+		TEST_METHOD(FunctionOperator1) {
+
+			Rational r(1, 2);
+
+			Assert::AreEqual("1/2", r().c_str());
+		}
+
+		TEST_METHOD(FunctionOperator2) {
+
+			Rational r(5, 8);
+
+			Assert::AreEqual("5/8", r().c_str());
+		}
+
+		TEST_METHOD(FunctionOperator3) {
+
+			Rational r(7, 2);
+
+			Assert::AreEqual("7/2", r().c_str());
+		}
+
+		TEST_METHOD(FunctionOperator4) {
+
+			Rational r(8, 2);
+
+			Assert::AreEqual("4/1", r().c_str());
+		}
+	};
 }
