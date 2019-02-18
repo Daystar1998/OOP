@@ -224,7 +224,7 @@ Rational operator/(const Rational &left, const Rational &right) {
 	return Rational(numerator, denominator);
 }
 
-Rational Rational::operator^(int exponent) {
+Rational Rational::operator^(int exponent) const {
 
 	Rational result(*this);
 

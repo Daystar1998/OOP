@@ -35,7 +35,7 @@ public:
 
 	Rational operator--(int);
 
-	Rational operator^(int exponent);
+	Rational operator^(int exponent) const;
 
 	operator double() const;
 
