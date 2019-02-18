@@ -19,13 +19,13 @@ public:
 
 	const Rational& operator=(const Rational &rValue);
 
-	Rational& operator+=(const Rational &other);
+	const Rational& operator+=(const Rational &other);
 
-	Rational& operator-=(const Rational &other);
+	const Rational& operator-=(const Rational &other);
 
-	Rational& operator*=(const Rational &other);
+	const Rational& operator*=(const Rational &other);
 
-	Rational& operator/=(const Rational &other);
+	const Rational& operator/=(const Rational &other);
 
 	Rational& operator++();
 

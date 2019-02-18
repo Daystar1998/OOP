@@ -22,28 +22,28 @@ const Rational& Rational::operator=(const Rational &rValue) {
 	return *this;
 }
 
-Rational& Rational::operator+=(const Rational &other) {
+const Rational& Rational::operator+=(const Rational &other) {
 
 	*this = *this + other;
 
 	return *this;
 }
 
-Rational& Rational::operator-=(const Rational &other) {
+const Rational& Rational::operator-=(const Rational &other) {
 
 	*this = *this - other;
 
 	return *this;
 }
 
-Rational& Rational::operator*=(const Rational &other) {
+const Rational& Rational::operator*=(const Rational &other) {
 
 	*this = *this * other;
 
 	return *this;
 }
 
-Rational& Rational::operator/=(const Rational &other) {
+const Rational& Rational::operator/=(const Rational &other) {
 
 	*this = *this / other;
 
