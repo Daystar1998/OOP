@@ -1,7 +1,10 @@
+// Author: Matthew Day
+
 #pragma once
 
 #include <string>
 
+#include "../Picture.h"
 #include "../RGBTriple.h"
 
 using std::string;
@@ -27,13 +30,13 @@ protected:
 	Coordinate startCoordinate;
 public:
 
-	Shape(string &data) {}
+	Shape(const string &data) {}
 
 	virtual ~Shape() {}
 
-	virtual void draw() = 0;
+	virtual void draw(Picture &picture) const = 0;
 
-	virtual void drawShadow() = 0;
+	virtual void drawShadow(Picture &picture) const = 0;
 
 	inline static bool getHasShadow() {
 
