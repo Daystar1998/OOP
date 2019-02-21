@@ -18,15 +18,14 @@ public:
 			: x(x), y(y) {
 		}
 	};
-private:
+protected:
 
 	static bool hasShadow;
 	static int shadowOffsetX, shadowOffsetY;
-public:
-
 
 	RGBTriple color;
 	Coordinate startCoordinate;
+public:
 
 	Shape(string &data) {}
 
