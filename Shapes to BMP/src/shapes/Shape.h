@@ -11,24 +11,26 @@ class Shape {
 public:
 
 	struct Coordinate {
-	
+
 		int x, y;
 
-		Coordinate(int x = 0, int y = 0) 
-			: x(x), y(y){}
+		Coordinate(int x = 0, int y = 0)
+			: x(x), y(y) {
+		}
 	};
 private:
 
 	static bool hasShadow;
+	static int shadowOffsetX, shadowOffsetY;
 public:
 
 
 	RGBTriple color;
 	Coordinate startCoordinate;
 
-	Shape(string &data){}
+	Shape(string &data) {}
 
-	virtual ~Shape(){}
+	virtual ~Shape() {}
 
 	virtual void draw() = 0;
 
@@ -43,5 +45,24 @@ public:
 
 		Shape::hasShadow = hasShadow;
 	}
-};
 
+	inline static int getShadowOffsetX() {
+
+		return shadowOffsetX;
+	}
+
+	inline static void setShadowOffsetX(int shadowOffsetX) {
+
+		Shape::shadowOffsetX = shadowOffsetX;
+	}
+
+	inline static int getShadowOffsetY() {
+
+		return shadowOffsetY;
+	}
+
+	inline static void setShadowOffsetY(int shadowOffsetY) {
+
+		Shape::shadowOffsetY = shadowOffsetY;
+	}
+};
