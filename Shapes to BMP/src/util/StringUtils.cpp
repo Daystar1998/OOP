@@ -2,7 +2,7 @@
 
 #include "stringUtils.h"
 
-string StringUtils::getNumber(const char *data, int length, int start, int &end) {
+string StringUtils::getNumber(const string &data, int start, int &end) {
 
 	string result = "";
 	int pos = start;
@@ -13,7 +13,7 @@ string StringUtils::getNumber(const char *data, int length, int start, int &end)
 		pos++;
 	}
 
-	for (int i = pos; i < length; i++) {
+	for (int i = pos; i < data.length(); i++) {
 
 		if (isdigit(data[i])) {
 
@@ -29,12 +29,12 @@ string StringUtils::getNumber(const char *data, int length, int start, int &end)
 	return result;
 }
 
-string StringUtils::getAlphaNumericWord(const char *data, int length, int start, int &end) {
+string StringUtils::getAlphaNumericWord(const string &data, int start, int &end) {
 
 	string result = "";
 	int pos = start;
 
-	for (int i = pos; i < length; i++) {
+	for (int i = pos; i < data.length(); i++) {
 
 		if (isalnum(data[i])) {
 

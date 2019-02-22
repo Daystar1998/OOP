@@ -13,7 +13,7 @@ class StringUtils {
 
 public:
 
-	static string getNumber(const char *data, int length, int start, int &end);
+	static string getNumber(const string &data, int start, int &end);
 
-	static string getAlphaNumericWord(const char *data, int length, int start, int &end);
+	static string getAlphaNumericWord(const string &data, int start, int &end);
 };
