@@ -5,15 +5,15 @@
 string StringUtils::getNumber(const string &data, int start, int &end) {
 
 	string result = "";
-	int pos = start;
+	int position = start;
 
 	if (data[start] == '-') {
 
 		result.push_back('-');
-		pos++;
+		position++;
 	}
 
-	for (int i = pos; i < data.length(); i++) {
+	for (int i = position; i < data.length(); i++) {
 
 		if (isdigit(data[i])) {
 
@@ -29,12 +29,28 @@ string StringUtils::getNumber(const string &data, int start, int &end) {
 	return result;
 }
 
+int StringUtils::getNextNumber(const string &data, int start, int &end) {
+
+	int result = 0;
+
+	for (int i = start; i < data.length(); i++) {
+
+		if (isdigit(data[i]) || data[i] == '-') {
+
+			result = stoi(getNumber(data, start, end));
+			break;
+		}
+	}
+
+	return result;
+}
+
 string StringUtils::getAlphaNumericWord(const string &data, int start, int &end) {
 
 	string result = "";
-	int pos = start;
+	int position = start;
 
-	for (int i = pos; i < data.length(); i++) {
+	for (int i = position; i < data.length(); i++) {
 
 		if (isalnum(data[i])) {
 
@@ -45,6 +61,22 @@ string StringUtils::getAlphaNumericWord(const string &data, int start, int &end)
 		}
 
 		end = i;
+	}
+
+	return result;
+}
+
+string StringUtils::getNextWord(const string &data, int start, int &end) {
+
+	string result = "";
+
+	for (int i = start; i < data.length(); i++) {
+
+		if (isalpha(data[i])) {
+
+			getAlphaNumericWord(data, start, end);
+			break;
+		}
 	}
 
 	return result;
