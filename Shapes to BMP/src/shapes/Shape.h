@@ -30,9 +30,11 @@ protected:
 	Coordinate startCoordinate;
 public:
 
-	Shape(const string &data) {}
+	Shape(const string &data);
 
 	virtual ~Shape() {}
+
+	virtual void initialize(const string &data) = 0;
 
 	virtual void draw(Picture &picture) const = 0;
 
