@@ -37,7 +37,7 @@ int StringUtils::getNextNumber(const string &data, int start, int &end) {
 
 		if (isdigit(data[i]) || data[i] == '-') {
 
-			result = stoi(getNumber(data, start, end));
+			result = stoi(getNumber(data, i, end));
 			break;
 		}
 	}
@@ -74,7 +74,7 @@ string StringUtils::getNextWord(const string &data, int start, int &end) {
 
 		if (isalpha(data[i])) {
 
-			getAlphaNumericWord(data, start, end);
+			getAlphaNumericWord(data, i, end);
 			break;
 		}
 	}
