@@ -16,8 +16,8 @@ bool Shape::isParsingCommonData(const String &data) {
 
 	if (label == "start_position") {
 
-		startCoordinate.x = StringUtils::getNextNumber(data, currentPosition, currentPosition);
-		startCoordinate.y = StringUtils::getNextNumber(data, currentPosition, currentPosition);
+		startCoordinate.x = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
+		startCoordinate.y = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
 
 		isCommonData = true;
 	} else if (label == "color") {
