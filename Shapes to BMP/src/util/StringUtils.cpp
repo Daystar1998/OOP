@@ -52,7 +52,7 @@ string StringUtils::getVariable(const string &data, int start, int &end) {
 
 	for (int i = position; i < data.length(); i++) {
 
-		if (isalnum(data[i])) {
+		if (isalnum(data[i]) || data[i] == '_') {
 
 			result.push_back(data[i]);
 		} else {
