@@ -11,6 +11,7 @@
 #include "../shapes/Point.h"
 #include "../shapes/Polygon.h"
 #include "../shapes/Shape.h"
+#include "../shapes/Rectangle.h"
 #include "StringUtils.h"
 #include "String.h"
 

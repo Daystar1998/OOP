@@ -21,3 +21,12 @@ polygon {
 	vertex: (20, 3)
 	vertex: (7, 0)
 }
+
+rectangle {
+
+	start_position: (40, 15)
+	color: (0, 255, 0, RGB)
+
+	width: 10
+	height: 5
+}
