@@ -6,6 +6,8 @@
 
 #include "../Picture.h"
 #include "../RGBTriple.h"
+#include "../util/String.h"
+#include "../util/StringUtils.h"
 
 using std::string;
 
@@ -30,7 +32,7 @@ protected:
 	Coordinate startCoordinate;
 public:
 
-	Shape(const string &data);
+	Shape() {}
 
 	virtual ~Shape() {}
 
@@ -39,6 +41,11 @@ public:
 	virtual void draw(Picture &picture) const = 0;
 
 	virtual void drawShadow(Picture &picture) const = 0;
+
+protected:
+
+	virtual bool isParsingCommonData(const String &data);
+public:
 
 	inline static bool getHasShadow() {
 
@@ -70,3 +77,6 @@ public:
 		Shape::shadowOffsetY = shadowOffsetY;
 	}
 };
+
+// Avoid issues with interdependence
+#include "../util/STBParser.h"
