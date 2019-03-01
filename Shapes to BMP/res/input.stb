@@ -30,3 +30,12 @@ rectangle {
 	width: 10
 	height: 5
 }
+
+right_triangle {
+
+	start_position: (80, 15)
+	color: (0, 0, 255, RGB)
+
+	width: 10
+	height: 5
+}

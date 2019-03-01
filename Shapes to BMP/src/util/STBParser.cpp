@@ -69,6 +69,9 @@ void STBParser::parseShapes(String currentLine, istream &data, vector<Shape*> &o
 	} else if (label == "rectangle") {
 
 		shape = new Rectangle();
+	} else if (label == "right_triangle") {
+
+		shape = new RightTriangle();
 	}
 
 	if (shape != nullptr) {
