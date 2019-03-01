@@ -2,6 +2,9 @@ width: 100
 height: 100
 background_color: (255, 255, 255, RGB)
 
+has_shadows: true
+shadow_offset: (-1, -1)
+
 point {
 
 	start_position: (5, 5)

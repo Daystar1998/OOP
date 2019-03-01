@@ -32,6 +32,13 @@ Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes)
 		} else if (label == "background_color") {
 
 			backgroundColor = parseColor(lineText, currentPosition);
+		} else if (label == "has_shadows") {
+
+			Shape::setHasShadow(parseBoolean(lineText, currentPosition + 1));
+		} else if (label == "shadow_offset") {
+
+			Shape::setShadowOffsetX(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
+			Shape::setShadowOffsetY(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
 		} else if (label == "point") {
 
 			Point *point = new Point();
