@@ -25,6 +25,8 @@ public:
 
 	static Picture parseSTBFile(const String &fileName, vector<Shape*> &oShapes);
 
+	static void parseShapes(String currentLine, istream &data, vector<Shape*> &oShapes);
+
 	static RGBTriple parseColor(const String &data, int begin);
 
 	static bool parseBoolean(const String &data, int begin);

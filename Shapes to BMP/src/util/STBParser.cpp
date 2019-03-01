@@ -39,17 +39,37 @@ Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes)
 
 			Shape::setShadowOffsetX(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
 			Shape::setShadowOffsetY(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
-		} else if (label == "point") {
+		} else {
 
-			Point *point = new Point();
-			point->initialize(getCodeBlock(file));
-			oShapes.push_back(point);
+			parseShapes(lineText, file, oShapes);
 		}
 
 		getline(file, lineText);
 	}
 
 	return Picture(width, height, backgroundColor);
+}
+
+void STBParser::parseShapes(String currentLine, istream &data, vector<Shape*> &oShapes) {
+
+	currentLine.trim();
+
+	int currentPosition = 0;
+
+	String label = StringUtils::getNextVariable(currentLine, currentPosition, currentPosition);
+
+	Shape *shape = nullptr;
+
+	if (label == "point") {
+
+		shape = new Point();
+	}
+
+	if (shape != nullptr) {
+
+		shape->initialize(getCodeBlock(data));
+		oShapes.push_back(shape);
+	}
 }
 
 RGBTriple STBParser::parseColor(const String &data, int begin) {
