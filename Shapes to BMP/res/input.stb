@@ -10,3 +10,14 @@ point {
 	start_position: (5, 5)
 	color: (80, 90, 30, RGB)
 }
+
+polygon {
+
+	start_position: (15, 15)
+	color: (255, 0, 0, RGB)
+
+	vertex: (0, 0)
+	vertex: (3, 20)
+	vertex: (20, 3)
+	vertex: (7, 0)
+}

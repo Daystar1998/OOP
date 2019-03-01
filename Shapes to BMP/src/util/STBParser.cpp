@@ -63,6 +63,9 @@ void STBParser::parseShapes(String currentLine, istream &data, vector<Shape*> &o
 	if (label == "point") {
 
 		shape = new Point();
+	} else if (label == "polygon") {
+
+		shape = new Polygon();
 	}
 
 	if (shape != nullptr) {

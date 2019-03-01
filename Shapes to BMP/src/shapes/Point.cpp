@@ -1,12 +1,8 @@
 #include "Point.h"
 
-Point::Point() {
+Point::Point() {}
 
-}
-
-Point::~Point() {
-
-}
+Point::~Point() {}
 
 void Point::initialize(const string &data) {
 

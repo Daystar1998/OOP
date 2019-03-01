@@ -9,6 +9,7 @@
 #include "../Picture.h"
 #include "../RGBTriple.h"
 #include "../shapes/Point.h"
+#include "../shapes/Polygon.h"
 #include "../shapes/Shape.h"
 #include "StringUtils.h"
 #include "String.h"
