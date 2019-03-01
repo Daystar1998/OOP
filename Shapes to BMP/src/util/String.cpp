@@ -125,7 +125,40 @@ void String::trim() {
 	this->trimEnd();
 }
 
-bool String::isWhiteSpace(char c) {
+bool String::endsWith(const string &other) const {
+
+	bool result = false;
+
+	if (this->length() >= other.length()) {
+
+		int j = this->length() - 1;
+
+		bool matching = false;
+
+		for (int i = other.length() - 1; i >= 0; i--) {
+
+			if (other[i] == this->at(j)) {
+
+				matching = true;
+			} else {
+
+				matching = false;
+				break;
+			}
+
+			j--;
+		}
+
+		if (matching) {
+
+			result = true;
+		}
+	}
+
+	return result;
+}
+
+bool String::isWhiteSpace(char c) const {
 
 	bool result = false;
 

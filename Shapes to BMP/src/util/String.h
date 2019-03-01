@@ -1,7 +1,9 @@
+// Author: Matthew Day
+
 #pragma once
 
-#include<stack>
-#include<string>
+#include <stack>
+#include <string>
 
 using std::stack;
 using std::string;
@@ -32,7 +34,9 @@ public:
 	void trimEnd();
 
 	void trim();
+
+	bool endsWith(const string &other) const;
 private:
 
-	bool isWhiteSpace(char c);
+	bool isWhiteSpace(char c) const;
 };
