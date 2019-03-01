@@ -17,7 +17,7 @@ public:
 
 	static int getNextNumber(const string &data, int start, int &end);
 
-	static string getAlphaNumericWord(const string &data, int start, int &end);
+	static string getVariable(const string &data, int start, int &end);
 
-	static string getNextWord(const string &data, int start, int &end);
+	static string getNextVariable(const string &data, int start, int &end);
 };

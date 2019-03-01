@@ -45,7 +45,7 @@ int StringUtils::getNextNumber(const string &data, int start, int &end) {
 	return result;
 }
 
-string StringUtils::getAlphaNumericWord(const string &data, int start, int &end) {
+string StringUtils::getVariable(const string &data, int start, int &end) {
 
 	string result = "";
 	int position = start;
@@ -66,7 +66,7 @@ string StringUtils::getAlphaNumericWord(const string &data, int start, int &end)
 	return result;
 }
 
-string StringUtils::getNextWord(const string &data, int start, int &end) {
+string StringUtils::getNextVariable(const string &data, int start, int &end) {
 
 	string result = "";
 
@@ -74,7 +74,7 @@ string StringUtils::getNextWord(const string &data, int start, int &end) {
 
 		if (isalpha(data[i])) {
 
-			getAlphaNumericWord(data, i, end);
+			getVariable(data, i, end);
 			break;
 		}
 	}
