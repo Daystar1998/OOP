@@ -125,6 +125,22 @@ void String::trim() {
 	this->trimEnd();
 }
 
+void String::split(const string &delimiter, vector<String> &oTokens) const {
+
+	int start = 0;
+	int end = 0;
+
+	start = this->find_first_not_of(delimiter, end);
+
+	while (start != -1) {
+
+		end = this->find(delimiter, start);
+		oTokens.push_back(this->substr(start, end - start));
+
+		start = this->find_first_not_of(delimiter, end);
+	}
+}
+
 bool String::endsWith(const string &other) const {
 
 	bool result = false;

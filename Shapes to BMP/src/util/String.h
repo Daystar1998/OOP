@@ -4,10 +4,12 @@
 
 #include <stack>
 #include <string>
+#include <vector>
 
 using std::stack;
 using std::string;
 using std::to_string;
+using std::vector;
 
 class String : public string {
 
@@ -34,6 +36,8 @@ public:
 	void trimEnd();
 
 	void trim();
+
+	void split(const string &delimiter, vector<String> &oTokens) const;
 
 	bool endsWith(const string &other) const;
 private:
