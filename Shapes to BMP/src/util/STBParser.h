@@ -26,5 +26,7 @@ public:
 	static Picture parseSTBFile(const String &fileName, vector<Shape*> &oShapes);
 
 	static RGBTriple parseColor(const String &data, int begin);
+
+	static String getCodeBlock(istream &data);
 };
 

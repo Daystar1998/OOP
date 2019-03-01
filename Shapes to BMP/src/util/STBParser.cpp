@@ -99,3 +99,38 @@ RGBTriple STBParser::parseColor(const String &data, int begin) {
 
 	return result;
 }
+
+String STBParser::getCodeBlock(istream &data) {
+
+	String result = "";
+
+	String line;
+
+	getline(data, line);
+
+	int blockLevel = 1;
+
+	while (!data.eof()) {
+
+		line.trim();
+
+		if (line.endsWith("{")) {
+
+			blockLevel++;
+		} else if (line.endsWith("}")) {
+
+			blockLevel--;
+		}
+
+		result += '\n' + line;
+
+		if (blockLevel == 0) {
+
+			break;
+		}
+
+		getline(data, line);
+	}
+
+	return result;
+}
