@@ -32,6 +32,11 @@ Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes)
 		} else if (label == "background_color") {
 
 			backgroundColor = parseColor(lineText, currentPosition);
+		} else if (label == "point") {
+
+			Point *point = new Point();
+			point->initialize(getCodeBlock(file));
+			oShapes.push_back(point);
 		}
 
 		getline(file, lineText);
