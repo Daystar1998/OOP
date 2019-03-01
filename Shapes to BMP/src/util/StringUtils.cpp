@@ -74,7 +74,7 @@ string StringUtils::getNextVariable(const string &data, int start, int &end) {
 
 		if (isalpha(data[i])) {
 
-			getVariable(data, i, end);
+			result = getVariable(data, i, end);
 			break;
 		}
 	}
