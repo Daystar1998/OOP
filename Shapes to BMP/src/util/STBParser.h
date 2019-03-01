@@ -27,6 +27,8 @@ public:
 
 	static RGBTriple parseColor(const String &data, int begin);
 
+	static bool parseBoolean(const String &data, int begin);
+
 	static String getCodeBlock(istream &data);
 };
 

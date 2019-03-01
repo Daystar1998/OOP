@@ -105,6 +105,25 @@ RGBTriple STBParser::parseColor(const String &data, int begin) {
 	return result;
 }
 
+bool STBParser::parseBoolean(const String &data, int begin) {
+
+	bool result = false;
+
+	String value = StringUtils::getNextVariable(data, begin, begin);
+
+	value.toLower();
+
+	if (value == "true") {
+
+		result = true;
+	} else {
+
+		// Do nothing
+	}
+
+	return result;
+}
+
 String STBParser::getCodeBlock(istream &data) {
 
 	String result = "";
