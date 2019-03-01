@@ -1,4 +1,7 @@
+// Author: Matthew Day
+
 #include "Polygon.h"
+#include "../util/STBParser.h"
 
 Polygon::Polygon() {}
 

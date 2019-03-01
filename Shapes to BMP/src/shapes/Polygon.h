@@ -1,19 +1,21 @@
+// Author: Matthew Day
+
 #pragma once
 
 #include <vector>
 
 #include "Shape.h"
-#include "../util/STBParser.h"
 #include "../util/String.h"
 #include "../util/StringUtils.h"
 
 using std::vector;
 
 class Polygon : public Shape {
-
-public:
+	
+protected:
 
 	vector<Coordinate> vertices;
+public:
 
 	Polygon();
 
@@ -25,4 +27,3 @@ public:
 
 	virtual void drawShadow(Picture &picture) const override;
 };
-
