@@ -39,6 +39,11 @@ void Polygon::initialize(const string &data) {
 
 void Polygon::draw(Picture &picture) const {
 
+	if (hasShadow) {
+
+		drawShadow(picture);
+	}
+
 	for (int i = 0; i < vertices.size() - 1; i++) {
 
 		picture.AddLine(startCoordinate.x + vertices[i].x, startCoordinate.y + vertices[i].y, startCoordinate.x + vertices[i + 1].x, startCoordinate.y + vertices[i + 1].y, color);

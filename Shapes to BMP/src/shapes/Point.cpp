@@ -18,6 +18,11 @@ void Point::initialize(const string &data) {
 
 void Point::draw(Picture &picture) const {
 
+	if (hasShadow) {
+
+		drawShadow(picture);
+	}
+
 	picture.SetPixelColor(startCoordinate.x, startCoordinate.y, color);
 }
 

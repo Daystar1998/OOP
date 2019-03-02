@@ -40,9 +40,9 @@ public:
 
 	virtual void draw(Picture &picture) const = 0;
 
-	virtual void drawShadow(Picture &picture) const = 0;
-
 protected:
+
+	virtual void drawShadow(Picture &picture) const = 0;
 
 	virtual bool isParsingCommonData(const String &data);
 public:

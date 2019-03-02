@@ -23,7 +23,6 @@ int main(int argc, char *argv[]) {
 
 			for (int i = 0; i < shapes.size(); i++) {
 
-				shapes[i]->drawShadow(picture);
 				shapes[i]->draw(picture);
 			}
 
