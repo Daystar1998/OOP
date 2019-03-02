@@ -1,6 +1,11 @@
 // Author: Matthew Day
 
 #include "STBParser.h"
+#include "../shapes/Point.h"
+#include "../shapes/Polygon.h"
+#include "../shapes/Rectangle.h"
+#include "../shapes/RightTriangle.h"
+#include "StringUtils.h"
 
 Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes) {
 

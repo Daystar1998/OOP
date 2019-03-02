@@ -2,13 +2,10 @@
 
 #pragma once
 
-#include "Shape.h"
+#include "Polygon.h"
 
-class Rectangle : public Shape {
+class Rectangle : public Polygon {
 
-protected:
-
-	vector<Coordinate> vertices;
 public:
 
 	Rectangle();
@@ -16,9 +13,5 @@ public:
 	virtual ~Rectangle();
 
 	virtual void initialize(const string &data) override;
-
-	virtual void draw(Picture &picture) const override;
-
-	virtual void drawShadow(Picture &picture) const override;
 };
 

@@ -40,25 +40,3 @@ void RightTriangle::initialize(const string &data) {
 	vertices.push_back(Coordinate(0, height));
 	vertices.push_back(Coordinate(width, 0));
 }
-
-void RightTriangle::draw(Picture &picture) const {
-
-	for (int i = 0; i < vertices.size() - 1; i++) {
-
-		picture.AddLine(startCoordinate.x + vertices[i].x, startCoordinate.y + vertices[i].y, startCoordinate.x + vertices[i + 1].x, startCoordinate.y + vertices[i + 1].y, color);
-	}
-
-	picture.AddLine(startCoordinate.x + vertices[0].x, startCoordinate.y + vertices[0].y, startCoordinate.x + vertices[vertices.size() - 1].x, startCoordinate.y + vertices[vertices.size() - 1].y, color);
-}
-
-void RightTriangle::drawShadow(Picture &picture) const {
-
-	RGBTriple shadowColor(color.Blue - 50, color.Green - 50, color.Red - 50);
-
-	for (int i = 0; i < vertices.size() - 1; i++) {
-
-		picture.AddLine(startCoordinate.x + vertices[i].x + shadowOffsetX, startCoordinate.y + vertices[i].y + shadowOffsetY, startCoordinate.x + vertices[i + 1].x + shadowOffsetX, startCoordinate.y + vertices[i + 1].y + shadowOffsetY, shadowColor);
-	}
-
-	picture.AddLine(startCoordinate.x + vertices[0].x + shadowOffsetX, startCoordinate.y + vertices[0].y + shadowOffsetY, startCoordinate.x + vertices[vertices.size() - 1].x + shadowOffsetX, startCoordinate.y + vertices[vertices.size() - 1].y + shadowOffsetY, shadowColor);
-}
