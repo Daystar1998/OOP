@@ -57,7 +57,33 @@ void Polygon::draw(Picture &picture) const {
 
 void Polygon::drawShadow(Picture &picture) const {
 
-	RGBTriple shadowColor(color.Blue - 50, color.Green - 50, color.Red - 50);
+	RGBTriple shadowColor;
+
+	int shadowOffset = 100;
+
+	if (color.Red < shadowOffset) {
+
+		shadowColor.Red = 0;
+	} else {
+
+		shadowColor.Red = color.Red - shadowOffset;
+	}
+
+	if (color.Green < shadowOffset) {
+
+		shadowColor.Green = 0;
+	} else {
+
+		shadowColor.Green = color.Green - shadowOffset;
+	}
+
+	if (color.Blue < shadowOffset) {
+
+		shadowColor.Blue = 0;
+	} else {
+
+		shadowColor.Blue = color.Blue - shadowOffset;
+	}
 
 	for (int i = 0; i < vertices.size() - 1; i++) {
 
