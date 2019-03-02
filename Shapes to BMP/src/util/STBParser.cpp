@@ -1,6 +1,7 @@
 // Author: Matthew Day
 
 #include "STBParser.h"
+#include "../shapes/Line.h"
 #include "../shapes/Point.h"
 #include "../shapes/Polygon.h"
 #include "../shapes/Rectangle.h"
@@ -68,6 +69,9 @@ void STBParser::parseShapes(String currentLine, istream &data, vector<Shape*> &o
 	if (label == "point") {
 
 		shape = new Point();
+	} else if (label == "line") {
+
+		shape = new Line();
 	} else if (label == "polygon") {
 
 		shape = new Polygon();

@@ -11,6 +11,14 @@ point {
 	color: (80, 90, 30, RGB)
 }
 
+line {
+
+	color: (70, 70, 70, RGB)
+
+	start: (50, 70)
+	end: (80, 86)
+}
+
 polygon {
 
 	start_position: (15, 15)
