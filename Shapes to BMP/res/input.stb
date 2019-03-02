@@ -47,3 +47,12 @@ right_triangle {
 	width: 10
 	height: 5
 }
+
+diamond {
+
+	start_position: (20, 80)
+	color: (70, 70, 0, RGB)
+
+	width: 10
+	height: 20
+}
