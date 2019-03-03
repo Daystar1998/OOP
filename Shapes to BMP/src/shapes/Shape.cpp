@@ -25,6 +25,11 @@ bool Shape::isParsingCommonData(const String &data) {
 		color = STBParser::parseColor(data, currentPosition);
 
 		isCommonData = true;
+	} else if (label == "isFilled") {
+
+		isFilled = STBParser::parseBoolean(data, currentPosition + 1);
+
+		isCommonData = true;
 	}
 
 	return isCommonData;

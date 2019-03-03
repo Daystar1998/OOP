@@ -28,6 +28,7 @@ protected:
 	static bool hasShadow;
 	static int shadowOffsetX, shadowOffsetY;
 
+	bool isFilled;
 	RGBTriple color;
 	Coordinate startCoordinate;
 public:

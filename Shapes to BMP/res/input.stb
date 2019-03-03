@@ -27,13 +27,13 @@ polygon {
 	vertex: (0, 0)
 	vertex: (30, 200)
 	vertex: (200, 30)
-	vertex: (70, 00)
+	vertex: (70, 0)
 	vertex: (200, 150)
 }
 
 rectangle {
 
-	start_position: (400, 150)
+	start_position: (150, 50)
 	color: (0, 255, 0, RGB)
 
 	width: 100
@@ -74,6 +74,7 @@ circle {
 
 	start_position: (800, 500)
 	color: (70, 0, 0, RGB)
+	isFilled: true
 
 	radius: 100
 }

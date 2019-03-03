@@ -14,6 +14,7 @@ void Circle::initialize(const string &data) {
 	String(data).split("\n", lines);
 
 	radius = 0;
+	isFilled = false;
 
 	for (int i = 0; i < lines.size(); i++) {
 
@@ -44,6 +45,22 @@ void Circle::draw(Picture &picture) const {
 	}
 
 	drawCircle(startCoordinate, radius, color, picture);
+
+	if (isFilled) {
+
+		for (int x = -radius; x < radius; x++) {
+
+			for (int y = -radius; y < radius; y++) {
+
+				int distance = sqrt((x * x) + (y * y));
+
+				if (distance < radius) {
+
+					picture.SetPixelColor(startCoordinate.x + x, startCoordinate.y + y, color);
+				}
+			}
+		}
+	}
 }
 
 void Circle::drawShadow(Picture &picture) const {
