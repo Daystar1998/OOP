@@ -105,9 +105,9 @@ void String::trimEnd() {
 
 	if (!this->empty()) {
 
-		size_t end;
+		int end;
 
-		for (end = this->length() - 1; end >= 0; end--) {
+		for (end = (int)this->length() - 1; end >= 0; end--) {
 
 			if (!isWhiteSpace(this->at(end))) {
 
@@ -151,7 +151,7 @@ bool String::endsWith(const string &other) const {
 
 		bool matching = false;
 
-		for (size_t i = other.length() - 1; i >= 0; i--) {
+		for (int i = (int)other.length() - 1; i >= 0; i--) {
 
 			if (other[i] == this->at(j)) {
 
