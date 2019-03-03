@@ -36,7 +36,7 @@ Shape::Coordinate Star::findIntersection(Coordinate line1Start, Coordinate line1
 	double m1, m2;
 
 	// Check to avoid dividing by zero
-	if (line1Start.x == 0 && line1End.x == 0) {
+	if (line1Start.x == line1End.x) {
 
 		m1 = 0;
 	} else {
@@ -45,7 +45,7 @@ Shape::Coordinate Star::findIntersection(Coordinate line1Start, Coordinate line1
 	}
 
 	// Check to avoid dividing by zero
-	if (line2Start.x == 0 && line2End.x == 0) {
+	if (line2Start.x == line2End.x) {
 
 		m2 = 0;
 	} else {
