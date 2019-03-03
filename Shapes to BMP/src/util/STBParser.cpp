@@ -1,6 +1,8 @@
 // Author: Matthew Day
 
 #include "STBParser.h"
+
+#include "../shapes/Circle.h"
 #include "../shapes/Diamond.h"
 #include "../shapes/Line.h"
 #include "../shapes/Point.h"
@@ -89,6 +91,9 @@ void STBParser::parseShapes(String currentLine, istream &data, vector<Shape*> &o
 	} else if (label == "star") {
 
 		shape = new Star();
+	} else if (label == "circle") {
+
+		shape = new Circle();
 	}
 
 	if (shape != nullptr) {
