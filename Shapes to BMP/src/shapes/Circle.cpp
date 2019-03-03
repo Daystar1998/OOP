@@ -85,16 +85,16 @@ void Circle::drawCircle(Coordinate position, int radius, RGBTriple color, Pictur
 
 	// Algorithm source: https://www.mathopenref.com/coordcirclealgorithm.html
 
-	int lastX = radius * cos(0);
-	int lastY = radius * sin(0);
+	int lastX = (int)(radius * cos(0));
+	int lastY = (int)(radius * sin(0));
 
 	// Increasing the number of segments results in a higher res circle, but the tradeoff is lower performance
 	int segments = 30;
 
 	for (double t = 2 * M_PI / segments; t < 2 * M_PI; t += 2 * M_PI / segments) {
 
-		int nextX = radius * cos(t);
-		int nextY = radius * sin(t);
+		int nextX = (int)(radius * cos(t));
+		int nextY = (int)(radius * sin(t));
 
 		picture.AddLine(position.x + lastX, position.y + lastY, position.x + nextX, position.y + nextY, color);
 
@@ -102,5 +102,5 @@ void Circle::drawCircle(Coordinate position, int radius, RGBTriple color, Pictur
 		lastY = nextY;
 	}
 
-	picture.AddLine(position.x + lastX, position.y + lastY, position.x + radius * cos(0), position.y + radius * sin(0), color);
+	picture.AddLine(position.x + lastX, position.y + lastY, (int)(position.x + radius * cos(0)), (int)(position.y + radius * sin(0)), color);
 }

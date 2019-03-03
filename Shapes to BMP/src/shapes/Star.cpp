@@ -15,7 +15,7 @@ void Star::initialize(const string &data) {
 
 		throw "Error: Too many vertices for a star. Needs to have 5";
 	}
-	
+
 	vertices.insert(vertices.begin() + 5, Coordinate());
 	vertices.insert(vertices.begin() + 4, Coordinate());
 	vertices.insert(vertices.begin() + 3, Coordinate());
@@ -62,8 +62,8 @@ Shape::Coordinate Star::findIntersection(Coordinate line1Start, Coordinate line1
 	// m1x - m2x = b2 - b1;
 	// (m1 - m2) * x = b2 - b1;
 	// x = (b2 - b1) / (m1 - m2)
-	int x = floor((b2 - b1) / (m1 - m2));
-	int y = floor(x * m1 + b1);
+	int x = (int)floor((b2 - b1) / (m1 - m2));
+	int y = (int)floor(x * m1 + b1);
 
 	result.x = x;
 	result.y = y;

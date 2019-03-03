@@ -35,10 +35,10 @@ void String::toUpper() {
 
 	if (!this->empty()) {
 
-		int length = this->length();
+		size_t length = this->length();
 		char *result = new char[length + 1];
 
-		for (int i = 0; i < length; i++) {
+		for (size_t i = 0; i < length; i++) {
 			
 			if (this->at(i) >= 97 && this->at(i) <= 122) {
 
@@ -61,10 +61,10 @@ void String::toLower() {
 
 	if (!this->empty()) {
 
-		int length = this->length();
+		size_t length = this->length();
 		char *result = new char[length + 1];
 
-		for (int i = 0; i < length; i++) {
+		for (size_t i = 0; i < length; i++) {
 
 			if (this->at(i) >= 65 && this->at(i) <= 90) {
 
@@ -105,7 +105,7 @@ void String::trimEnd() {
 
 	if (!this->empty()) {
 
-		int end;
+		size_t end;
 
 		for (end = this->length() - 1; end >= 0; end--) {
 
@@ -127,8 +127,8 @@ void String::trim() {
 
 void String::split(const string &delimiter, vector<String> &oTokens) const {
 
-	int start = 0;
-	int end = 0;
+	size_t start = 0;
+	size_t end = 0;
 
 	start = this->find_first_not_of(delimiter, end);
 
@@ -147,11 +147,11 @@ bool String::endsWith(const string &other) const {
 
 	if (this->length() >= other.length()) {
 
-		int j = this->length() - 1;
+		size_t j = this->length() - 1;
 
 		bool matching = false;
 
-		for (int i = other.length() - 1; i >= 0; i--) {
+		for (size_t i = other.length() - 1; i >= 0; i--) {
 
 			if (other[i] == this->at(j)) {
 
