@@ -7,6 +7,7 @@
 #include "../shapes/Polygon.h"
 #include "../shapes/Rectangle.h"
 #include "../shapes/RightTriangle.h"
+#include "../shapes/Star.h"
 #include "StringUtils.h"
 
 Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes) {
@@ -85,6 +86,9 @@ void STBParser::parseShapes(String currentLine, istream &data, vector<Shape*> &o
 	} else if (label == "diamond") {
 
 		shape = new Diamond();
+	} else if (label == "star") {
+
+		shape = new Star();
 	}
 
 	if (shape != nullptr) {

@@ -1,13 +1,13 @@
-width: 100
-height: 100
+width: 1000
+height: 1000
 background_color: (255, 255, 255, RGB)
 
-has_shadows: true
+has_shadows: false
 shadow_offset: (-1, -1)
 
 point {
 
-	start_position: (5, 5)
+	start_position: (50, 50)
 	color: (80, 90, 30, RGB)
 }
 
@@ -15,44 +15,57 @@ line {
 
 	color: (70, 70, 70, RGB)
 
-	start: (50, 70)
-	end: (80, 86)
+	start: (700, 700)
+	end: (800, 860)
 }
 
 polygon {
 
-	start_position: (15, 15)
+	start_position: (150, 150)
 	color: (255, 0, 0, RGB)
 
 	vertex: (0, 0)
-	vertex: (3, 20)
-	vertex: (20, 3)
-	vertex: (7, 0)
+	vertex: (30, 200)
+	vertex: (200, 30)
+	vertex: (70, 00)
+	vertex: (200, 150)
 }
 
 rectangle {
 
-	start_position: (40, 15)
+	start_position: (400, 150)
 	color: (0, 255, 0, RGB)
 
-	width: 10
-	height: 5
+	width: 100
+	height: 50
 }
 
 right_triangle {
 
-	start_position: (80, 15)
+	start_position: (800, 150)
 	color: (0, 0, 255, RGB)
 
-	width: 10
-	height: 5
+	width: 100
+	height: 50
 }
 
 diamond {
 
-	start_position: (20, 80)
+	start_position: (200, 800)
 	color: (70, 70, 0, RGB)
 
-	width: 10
-	height: 20
+	width: 100
+	height: 200
+}
+
+star {
+
+	start_position: (500, 500)
+	color: (0, 0, 70, RGB)
+
+	vertex: (0, 120)
+	vertex: (100, 70)
+	vertex: (70, -10)
+	vertex: (-70, -10)
+	vertex: (-100, 70)
 }
