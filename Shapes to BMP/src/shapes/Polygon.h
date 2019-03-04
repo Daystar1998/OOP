@@ -26,9 +26,10 @@ public:
 	virtual void draw(Picture &picture) const override;
 
 	virtual void drawShadow(Picture &picture) const override;
+protected:
+
+	virtual bool lineIntersects(Coordinate line1Start, Coordinate line1End, Coordinate line2Start, Coordinate line2End, Coordinate &oIntersection) const;
 private:
 
 	virtual void findSortedEdgesOnHorizontalLine(int y, vector<int> &edges) const;
-
-	virtual bool lineIntersects(Coordinate line1Start, Coordinate line1End, Coordinate line2Start, Coordinate line2End, Coordinate &oIntersection) const;
 };

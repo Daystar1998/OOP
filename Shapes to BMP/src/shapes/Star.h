@@ -11,8 +11,5 @@ public:
 	virtual ~Star();
 
 	void initialize(const string &data) override;
-private:
-
-	Coordinate findIntersection(Coordinate line1Start, Coordinate line1End, Coordinate line2Start, Coordinate line2End);
 };
 
