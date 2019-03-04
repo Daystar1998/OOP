@@ -152,20 +152,17 @@ void Polygon::findSortedEdgesOnHorizontalLine(int y, vector<int> &edges) const {
 
 				bool bothAbove = vertices[previousIndex].y > vertices[i].y && vertices[nextIndex].y > vertices[i].y;
 				bool bothBelow = vertices[previousIndex].y < vertices[i].y && vertices[nextIndex].y < vertices[i].y;
-				
+
 				if (bothAbove || bothBelow) {
 
-					if (lineIntersects(vertices[previousIndex], vertices[i], Coordinate(vertices[i].x - 1, y), Coordinate(vertices[i].x, y), (Coordinate&)Coordinate(0, 0))) {
-
-						if (edges.size() > 0) {
-
-							edges.erase(edges.end() - 1);
-						}
-					}
+					// Do nothing
 				} else {
 
 					edges.push_back(x);
 				}
+			} else if (x == vertices[nextIndex].x && y == vertices[nextIndex].y) {
+
+				// Do nothing
 			} else {
 
 				edges.push_back(x);
@@ -177,7 +174,6 @@ void Polygon::findSortedEdgesOnHorizontalLine(int y, vector<int> &edges) const {
 	}
 
 	sort(edges.begin(), edges.end());
-	unique(edges.begin(), edges.end());
 }
 
 bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordinate line2Start, Coordinate line2End, Coordinate &oIntersection) const {
