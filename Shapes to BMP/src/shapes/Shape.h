@@ -46,6 +46,8 @@ protected:
 	virtual void drawShadow(Picture &picture) const = 0;
 
 	virtual bool isParsingCommonData(const String &data);
+
+	virtual RGBTriple getShadowColor() const;
 public:
 
 	inline static bool getHasShadow() {

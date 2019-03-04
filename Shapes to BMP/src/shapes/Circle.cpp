@@ -65,33 +65,7 @@ void Circle::draw(Picture &picture) const {
 
 void Circle::drawShadow(Picture &picture) const {
 
-	RGBTriple shadowColor;
-
-	int shadowOffset = 100;
-
-	if (color.Red < shadowOffset) {
-
-		shadowColor.Red = 0;
-	} else {
-
-		shadowColor.Red = color.Red - shadowOffset;
-	}
-
-	if (color.Green < shadowOffset) {
-
-		shadowColor.Green = 0;
-	} else {
-
-		shadowColor.Green = color.Green - shadowOffset;
-	}
-
-	if (color.Blue < shadowOffset) {
-
-		shadowColor.Blue = 0;
-	} else {
-
-		shadowColor.Blue = color.Blue - shadowOffset;
-	}
+	RGBTriple shadowColor = getShadowColor();
 
 	Coordinate shadowPosition(startCoordinate.x + shadowOffsetX, startCoordinate.y + shadowOffsetY);
 

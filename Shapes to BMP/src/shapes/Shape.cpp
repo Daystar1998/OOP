@@ -34,3 +34,36 @@ bool Shape::isParsingCommonData(const String &data) {
 
 	return isCommonData;
 }
+
+RGBTriple Shape::getShadowColor() const {
+
+	RGBTriple result;
+
+	int shadowOffset = 100;
+
+	if (color.Red < shadowOffset) {
+
+		result.Red = 0;
+	} else {
+
+		result.Red = color.Red - shadowOffset;
+	}
+
+	if (color.Green < shadowOffset) {
+
+		result.Green = 0;
+	} else {
+
+		result.Green = color.Green - shadowOffset;
+	}
+
+	if (color.Blue < shadowOffset) {
+
+		result.Blue = 0;
+	} else {
+
+		result.Blue = color.Blue - shadowOffset;
+	}
+
+	return result;
+}
