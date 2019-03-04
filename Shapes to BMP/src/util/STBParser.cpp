@@ -31,35 +31,41 @@ Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes)
 
 		lineText.trim();
 
-		int currentPosition = 0;
+		if (lineText.startsWith("//")) {
 
-		String label = StringUtils::getNextVariable(lineText, currentPosition, currentPosition);
-
-		if (label == "width") {
-
-			width = StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition);
-		} else if (label == "height") {
-
-			height = StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition);
-		} else if (label == "background_color") {
-
-			backgroundColor = parseColor(lineText, currentPosition);
-		} else if (label == "has_shadows") {
-
-			Shape::setHasShadow(parseBoolean(lineText, currentPosition + 1));
-		} else if (label == "shadow_offset") {
-
-			Shape::setShadowOffsetX(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
-			Shape::setShadowOffsetY(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
-		} else if (label == "color") {
-
-			String colorName = StringUtils::getNextVariable(lineText, currentPosition + 1, currentPosition);
-			RGBTriple color = parseColor(lineText, currentPosition + 1);
-
-			setColor(colorName, color);
+			// Do nothing
 		} else {
 
-			parseShapes(lineText, file, oShapes);
+			int currentPosition = 0;
+
+			String label = StringUtils::getNextVariable(lineText, currentPosition, currentPosition);
+
+			if (label == "width") {
+
+				width = StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition);
+			} else if (label == "height") {
+
+				height = StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition);
+			} else if (label == "background_color") {
+
+				backgroundColor = parseColor(lineText, currentPosition);
+			} else if (label == "has_shadows") {
+
+				Shape::setHasShadow(parseBoolean(lineText, currentPosition + 1));
+			} else if (label == "shadow_offset") {
+
+				Shape::setShadowOffsetX(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
+				Shape::setShadowOffsetY(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
+			} else if (label == "color") {
+
+				String colorName = StringUtils::getNextVariable(lineText, currentPosition + 1, currentPosition);
+				RGBTriple color = parseColor(lineText, currentPosition + 1);
+
+				setColor(colorName, color);
+			} else {
+
+				parseShapes(lineText, file, oShapes);
+			}
 		}
 
 		getline(file, lineText);

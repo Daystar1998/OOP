@@ -10,26 +10,36 @@ bool Shape::isParsingCommonData(const String &data) {
 
 	bool isCommonData = false;
 
-	int currentPosition = 0;
+	String temp = data;
 
-	String label = StringUtils::getNextVariable(data, currentPosition, currentPosition);
+	temp.trim();
 
-	if (label == "start_position") {
-
-		startCoordinate.x = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
-		startCoordinate.y = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
+	if (temp.startsWith("//")) {
 
 		isCommonData = true;
-	} else if (label == "color") {
+	} else {
 
-		color = STBParser::parseColor(data, currentPosition);
+		int currentPosition = 0;
 
-		isCommonData = true;
-	} else if (label == "isFilled") {
+		String label = StringUtils::getNextVariable(data, currentPosition, currentPosition);
 
-		isFilled = STBParser::parseBoolean(data, currentPosition + 1);
+		if (label == "start_position") {
 
-		isCommonData = true;
+			startCoordinate.x = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
+			startCoordinate.y = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
+
+			isCommonData = true;
+		} else if (label == "color") {
+
+			color = STBParser::parseColor(data, currentPosition);
+
+			isCommonData = true;
+		} else if (label == "isFilled") {
+
+			isFilled = STBParser::parseBoolean(data, currentPosition + 1);
+
+			isCommonData = true;
+		}
 	}
 
 	return isCommonData;
