@@ -83,8 +83,10 @@ void Polygon::draw(Picture &picture) const {
 
 				for (int i = 0; i < edges.size(); i += 2) {
 
-					if(i + 1 != edges.size())
-					picture.AddLine(startCoordinate.x + edges[i], startCoordinate.y + y, startCoordinate.x + edges[i + 1], startCoordinate.y + y, color);
+					if (i + 1 != edges.size()) {
+
+						picture.AddLine(startCoordinate.x + edges[i], startCoordinate.y + y, startCoordinate.x + edges[i + 1], startCoordinate.y + y, color);
+					}
 				}
 			}
 		}
@@ -148,19 +150,17 @@ void Polygon::findSortedEdgesOnHorizontalLine(int y, vector<int> &edges) const {
 					previousIndex = (int)vertices.size() - 1;
 				}
 
-				if (vertices[previousIndex].y < vertices[i].y && vertices[nextIndex].y < vertices[i].y) {
+				bool bothAbove = vertices[previousIndex].y > vertices[i].y && vertices[nextIndex].y > vertices[i].y;
+				bool bothBelow = vertices[previousIndex].y < vertices[i].y && vertices[nextIndex].y < vertices[i].y;
+				
+				if (bothAbove || bothBelow) {
 
 					if (lineIntersects(vertices[previousIndex], vertices[i], Coordinate(vertices[i].x - 1, y), Coordinate(vertices[i].x, y), (Coordinate&)Coordinate(0, 0))) {
 
-						if(edges.size() > 0)
-						edges.erase(edges.end() - 1);
-					}
-				} else if (vertices[previousIndex].y > vertices[i].y && vertices[nextIndex].y > vertices[i].y) {
+						if (edges.size() > 0) {
 
-					if (lineIntersects(vertices[previousIndex], vertices[i], Coordinate(vertices[i].x - 1, y), Coordinate(vertices[i].x, y), (Coordinate&)Coordinate(0, 0))) {
-
-						if (edges.size() > 0)
-						edges.erase(edges.end() - 1);
+							edges.erase(edges.end() - 1);
+						}
 					}
 				} else {
 
