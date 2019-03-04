@@ -141,6 +141,39 @@ void String::split(const string &delimiter, vector<String> &oTokens) const {
 	}
 }
 
+bool String::startsWith(const string &other) const {
+
+	bool result = false;
+
+	if (this->length() >= other.length()) {
+
+		size_t j = 0;
+
+		bool matching = false;
+
+		for (int i = 0; i < other.length(); i++) {
+
+			if (other[i] == this->at(j)) {
+
+				matching = true;
+			} else {
+
+				matching = false;
+				break;
+			}
+
+			j++;
+		}
+
+		if (matching) {
+
+			result = true;
+		}
+	}
+
+	return result;
+}
+
 bool String::endsWith(const string &other) const {
 
 	bool result = false;

@@ -39,6 +39,8 @@ public:
 
 	void split(const string &delimiter, vector<String> &oTokens) const;
 
+	bool startsWith(const string &other) const;
+
 	bool endsWith(const string &other) const;
 private:
 
