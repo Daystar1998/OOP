@@ -2,7 +2,7 @@ width: 1000
 height: 1000
 background_color: (255, 255, 255, RGB)
 
-has_shadows: true
+has_shadows: false
 shadow_offset: (-1, -1)
 
 point {
@@ -23,10 +23,11 @@ polygon {
 
 	start_position: (150, 150)
 	color: (255, 0, 0, RGB)
+	isFilled: true
 
 	vertex: (0, 0)
 	vertex: (30, 200)
-	vertex: (200, 30)
+	vertex: (200, 0)
 	vertex: (70, 0)
 	vertex: (200, 150)
 }
@@ -35,6 +36,7 @@ rectangle {
 
 	start_position: (150, 50)
 	color: (0, 255, 0, RGB)
+	isFilled: true
 
 	width: 100
 	height: 50
@@ -44,6 +46,7 @@ right_triangle {
 
 	start_position: (800, 150)
 	color: (0, 0, 255, RGB)
+	isFilled: true
 
 	width: 100
 	height: 50
@@ -53,6 +56,7 @@ diamond {
 
 	start_position: (200, 800)
 	color: (70, 70, 0, RGB)
+	isFilled: true
 
 	width: 100
 	height: 200
@@ -62,6 +66,7 @@ star {
 
 	start_position: (500, 500)
 	color: (0, 0, 70, RGB)
+	isFilled: true
 
 	vertex: (0, 120)
 	vertex: (100, 70)
