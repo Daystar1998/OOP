@@ -5,6 +5,9 @@ background_color: (255, 255, 255, RGB)
 has_shadows: true
 shadow_offset: (-1, -1)
 
+color red: (255, 0, 0, RGB)
+color blue: (0, 0, 255, RGB)
+
 point {
 
 	start_position: (50, 50)
@@ -22,7 +25,7 @@ line {
 polygon {
 
 	start_position: (150, 150)
-	color: (255, 0, 0, RGB)
+	color: red
 	isFilled: true
 
 	vertex: (0, 0)
@@ -45,7 +48,7 @@ rectangle {
 right_triangle {
 
 	start_position: (800, 150)
-	color: (0, 0, 255, RGB)
+	color: blue
 	isFilled: true
 
 	width: 100
@@ -55,7 +58,7 @@ right_triangle {
 right_triangle {
 
 	start_position: (800, 100)
-	color: (0, 0, 80, BGR)
+	color: blue
 	isFilled: true
 
 	width: -100

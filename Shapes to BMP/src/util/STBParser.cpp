@@ -12,6 +12,8 @@
 #include "../shapes/Star.h"
 #include "StringUtils.h"
 
+map<String, RGBTriple> STBParser::colors;
+
 Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes) {
 
 	ifstream file(fileName);
@@ -49,6 +51,12 @@ Picture STBParser::parseSTBFile(const String &fileName, vector<Shape*> &oShapes)
 
 			Shape::setShadowOffsetX(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
 			Shape::setShadowOffsetY(StringUtils::getNextNumber(lineText, currentPosition + 1, currentPosition));
+		} else if (label == "color") {
+
+			String colorName = StringUtils::getNextVariable(lineText, currentPosition + 1, currentPosition);
+			RGBTriple color = parseColor(lineText, currentPosition + 1);
+
+			setColor(colorName, color);
 		} else {
 
 			parseShapes(lineText, file, oShapes);
@@ -107,9 +115,9 @@ RGBTriple STBParser::parseColor(const String &data, int begin) {
 
 	RGBTriple result;
 
-	int red;
-	int green;
-	int blue;
+	int red = 0;
+	int green = 0;
+	int blue = 0;
 
 	int currentPosition = begin;
 
@@ -117,7 +125,7 @@ RGBTriple STBParser::parseColor(const String &data, int begin) {
 	green = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
 	blue = StringUtils::getNextNumber(data, currentPosition + 1, currentPosition);
 
-	String colorOrder(StringUtils::getNextVariable(data, currentPosition, currentPosition));
+	String colorOrder(StringUtils::getNextVariable(data, begin + 1, currentPosition));
 
 	colorOrder.toUpper();
 
@@ -154,11 +162,23 @@ RGBTriple STBParser::parseColor(const String &data, int begin) {
 		red = blue;
 		blue = green;
 		green = temp;
+	} else {
+
+		// Throwaway value for reference input
+		int garbage;
+
+		String colorName = StringUtils::getNextVariable(data, begin + 1, garbage);
+
+		result = getColor(colorName);
 	}
 
-	result.Red = red;
-	result.Green = green;
-	result.Blue = blue;
+	// If they are all zero then it can be assumed that a color was specifed. Even if they were correctly set to zero then the defaults will have the same result
+	if (red != 0 || green != 0 || blue != 0) {
+
+		result.Red = red;
+		result.Green = green;
+		result.Blue = blue;
+	}
 
 	return result;
 }
@@ -215,4 +235,21 @@ String STBParser::getCodeBlock(istream &data) {
 	}
 
 	return result;
+}
+
+RGBTriple STBParser::getColor(const String &name) {
+
+	RGBTriple result;
+
+	if (colors.find(name) != colors.end()) {
+
+		result = colors.at(name);
+	}
+
+	return result;
+}
+
+void STBParser::setColor(const String &name, RGBTriple &color) {
+
+	colors.emplace(name, color);
 }
