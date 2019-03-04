@@ -145,7 +145,7 @@ void Polygon::findSortedEdgesOnHorizontalLine(int y, vector<int> &edges) const {
 
 				if (previousIndex < 0) {
 
-					previousIndex = vertices.size() - 1;
+					previousIndex = (int)vertices.size() - 1;
 				}
 
 				if (vertices[previousIndex].y < vertices[i].y && vertices[nextIndex].y < vertices[i].y) {

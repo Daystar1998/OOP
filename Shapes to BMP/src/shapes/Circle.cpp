@@ -52,7 +52,7 @@ void Circle::draw(Picture &picture) const {
 
 			for (int y = -radius; y < radius; y++) {
 
-				int distance = sqrt((x * x) + (y * y));
+				int distance = (int)sqrt((x * x) + (y * y));
 
 				if (distance < radius) {
 
