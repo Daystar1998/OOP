@@ -189,7 +189,7 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 
 		double m1, m2;
 		double b1, b2;
-		int x, y;
+		double x, y;
 
 		// Line one is vertical but line two is not
 		if (line1Start.x == line1End.x && line2Start.x != line2End.x) {
@@ -198,7 +198,7 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 			b2 = line2Start.y - (line2Start.x * m2);
 
 			x = line1Start.x;
-			y = (int)floor(x * m2 + b2);
+			y = x * m2 + b2;
 		// Line two is vertical but line one is not
 		} else if (line1Start.x != line1End.x && line2Start.x == line2End.x) {
 
@@ -206,7 +206,7 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 			b1 = line1Start.y - (line1Start.x * m1);
 
 			x = line2Start.x;
-			y = (int)floor(x * m1 + b1);
+			y = x * m1 + b1;
 		// Neither line is vertical
 		} else if (line1Start.x != line1End.x && line2Start.x != line2End.x) {
 
@@ -222,8 +222,8 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 			// m1x - m2x = b2 - b1;
 			// (m1 - m2) * x = b2 - b1;
 			// x = (b2 - b1) / (m1 - m2)
-			x = (int)floor((b2 - b1) / (m1 - m2));
-			y = (int)floor(x * m1 + b1);
+			x = (b2 - b1) / (m1 - m2);
+			y = x * m1 + b1;
 		}
 
 		// Check that the x and why values are in range regardless of the order the points of the line are in
@@ -235,8 +235,8 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 
 			result = true;
 
-			oIntersection.x = x;
-			oIntersection.y = y;
+			oIntersection.x = (int)floor(x);
+			oIntersection.y = (int)floor(y);
 		}
 	}
 
