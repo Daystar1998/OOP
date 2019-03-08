@@ -184,7 +184,6 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 	if (line1Start.y == line1End.y && line2Start.y == line2End.y) {
 
 		// Do nothing
-
 	} else {
 
 		double m1, m2;
