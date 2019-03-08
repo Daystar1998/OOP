@@ -180,45 +180,64 @@ bool Polygon::lineIntersects(Coordinate line1Start, Coordinate line1End, Coordin
 
 	bool result = false;
 
-	double m1, m2;
+	// Both lines are horizontal
+	if (line1Start.y == line1End.y && line2Start.y == line2End.y) {
 
-	// Check to avoid dividing by zero
-	if (line1Start.x == line1End.x) {
+		// Do nothing
 
-		m1 = 0;
 	} else {
 
-		m1 = (double)(line1End.y - line1Start.y) / (double)(line1End.x - line1Start.x);
-	}
+		double m1, m2;
+		double b1, b2;
+		int x, y;
 
-	// Check to avoid dividing by zero
-	if (line2Start.x == line2End.x) {
+		// Line one is vertical but line two is not
+		if (line1Start.x == line1End.x && line2Start.x != line2End.x) {
 
-		m2 = 0;
-	} else {
+			m2 = (double)(line2End.y - line2Start.y) / (double)(line2End.x - line2Start.x);
+			b2 = line2Start.y - (line2Start.x * m2);
 
-		m2 = (double)(line2End.y - line2Start.y) / (double)(line2End.x - line2Start.x);
-	}
+			x = line1Start.x;
+			y = (int)floor(x * m2 + b2);
+		// Line two is vertical but line one is not
+		} else if (line1Start.x != line1End.x && line2Start.x == line2End.x) {
 
-	double b1 = line1Start.y - (line1Start.x * m1);
-	double b2 = line2Start.y - (line2Start.x * m2);
+			m1 = (double)(line1End.y - line1Start.y) / (double)(line1End.x - line1Start.x);
+			b1 = line1Start.y - (line1Start.x * m1);
 
-	// y1 = m1x + b1
-	// y2 = m2x + b2
-	// m1x + b1 = m2x + b2;
-	// m1x - m2x = b2 - b1;
-	// (m1 - m2) * x = b2 - b1;
-	// x = (b2 - b1) / (m1 - m2)
-	int x = (int)floor((b2 - b1) / (m1 - m2));
-	int y = (int)floor(x * m1 + b1);
+			x = line2Start.x;
+			y = (int)floor(x * m1 + b1);
+		// Neither line is vertical
+		} else if (line1Start.x != line1End.x && line2Start.x != line2End.x) {
 
-	// Ensure the coordinate is inside the range of both lines
-	if (((x >= line1Start.x && x <= line1End.x) || (x >= line1End.x && x <= line1Start.x)) && ((x >= line2Start.x && x <= line2End.x) || (x >= line2End.x && x <= line2Start.x))) {
+			m1 = (double)(line1End.y - line1Start.y) / (double)(line1End.x - line1Start.x);
+			m2 = (double)(line2End.y - line2Start.y) / (double)(line2End.x - line2Start.x);
 
-		result = true;
+			b1 = line1Start.y - (line1Start.x * m1);
+			b2 = line2Start.y - (line2Start.x * m2);
 
-		oIntersection.x = x;
-		oIntersection.y = y;
+			// y = m1x + b1
+			// y = m2x + b2
+			// m1x + b1 = m2x + b2;
+			// m1x - m2x = b2 - b1;
+			// (m1 - m2) * x = b2 - b1;
+			// x = (b2 - b1) / (m1 - m2)
+			x = (int)floor((b2 - b1) / (m1 - m2));
+			y = (int)floor(x * m1 + b1);
+		}
+
+		// Check that the x and why values are in range regardless of the order the points of the line are in
+		bool inRangeOnX = ((x >= line1Start.x && x <= line1End.x) || (x >= line1End.x && x <= line1Start.x)) && ((x >= line2Start.x && x <= line2End.x) || (x >= line2End.x && x <= line2Start.x));
+		bool inRangeOnY = ((y >= line1Start.y && y <= line1End.y) || (y >= line1End.y && x <= line1Start.y)) && ((y >= line2Start.y && y <= line2End.y) || (y >= line2End.y && y <= line2Start.y));
+
+		// Ensure the coordinate is inside the range of both lines
+		if (inRangeOnX && inRangeOnY) {
+
+			result = true;
+
+			oIntersection.x = x;
+			oIntersection.y = y;
+		}
 	}
 
 	return result;
