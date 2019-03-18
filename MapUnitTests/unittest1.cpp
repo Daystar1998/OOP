@@ -68,5 +68,35 @@ namespace MapUnitTests
 			Assert::AreEqual((int)test['l'], 7);
 		}
 
+		TEST_METHOD(UpdateValueTest1) {
+
+			Map<char, int> test;
+
+			test['h'] = 6;
+			test['h'] = 8;
+
+			Assert::AreEqual((int)test['h'], 8);
+		}
+
+		TEST_METHOD(UpdateValueTest2) {
+
+			Map<char, int> test;
+
+			test['l'] = 7;
+			test['l'] = 3;
+
+			Assert::AreEqual((int)test['l'], 3);
+		}
+
+		TEST_METHOD(UpdateValueTest3) {
+
+			Map<char, char> test;
+
+			test['y'] = '9';
+			test['y'] = '7';
+
+			Assert::AreEqual((char)test['y'], '7');
+		}
+
 	};
 }
