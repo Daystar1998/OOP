@@ -59,7 +59,7 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	ValueType* Map<KeyType, ValueType>::find(const KeyType &key) {
 
-		ValueType* result = nullptr;
+		ValueType *result = nullptr;
 
 			//loop through the keys list to see if the key parameter is in the list
 		for (unsigned int i = 0; i < keys.size(); i++) {
@@ -68,7 +68,7 @@ namespace util {
 			//index in the values list
 			if (keys[i] == key) {
 
-				result = values[i];
+				result = &values[i];
 				break;
 			}
 		}
