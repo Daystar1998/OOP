@@ -128,7 +128,8 @@ namespace util {
 
 	//Copy construxtor
 	template <typename KeyType, typename ValueType>
-	Map<KeyType, ValueType>::Wrapper::Wrapper(const Wrapper& rValue) {
+	Map<KeyType, ValueType>::Wrapper::Wrapper(const Wrapper& rValue)
+		: map(rValue.map), key(rValue.key), value(rValue.value) {
 			  //in the member initialization list - set the map, the key, and the value
 			  //members to the values passed to the constructor
 	}
