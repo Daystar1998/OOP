@@ -1,4 +1,5 @@
 // Definition by Dr. Steil and Dr. Foust
+// Implementation by Matthew Day
 
 #include <vector>
 #include <stdexcept>
@@ -50,6 +51,7 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	unsigned Map<KeyType, ValueType>::size() {
 		//return the number of items that are in the keys or values list
+		return keys.size();
 	}
 
 	template <typename KeyType, typename ValueType>
