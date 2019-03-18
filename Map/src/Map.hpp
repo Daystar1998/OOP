@@ -115,12 +115,15 @@ namespace util {
   */
 
 	template <typename KeyType, typename ValueType>
-	Map<KeyType, ValueType>::Wrapper::Wrapper(Map &map, const KeyType &key) {
+	Map<KeyType, ValueType>::Wrapper::Wrapper(Map &map, const KeyType &key)
+		: map(map), key(key) {
 			  //in the member initialization list - set the map and the key members to
 			  //the values passed to the constructor
 
 			  //in the body of the constructor - set the value member to the
 			  //map's value with that key. Hint: use map.find
+
+		value = map.find(key);
 	}
 
 	//Copy construxtor
