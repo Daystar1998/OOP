@@ -140,8 +140,13 @@ namespace util {
 			  //if the value is null throw an std::range_error exception
 			  //with the text "Key not found in map"
 			  //stdexcept is included for this purpose
+		if (value == nullptr) {
+
+			throw std::range_error("Key not found in map");
+		}
 
 			  //if the value is not null return the value (dereferenced)
+		return *value;
 	}
 
 	//address of operator. This is used when the programmer tries to 
