@@ -1,3 +1,5 @@
+#include <string>
+
 #include "stdafx.h"
 #include "CppUnitTest.h"
 
@@ -132,6 +134,54 @@ namespace MapUnitTests
 			test[5] = 4;
 
 			Assert::AreEqual(test.size(), 2U);
+		}
+
+		TEST_METHOD(CastFailureTest1) {
+
+			Map<int, int> test;
+
+			bool caughtCorrectException = false;
+
+			try {
+
+				int i = test[9];
+			} catch (std::range_error e) {
+
+				if (std::string(e.what()) == "Key not found in map") {
+
+					caughtCorrectException = true;
+				}
+			}
+
+			if (!caughtCorrectException) {
+
+				Assert::Fail();
+			}
+		}
+
+		TEST_METHOD(CastFailureTest2) {
+
+			Map<int, int> test;
+
+			test[7] = 6;
+
+			bool caughtCorrectException = false;
+
+			try {
+
+				int i = test[9];
+			} catch (std::range_error e) {
+
+				if (std::string(e.what()) == "Key not found in map") {
+
+					caughtCorrectException = true;
+				}
+			}
+
+			if (!caughtCorrectException) {
+
+				Assert::Fail();
+			}
 		}
 	};
 }
