@@ -80,12 +80,34 @@ namespace util {
 
 	template <typename KeyType, typename ValueType>
 	ValueType* Map<KeyType, ValueType>::set(const KeyType &key, const ValueType &value) {
+
+		ValueType *result = nullptr;
+
+		for (unsigned int i = 0; i < keys.size(); i++) {
+
 			  //if the key is already in the keys list,
 			  //change the value corresponding to that key value passed to this method
+			if (keys[i] == key) {
+
+				values[i] = value;
+				result = &values[i];
+
+				break;
+			}
+		}
 
 			  //if the key is NOT in the list, add it and the value to the end of their lists
+		if (result == nullptr) {
+
+			keys.push_back(key);
+			values.push_back(value);
+
+			result = &values[values.size() - 1];
+		}
 
 			  // return the address of the value, in the values list, that was changed or added
+
+		return result;
 	}
 
  /*==========================================================================
