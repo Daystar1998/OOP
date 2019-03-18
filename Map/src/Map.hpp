@@ -46,6 +46,8 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	typename Map<KeyType, ValueType>::Wrapper Map<KeyType, ValueType>::operator[](const KeyType& key) {
 	   //return a Wrapper object that has a reference to this Map and the key that was passed in
+
+		return Wrapper(this, key);
 	}
 
 	template <typename KeyType, typename ValueType>
