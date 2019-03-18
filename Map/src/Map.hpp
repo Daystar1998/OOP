@@ -173,12 +173,20 @@ namespace util {
 			  // if the value member is null
 			  // set the map's value for the current key to the value parameter (use map.set)
 			  // set the value member of the wrapper to the rValue (you can use the value returned from map.set)
+		if (value == nullptr) {
 
+			value = map.set(key, rValue);
 
 			  //if the value member is NOT null
 			  //set the member value to the value parameter
 			  //(you will need to dereference the member value to make this assignment)
+		} else {
+
+			*value = rValue;
+		}
 
 			  //return the rValue parameter
+
+		return rValue;
 	}
 }
