@@ -98,5 +98,40 @@ namespace MapUnitTests
 			Assert::AreEqual((char)test['y'], '7');
 		}
 
+		TEST_METHOD(SizeTest1) {
+
+			Map<char, char> test;
+
+			Assert::AreEqual(test.size(), 0U);
+		}
+
+		TEST_METHOD(SizeTest2) {
+
+			Map<int, int> test;
+
+			test[8] = 7;
+
+			Assert::AreEqual(test.size(), 1U);
+		}
+
+		TEST_METHOD(SizeTest3) {
+
+			Map<int, int> test;
+
+			test[8] = 7;
+			test[8] = 7;
+
+			Assert::AreEqual(test.size(), 1U);
+		}
+
+		TEST_METHOD(SizeTest4) {
+
+			Map<int, int> test;
+
+			test[8] = 7;
+			test[5] = 4;
+
+			Assert::AreEqual(test.size(), 2U);
+		}
 	};
 }
