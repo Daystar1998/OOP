@@ -136,6 +136,35 @@ namespace MapUnitTests
 			Assert::AreEqual(test.size(), 2U);
 		}
 
+		TEST_METHOD(CastSuccessTest1) {
+
+			Map<int, int> test;
+
+			test[9] = 8;
+
+			bool caughtCorrectException = false;
+
+			int i = test[9];
+
+			Assert::AreEqual(i, 8);
+		}
+
+		TEST_METHOD(CastSuccessTest2) {
+
+			Map<int, int> test;
+
+			test[9] = -5;
+			test[3] = 0;
+			test[100] = 3;
+			test[7] = 76;
+
+			bool caughtCorrectException = false;
+
+			int i = test[9];
+
+			Assert::AreEqual(i, -5);
+		}
+
 		TEST_METHOD(CastFailureTest1) {
 
 			Map<int, int> test;
