@@ -53,7 +53,7 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	unsigned Map<KeyType, ValueType>::size() {
 		//return the number of items that are in the keys or values list
-		return keys.size();
+		return (unsigned)keys.size();
 	}
 
 	template <typename KeyType, typename ValueType>
