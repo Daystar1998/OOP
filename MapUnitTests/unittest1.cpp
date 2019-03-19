@@ -1,3 +1,5 @@
+// Author: Matthew Day
+
 #include <string>
 
 #include "stdafx.h"
