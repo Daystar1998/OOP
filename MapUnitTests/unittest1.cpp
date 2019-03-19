@@ -183,5 +183,84 @@ namespace MapUnitTests
 				Assert::Fail();
 			}
 		}
+
+		TEST_METHOD(ReferenceSuccessTest1) {
+
+			Map<int, int> test;
+
+			test[9] = 8;
+
+			bool caughtCorrectException = false;
+
+			int *i = &test[9];
+
+			Assert::AreEqual(*i, 8);
+		}
+
+		TEST_METHOD(ReferenceSuccessTest2) {
+
+			Map<int, int> test;
+
+			test[9] = 8;
+			test[8] = 5;
+			test[10] = 7;
+			test[5] = 111;
+
+			test[9] = 6;
+
+			bool caughtCorrectException = false;
+
+			int *i = &test[9];
+
+			Assert::AreEqual(*i, 6);
+		}
+
+		TEST_METHOD(ReferenceFailureTest1) {
+
+			Map<int, int> test;
+
+			bool caughtCorrectException = false;
+
+			try {
+
+				int *i = &test[9];
+			} catch (std::range_error e) {
+
+				if (std::string(e.what()) == "Key not found in map") {
+
+					caughtCorrectException = true;
+				}
+			}
+
+			if (!caughtCorrectException) {
+
+				Assert::Fail();
+			}
+		}
+
+		TEST_METHOD(ReferenceFailureTest2) {
+
+			Map<int, int> test;
+
+			test[9] = 8;
+
+			bool caughtCorrectException = false;
+
+			try {
+
+				int *i = &test[7];
+			} catch (std::range_error e) {
+
+				if (std::string(e.what()) == "Key not found in map") {
+
+					caughtCorrectException = true;
+				}
+			}
+
+			if (!caughtCorrectException) {
+
+				Assert::Fail();
+			}
+		}
 	};
 }
