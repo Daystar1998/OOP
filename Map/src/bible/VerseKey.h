@@ -2,6 +2,7 @@
 
 // Author: Matthew Day
 
+#include <iostream>
 #include <string>
 
 using std::string;
@@ -16,10 +17,9 @@ private:
 	int verseNumber;
 public:
 
-	VerseKey();
+	VerseKey(string book, int chapter, int verseNumber);
 
 	virtual ~VerseKey();
 
 	bool operator==(const VerseKey &other) const;
 };
-
