@@ -5,6 +5,8 @@
 #include <iostream>
 #include <string>
 
+using std::cout;
+using std::istream;
 using std::string;
 
 class VerseKey {
@@ -23,3 +25,5 @@ public:
 
 	bool operator==(const VerseKey &other) const;
 };
+
+istream& operator>>(istream &in, VerseKey &verseKey);

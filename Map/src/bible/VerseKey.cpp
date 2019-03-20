@@ -14,3 +14,23 @@ bool VerseKey::operator==(const VerseKey &other) const {
 
 	return result;
 }
+
+istream& operator>>(istream &in, VerseKey &verseKey) {
+
+	string book;
+	int chapter;
+	int verse;
+
+	cout << "Enter the book: ";
+	in >> book;
+
+	cout << "Enter the chapter: ";
+	in >> chapter;
+
+	cout << "Enter the verse: ";
+	in >> verse;
+
+	verseKey = VerseKey(book, chapter, verse);
+
+	return in;
+}
