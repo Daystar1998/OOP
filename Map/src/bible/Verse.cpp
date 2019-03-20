@@ -2,8 +2,7 @@
 
 #include "Verse.h"
 
-Verse::Verse() {
-}
+Verse::Verse(VerseKey verseKey, string verseText)
+	: verseKey(verseKey), verseText(verseText) {}
 
-Verse::~Verse() {
-}
+Verse::~Verse() {}
