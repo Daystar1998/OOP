@@ -8,10 +8,18 @@
 
 class Bible : public util::Map<VerseKey, Verse> {
 
-public:
+private:
+
+	static Bible *instance;
+
+	Bible(const Bible &other) = delete;
+	const Bible& operator=(const Bible &other) = delete;
 
 	Bible();
+public:
 
 	virtual ~Bible();
+
+	static Bible& getInstance();
 };
 
