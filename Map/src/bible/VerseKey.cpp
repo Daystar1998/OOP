@@ -19,7 +19,7 @@ istream& operator>>(istream &in, VerseKey &verseKey) {
 
 	string book;
 	int chapter;
-	int verse;
+	int verseNumber;
 
 	cout << "Enter the book: ";
 	in >> book;
@@ -27,10 +27,10 @@ istream& operator>>(istream &in, VerseKey &verseKey) {
 	cout << "Enter the chapter: ";
 	in >> chapter;
 
-	cout << "Enter the verse: ";
-	in >> verse;
+	cout << "Enter the verse number: ";
+	in >> verseNumber;
 
-	verseKey = VerseKey(book, chapter, verse);
+	verseKey = VerseKey(book, chapter, verseNumber);
 
 	return in;
 }
