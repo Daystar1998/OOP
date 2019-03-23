@@ -19,4 +19,9 @@ public:
 	Verse(VerseKey verseKey, string verseText);
 
 	virtual ~Verse();
+
+	inline string getText() {
+
+		return verseText;
+	}
 };
