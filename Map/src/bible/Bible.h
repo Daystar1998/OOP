@@ -6,7 +6,7 @@
 #include "Verse.h"
 #include "VerseKey.h"
 
-class Bible : util::Map<VerseKey, Verse> {
+class Bible : public util::Map<VerseKey, Verse> {
 
 public:
 
