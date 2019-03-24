@@ -49,7 +49,7 @@ Bible::Bible() {
 
 			verseNumber = StringUtils::getNextNumber(line, currentPosition + 1, currentPosition);
 
-			verseText = line.substr(currentPosition, line.length() - currentPosition);
+			verseText = line.substr(currentPosition + 1, line.length() - currentPosition - 1);
 
 			VerseKey verseKey(currentBookName, chapter, verseNumber);
 
