@@ -60,6 +60,8 @@ namespace util {
 
 		ValueType* find(const KeyType &key);
 		ValueType* set(const KeyType &key, const ValueType &value);
+
+		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
 	};
 
 	/*==========================================================================
@@ -211,5 +213,29 @@ namespace util {
 			  //return the rValue parameter
 
 		return rValue;
+	}
+
+	template <typename KeyType, typename ValueType>
+	typename Map<KeyType, ValueType>::Iterator Map<KeyType, ValueType>::getIterator(KeyType &key) {
+
+		Iterator result(*this);
+
+		bool foundKey = false;
+
+		for (size_t i = 0; i < keys.size(); i++) {
+
+			if (keys[i] == key) {
+
+				foundKey = true;
+				result.index = i;
+			}
+		}
+
+		if (!foundKey) {
+
+			throw std::range_error("Key not found in map");
+		}
+
+		return result;
 	}
 }
