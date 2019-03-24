@@ -37,6 +37,23 @@ Bible::Bible() {
 
 				currentBookName.append(StringUtils::getNextVariable(line, currentPosition + 1, currentPosition));
 			}
+		} else {
+
+			int chapter;
+			int verseNumber;
+			string verseText;
+
+			int currentPosition = 0;
+
+			chapter = StringUtils::getNextNumber(line, currentPosition, currentPosition);
+
+			verseNumber = StringUtils::getNextNumber(line, currentPosition + 1, currentPosition);
+
+			verseText = line.substr(currentPosition, line.length() - currentPosition);
+
+			VerseKey verseKey(currentBookName, chapter, verseNumber);
+
+			(*this)[verseKey] = Verse(verseKey, verseText);
 		}
 	}
 }
