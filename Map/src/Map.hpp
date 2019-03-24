@@ -31,6 +31,29 @@ namespace util {
 		Wrapper operator[](const KeyType& key);
 		unsigned size();
 
+		// Author: Matthew Day
+		class Iterator {
+
+		private:
+
+			Map<KeyType, ValueType> &map;
+			size_t index;
+
+			Iterator(Map<KeyType, ValueType> &map);
+
+			friend class Map;
+		public:
+
+			Iterator& operator++();
+
+			Iterator operator++(int);
+
+			Iterator& operator--();
+
+			Iterator operator--(int);
+
+			ValueType& operator*();
+		};
 	private:
 		std::vector<KeyType> keys;
 		std::vector<ValueType> values;
