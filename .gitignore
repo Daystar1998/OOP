@@ -21,3 +21,8 @@
 *.vcxproj
 /*/x64/Release
 /x64/Release
+*.aps
+/UnitTest1/unittest1.cpp
+/UnitTest1/targetver.h
+/UnitTest1/stdafx.h
+/UnitTest1/stdafx.cpp

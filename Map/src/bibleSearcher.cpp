@@ -10,7 +10,7 @@ using std::cin;
 using std::endl;
 using std::cout;
 
-int main() {
+void searchBible() {
 
 	Bible &bible = Bible::getInstance();
 
@@ -32,6 +32,4 @@ int main() {
 
 		cin >> verseKey;
 	}
-
-	return 0;
 }
