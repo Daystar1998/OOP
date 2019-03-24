@@ -3,6 +3,7 @@
 #include <iostream>
 
 #include "bibleSearcher.h"
+#include "bibleIterator.h"
 
 using std::cin;
 using std::endl;
@@ -35,7 +36,7 @@ int main() {
 			searchBible();
 		} else if (selectedOption == iterateOption) {
 
-
+			iterateOverBible();
 		}
 	} while (selectedOption != quitOption);
 
