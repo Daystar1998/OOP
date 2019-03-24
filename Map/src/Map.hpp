@@ -302,4 +302,10 @@ namespace util {
 
 		return result;
 	}
+
+	template <typename KeyType, typename ValueType>
+	ValueType& Map<KeyType, ValueType>::Iterator::operator*() {
+
+		return &(this->map.values[index]);
+	}
 }
