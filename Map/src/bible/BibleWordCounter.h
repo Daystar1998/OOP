@@ -2,13 +2,21 @@
 
 #pragma once
 
+#include <string>
+
 #include "Bible.h"
+
+using std::string;
 
 class BibleWordCounter : public Bible::IVisitor {
 
+private:
+
+	string word;
+	unsigned int count;
 public:
 
-	BibleWordCounter();
+	BibleWordCounter(const string &word);
 
 	virtual ~BibleWordCounter();
 

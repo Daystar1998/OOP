@@ -2,7 +2,8 @@
 
 #include "BibleWordCounter.h"
 
-BibleWordCounter::BibleWordCounter() {}
+BibleWordCounter::BibleWordCounter(const string &word)
+	: word(word), count(0) {}
 
 BibleWordCounter::~BibleWordCounter() {}
 
