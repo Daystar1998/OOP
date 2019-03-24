@@ -15,7 +15,7 @@ namespace util {
 
 		public:
 
-			virtual void visit(KeyType, &key, ValueType &value);
+			virtual void visit(KeyType, &key, ValueType &value) = 0;
 		};
 
 		// Wrapper is an inner class of the Map Template
