@@ -15,6 +15,8 @@ namespace util {
 
 		public:
 
+			virtual ~IVisitor(){}
+
 			virtual void visit(KeyType, &key, ValueType &value) = 0;
 		};
 
