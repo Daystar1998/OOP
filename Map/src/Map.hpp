@@ -228,6 +228,8 @@ namespace util {
 
 				foundKey = true;
 				result.index = i;
+
+				break;
 			}
 		}
 
