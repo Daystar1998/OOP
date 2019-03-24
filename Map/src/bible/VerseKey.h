@@ -24,6 +24,21 @@ public:
 	virtual ~VerseKey();
 
 	bool operator==(const VerseKey &other) const;
+
+	inline string getBook() {
+
+		return book;
+	}
+
+	inline int getChapter() {
+
+		return chapter;
+	}
+
+	inline int getVerseNumber() {
+
+		return verseNumber;
+	}
 };
 
 istream& operator>>(istream &in, VerseKey &verseKey);
