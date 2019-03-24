@@ -9,6 +9,15 @@ namespace util {
 	class Map {
 
 	public:
+
+		// Author: Matthew Day
+		class IVisitor {
+
+		public:
+
+			virtual void visit(KeyType, &key, ValueType &value);
+		};
+
 		// Wrapper is an inner class of the Map Template
 		class Wrapper {
 		public:
@@ -62,7 +71,7 @@ namespace util {
 		ValueType* set(const KeyType &key, const ValueType &value);
 
 		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
-	};
+};
 
 	/*==========================================================================
 	 * Map class methods
