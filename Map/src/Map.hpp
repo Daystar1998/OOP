@@ -238,4 +238,17 @@ namespace util {
 
 		return result;
 	}
+
+	template <typename KeyType, typename ValueType>
+	typename Map<KeyType, ValueType>::Iterator& Map<KeyType, ValueType>::Iterator::operator++() {
+
+		this->index++;
+
+		if (index >= map.size()) {
+
+			index = 0;
+		}
+
+		return *this;
+	}
 }
