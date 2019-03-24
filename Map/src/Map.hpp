@@ -71,6 +71,8 @@ namespace util {
 		ValueType* set(const KeyType &key, const ValueType &value);
 
 		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
+		void visit(IVisitor &visitor);
+	
 };
 
 	/*==========================================================================
@@ -248,6 +250,15 @@ namespace util {
 		}
 
 		return result;
+	}
+
+	template <typename KeyType, typename ValueType>
+	void Map<KeyType, ValueType>::visit(Map<KeyType, ValueType>::IVisitor &visitor) {
+
+		for (size_t = 0; i < keys.size(); i++) {
+
+			visitor.visit(keys[i], values[i]);
+		}
 	}
 
 	template <typename KeyType, typename ValueType>
