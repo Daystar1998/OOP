@@ -244,9 +244,9 @@ namespace util {
 
 		this->index++;
 
-		if (index >= map.size()) {
+		if (this->index >= this->map.size()) {
 
-			index = 0;
+			this->index = 0;
 		}
 
 		return *this;
@@ -259,9 +259,9 @@ namespace util {
 
 		this->index++;
 
-		if (index >= map.size()) {
+		if (this->index >= this->map.size()) {
 
-			index = 0;
+			this->index = 0;
 		}
 
 		return result;
@@ -270,9 +270,9 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	typename Map<KeyType, ValueType>::Iterator& Map<KeyType, ValueType>::Iterator::operator--() {
 
-		if (index == 0) {
+		if (this->index == 0) {
 
-			index = map.size() - 1;
+			this->index = this->map.size() - 1;
 		} else {
 
 			this->index--;
@@ -288,7 +288,7 @@ namespace util {
 
 		if (this->index == 0) {
 
-			this->index = map.size() - 1;
+			this->index = this->map.size() - 1;
 		} else {
 
 			this->index--;
