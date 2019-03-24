@@ -53,6 +53,8 @@ Bible::Bible() {
 
 			VerseKey verseKey(currentBookName, chapter, verseNumber);
 
+			StringUtils::trim(verseText);
+
 			(*this)[verseKey] = Verse(verseKey, verseText);
 		}
 	}
