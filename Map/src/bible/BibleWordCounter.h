@@ -21,5 +21,10 @@ public:
 	virtual ~BibleWordCounter();
 
 	virtual void visit(VerseKey &key, Verse &verse);
+
+	inline unsigned int getCount() const {
+
+		return count;
+	}
 };
 
