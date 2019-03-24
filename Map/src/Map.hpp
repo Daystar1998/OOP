@@ -280,4 +280,20 @@ namespace util {
 
 		return *this;
 	}
+
+	template <typename KeyType, typename ValueType>
+	typename Map<KeyType, ValueType>::Iterator Map<KeyType, ValueType>::Iterator::operator--(int) {
+
+		Iterator result = *this;
+
+		if (this->index == 0) {
+
+			this->index = map.size() - 1;
+		} else {
+
+			this->index--;
+		}
+
+		return result;
+	}
 }
