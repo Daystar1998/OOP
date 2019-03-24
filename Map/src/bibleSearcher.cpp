@@ -1,5 +1,7 @@
 // Author: Matthew Day
 
+#include "bibleSearcher.h"
+
 #include <iostream>
 
 #include "bible/Bible.h"
