@@ -15,7 +15,7 @@ namespace util {
 
 		public:
 
-			virtual ~IVisitor(){}
+			virtual ~IVisitor() {}
 
 			virtual void visit(KeyType &key, ValueType &value) = 0;
 		};
@@ -74,8 +74,7 @@ namespace util {
 
 		ValueType* find(const KeyType &key);
 		ValueType* set(const KeyType &key, const ValueType &value);
-	
-};
+	};
 
 	/*==========================================================================
 	 * Map class methods
