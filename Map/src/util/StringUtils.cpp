@@ -90,6 +90,48 @@ string StringUtils::getNextVariable(const string &data, int start, int &end) {
 	return result;
 }
 
+void StringUtils::trimStart(string &str) {
+
+	if (!str.empty()) {
+
+		int start;
+
+		for (start = 0; start < str.length(); start++) {
+
+			if (!isWhiteSpace(str.at(start))) {
+
+				break;
+			}
+		}
+
+		str.assign(str.substr(start, str.length() - start));
+	}
+}
+
+void StringUtils::trimEnd(string &str) {
+
+	if (!str.empty()) {
+
+		int end;
+
+		for (end = (int)str.length() - 1; end >= 0; end--) {
+
+			if (!isWhiteSpace(str.at(end))) {
+
+				break;
+			}
+		}
+
+		str.assign(str.substr(0, end + 1));
+	}
+}
+
+void StringUtils::trim(string &str) {
+
+	trimStart(str);
+	trimEnd(str);
+}
+
 bool StringUtils::startsWith(string &lValue, const string &rValue) {
 
 	bool result = false;
@@ -118,6 +160,25 @@ bool StringUtils::startsWith(string &lValue, const string &rValue) {
 
 			result = true;
 		}
+	}
+
+	return result;
+}
+
+bool StringUtils::isWhiteSpace(char c) {
+
+	bool result = false;
+
+	switch (c) {
+
+		case ' ':
+		case '\n':
+		case '\r':
+		case '\t':
+		case '\v':
+
+			result = true;
+			break;
 	}
 
 	return result;

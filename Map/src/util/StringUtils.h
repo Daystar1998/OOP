@@ -19,6 +19,14 @@ public:
 	static string getVariable(const string &data, int start, int &end);
 
 	static string getNextVariable(const string &data, int start, int &end);
+	
+	static void trimStart(string &str);
+
+	static void trimEnd(string &str);
+
+	static void trim(string &str);
 
 	static bool startsWith(string &lValue, const string &rValue);
+
+	static bool isWhiteSpace(char c);
 };
