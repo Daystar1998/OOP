@@ -2,6 +2,8 @@
 
 #include "VerseKey.h"
 
+#include <cctype>
+
 VerseKey::VerseKey(string book, int chapter, int verseNumber)
 	: book(book), chapter(chapter), verseNumber(verseNumber) {
 }
@@ -23,6 +25,17 @@ istream& operator>>(istream &in, VerseKey &verseKey) {
 
 	cout << "Enter the book: ";
 	in >> book;
+
+	if (std::isdigit(book[0])) {
+
+		book += " ";
+
+		string bookSecondPart;
+
+		in >> bookSecondPart;
+
+		book += bookSecondPart;
+	}
 
 	cout << "Enter the chapter: ";
 	in >> chapter;
