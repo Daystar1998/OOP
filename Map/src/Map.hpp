@@ -65,15 +65,15 @@ namespace util {
 
 			ValueType& operator*();
 		};
+
+		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
+		void visit(IVisitor &visitor);
 	private:
 		std::vector<KeyType> keys;
 		std::vector<ValueType> values;
 
 		ValueType* find(const KeyType &key);
 		ValueType* set(const KeyType &key, const ValueType &value);
-
-		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
-		void visit(IVisitor &visitor);
 	
 };
 
