@@ -242,6 +242,10 @@ namespace util {
 	}
 
 	template <typename KeyType, typename ValueType>
+	Map<KeyType, ValueType>::Iterator::Iterator(Map<KeyType, ValueType> &map)
+		:map(map) {}
+
+	template <typename KeyType, typename ValueType>
 	typename Map<KeyType, ValueType>::Iterator& Map<KeyType, ValueType>::Iterator::operator++() {
 
 		this->index++;
