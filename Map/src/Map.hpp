@@ -257,7 +257,7 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	void Map<KeyType, ValueType>::visit(Map<KeyType, ValueType>::IVisitor &visitor) {
 
-		for (size_t = 0; i < keys.size(); i++) {
+		for (size_t i = 0; i < keys.size(); i++) {
 
 			visitor.visit(keys[i], values[i]);
 		}
