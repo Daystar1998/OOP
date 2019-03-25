@@ -20,10 +20,20 @@ void BiblePigLatin::visit(VerseKey &key, Verse &verse) {
 
 			string currentWord = StringUtils::getVariable(verseText, i, i);
 
+			string convertedWord = "";
+
+			bool capitalized = false;
+
+			if (std::isupper(currentWord[0])) {
+
+				currentWord[0] = tolower(currentWord[0]);
+				capitalized = true;
+			}
+
 			if (isVowel(currentWord[0])) {
 
-				convertedVerse.append(currentWord);
-				convertedVerse.append("yay");
+				convertedWord.append(currentWord);
+				convertedWord.append("yay");
 			} else {
 
 				string consonants = "";
@@ -32,9 +42,9 @@ void BiblePigLatin::visit(VerseKey &key, Verse &verse) {
 
 					if (j == currentWord.size() - 1 || isVowel(currentWord[j])) {
 
-						convertedVerse += currentWord.substr(j, currentWord.size() - j);
-						convertedVerse += consonants;
-						convertedVerse += "ay";
+						convertedWord += currentWord.substr(j, currentWord.size() - j);
+						convertedWord += consonants;
+						convertedWord += "ay";
 
 						break;
 					} else {
@@ -43,6 +53,13 @@ void BiblePigLatin::visit(VerseKey &key, Verse &verse) {
 					}
 				}
 			}
+
+			if (capitalized) {
+
+				convertedWord[0] = toupper(convertedWord[0]);
+			}
+
+			convertedVerse += convertedWord;
 		} else {
 
 			convertedVerse += verseText[i];
