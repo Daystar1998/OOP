@@ -75,5 +75,11 @@ void iterateOverBible() {
 			cout << (*(++i)).getText() << endl;
 
 			break;
+		case postincrementOption:
+
+			cout << (*(i++)).getText() << endl;
+
+			break;
+		};
 	} while (selectedOption != quitOption);
 }
