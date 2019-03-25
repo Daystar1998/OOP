@@ -18,6 +18,8 @@ void iterateOverBible() {
 
 	VerseKey verseKey("", 0, 0);
 
+	Bible::Iterator i = bible.begin();
+
 	int startOption = 1;
 	int predecrementOption = 2;
 	int postdecrementOption = 3;
