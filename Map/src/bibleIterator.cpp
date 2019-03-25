@@ -80,6 +80,11 @@ void iterateOverBible() {
 			cout << (*(i++)).getText() << endl;
 
 			break;
-		};
+		case displayCurrent:
+
+			cout << (*i).getText() << endl;
+
+			break;
+	};
 	} while (selectedOption != quitOption);
 }
