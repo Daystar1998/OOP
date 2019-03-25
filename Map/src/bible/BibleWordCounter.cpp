@@ -17,7 +17,7 @@ void BibleWordCounter::visit(VerseKey &key, Verse &verse) {
 
 	string currentWord = StringUtils::getNextVariable(verseText, currentPosition, currentPosition);
 
-	while (currentPosition < verseText.size()) {
+	while (currentWord != "") {
 
 		if (currentWord == word) {
 
