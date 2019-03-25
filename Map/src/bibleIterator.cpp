@@ -60,6 +60,11 @@ void iterateOverBible() {
 			cout << (*i).getText() << endl;
 
 			break;
+		case predecrementOption:
+
+			cout << (*(--i)).getText() << endl;
+
+			break;
 		};
 	} while (selectedOption != quitOption);
 }
