@@ -30,14 +30,8 @@ Bible::Bible() {
 				// Skip the book number
 				StringUtils::getNextNumber(line, currentPosition, currentPosition);
 
-				currentBookName = StringUtils::getNextVariable(line, currentPosition + 1, currentPosition);
-
-				if (std::isdigit(currentBookName[0])) {
-
-					currentBookName += " ";
-
-					currentBookName.append(StringUtils::getNextVariable(line, currentPosition + 1, currentPosition));
-				}
+				currentBookName = line.substr(currentPosition + 1, line.size() - currentPosition - 1);
+				StringUtils::trim(currentBookName);
 			} else {
 
 				int chapter;
