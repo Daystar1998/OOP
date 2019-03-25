@@ -13,5 +13,7 @@ public:
 	virtual ~BiblePigLatin();
 
 	virtual void visit(VerseKey &key, Verse &verse);
+
+	virtual bool isVowel(char character) const;
 };
 
