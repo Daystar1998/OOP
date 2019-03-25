@@ -2,6 +2,8 @@
 
 #pragma once
 
+#include <cctype>
+
 #include "Bible.h"
 
 class BiblePigLatin : public Bible::IVisitor {
