@@ -4,9 +4,9 @@
 
 #include <iostream>
 
-#include "bible/Bible.h"
-#include "bible/VerseKey.h"
-#include "bible/Verse.h"
+#include "../bible/Bible.h"
+#include "../bible/VerseKey.h"
+#include "../bible/Verse.h"
 
 using std::cin;
 using std::endl;
