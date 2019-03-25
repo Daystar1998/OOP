@@ -10,16 +10,16 @@ using std::cin;
 using std::endl;
 using std::cout;
 
-int searchOption = 1;
-int iterateOption = 2;
-int quitOption = 3;
+const int searchOption = 1;
+const int iterateOption = 2;
+const int quitOption = 3;
 
 void printMenu() {
 
 	cout << searchOption << ": Search Bible for verse" << endl;
 	cout << iterateOption << ": Iterate over Bible" << endl;
 	cout << quitOption << ": Quit" << endl;
-	cout <<  "\nEnter selection: ";
+	cout << "\nEnter selection: ";
 }
 
 int main() {
@@ -36,13 +36,17 @@ int main() {
 
 		selectedOption = std::stoi(line);
 
-		if (selectedOption == searchOption) {
+		switch (selectedOption) {
+
+		case searchOption:
 
 			searchBible();
-		} else if (selectedOption == iterateOption) {
+			break;
+		case iterateOption:
 
 			iterateOverBible();
-		}
+			break;
+		};
 	} while (selectedOption != quitOption);
 
 	return 0;
