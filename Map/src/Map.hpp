@@ -64,6 +64,9 @@ namespace util {
 			Iterator operator--(int);
 
 			ValueType& operator*();
+
+			// Added because the compiler throws an error stating the copy assignment operator was deleted
+			const Iterator& operator=(const Iterator &other);
 		};
 
 		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
@@ -353,5 +356,14 @@ namespace util {
 	ValueType& Map<KeyType, ValueType>::Iterator::operator*() {
 
 		return &(this->map.values[index]);
+	}
+
+	template <typename KeyType, typename ValueType>
+	const typename Map<KeyType, ValueType>::Iterator& Map<KeyType, ValueType>::Iterator::operator=(const Map<KeyType, ValueType>::Iterator &other) {
+
+		this->map = other.map;
+		this->index = other.index;
+
+		return *this;
 	}
 }
