@@ -21,11 +21,11 @@ const int quitOption = 5;
 
 void printMenu() {
 
-	cout << searchOption << ": Search Bible for verse" << endl;
-	cout << iterateOption << ": Iterate over Bible" << endl;
-	cout << countWordsOption << ": Count number of instances of the specified word" << endl;
-	cout << pigLatinOption << ": Convert to pig latin" << endl;
-	cout << quitOption << ": Quit" << endl;
+	cout << searchOption << ") Search Bible for verse" << endl;
+	cout << iterateOption << ") Iterate over Bible" << endl;
+	cout << countWordsOption << ") Count number of instances of the specified word" << endl;
+	cout << pigLatinOption << ") Convert to pig latin" << endl;
+	cout << quitOption << ") Quit" << endl;
 	cout << "\nEnter selection: ";
 }
 

@@ -34,13 +34,13 @@ void iterateOverBible() {
 
 	do {
 
-		cout << startOption << ": Start at new verse" << endl;
-		cout << predecrementOption << ": Pre-decrement" << endl;
-		cout << postdecrementOption << ": Post-decrement" << endl;
-		cout << preincrementOption << ": Pre-increment" << endl;
-		cout << postincrementOption << ": Post-increment" << endl;
-		cout << displayCurrent << ": Display current verse" << endl;
-		cout << quitOption << ": Quit" << endl;
+		cout << startOption << ") Start at new verse" << endl;
+		cout << predecrementOption << ") Pre-decrement" << endl;
+		cout << postdecrementOption << ") Post-decrement" << endl;
+		cout << preincrementOption << ") Pre-increment" << endl;
+		cout << postincrementOption << ") Post-increment" << endl;
+		cout << displayCurrent << ") Display current verse" << endl;
+		cout << quitOption << ") Quit" << endl;
 		cout << "\nEnter selection: ";
 
 		std::getline(cin, line);
