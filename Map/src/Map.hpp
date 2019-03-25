@@ -71,6 +71,8 @@ namespace util {
 		void visit(IVisitor &visitor);
 
 		Iterator begin();
+
+		Iterator end();
 	private:
 		std::vector<KeyType> keys;
 		std::vector<ValueType> values;
@@ -156,6 +158,16 @@ namespace util {
 		Iterator result(*this);
 
 		result.index = 0;
+
+		return result;
+	}
+
+	template <typename KeyType, typename ValueType>
+	typename Map<KeyType, ValueType>::Iterator Map<KeyType, ValueType>::end() {
+
+		Iterator result(*this);
+
+		result.index = this->size();
 
 		return result;
 	}
