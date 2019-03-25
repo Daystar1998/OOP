@@ -355,7 +355,7 @@ namespace util {
 	template <typename KeyType, typename ValueType>
 	ValueType& Map<KeyType, ValueType>::Iterator::operator*() {
 
-		return &(this->map.values[index]);
+		return this->map.values[this->index];
 	}
 
 	template <typename KeyType, typename ValueType>
