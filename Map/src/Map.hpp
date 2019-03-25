@@ -67,7 +67,10 @@ namespace util {
 		};
 
 		Map<KeyType, ValueType>::Iterator getIterator(KeyType &key);
+
 		void visit(IVisitor &visitor);
+
+		Iterator begin();
 	private:
 		std::vector<KeyType> keys;
 		std::vector<ValueType> values;
@@ -143,6 +146,16 @@ namespace util {
 		}
 
 			  // return the address of the value, in the values list, that was changed or added
+
+		return result;
+	}
+
+	template <typename KeyType, typename ValueType>
+	typename Map<KeyType, ValueType>::Iterator Map<KeyType, ValueType>::begin() {
+
+		Iterator result(*this);
+
+		result.index = 0;
 
 		return result;
 	}
