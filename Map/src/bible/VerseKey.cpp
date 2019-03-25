@@ -26,16 +26,44 @@ istream& operator>>(istream &in, VerseKey &verseKey) {
 	int verseNumber;
 
 	cout << "Enter the book: ";
-	std::getline(in, line);
-	book = line;
+
+	do {
+
+		std::getline(in, line);
+		book = line;
+	} while (line.size() == 0);
 
 	cout << "Enter the chapter: ";
-	std::getline(in, line);
-	chapter = stoi(line);
+
+	do {
+
+		std::getline(in, line);
+
+		try {
+
+			chapter = stoi(line);
+		} catch (std::invalid_argument) {
+
+			cout << "The value entered is not valid" << endl;
+			line.clear();
+		}
+	} while (line.size() == 0);
 
 	cout << "Enter the verse number: ";
-	std::getline(in, line);
-	verseNumber = stoi(line);
+
+	do {
+
+		std::getline(in, line);
+
+		try {
+
+			verseNumber = stoi(line);
+		} catch (std::invalid_argument) {
+
+			cout << "The value entered is not valid" << endl;
+			line.clear();
+		}
+	} while (line.size() == 0);
 
 	verseKey = VerseKey(book, chapter, verseNumber);
 

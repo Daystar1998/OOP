@@ -6,6 +6,7 @@
 #include <string>
 
 using std::cout;
+using std::endl;
 using std::istream;
 using std::string;
 
