@@ -20,13 +20,13 @@ void iterateOverBible() {
 
 	Bible::Iterator i = bible.begin();
 
-	int startOption = 1;
-	int predecrementOption = 2;
-	int postdecrementOption = 3;
-	int preincrementOption = 4;
-	int postincrementOption = 5;
-	int displayCurrent = 6;
-	int quitOption = 7;
+	const int startOption = 1;
+	const int predecrementOption = 2;
+	const int postdecrementOption = 3;
+	const int preincrementOption = 4;
+	const int postincrementOption = 5;
+	const int displayCurrent = 6;
+	const int quitOption = 7;
 
 	int selectedOption;
 
@@ -42,5 +42,24 @@ void iterateOverBible() {
 		cout << "\nEnter selection: ";
 
 		cin >> selectedOption;
+
+		switch (selectedOption) {
+
+		case startOption:
+
+			cin >> verseKey;
+
+			try {
+
+				i = bible.getIterator(verseKey);
+			} catch (std::range_error) {
+
+				cout << "Verse not found" << endl;
+			}
+
+			cout << (*i).getText() << endl;
+
+			break;
+		};
 	} while (selectedOption != quitOption);
 }
