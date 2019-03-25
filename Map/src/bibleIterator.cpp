@@ -65,6 +65,15 @@ void iterateOverBible() {
 			cout << (*(--i)).getText() << endl;
 
 			break;
-		};
+		case postdecrementOption:
+
+			cout << (*(i--)).getText() << endl;
+
+			break;
+		case preincrementOption:
+
+			cout << (*(++i)).getText() << endl;
+
+			break;
 	} while (selectedOption != quitOption);
 }
