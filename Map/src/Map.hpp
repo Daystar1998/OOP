@@ -170,7 +170,7 @@ namespace util {
 
 		Iterator result(*this);
 
-		result.index = this->size();
+		result.index = this->size() - 1;
 
 		return result;
 	}
