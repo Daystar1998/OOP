@@ -1,6 +1,7 @@
 // Author: Matthew Day
 
 #include <iostream>
+#include <string>
 
 #include "bibleSearcher.h"
 #include "bibleIterator.h"
@@ -25,11 +26,15 @@ int main() {
 
 	int selectedOption;
 
+	std::string line;
+
 	do {
 
 		printMenu();
 
-		cin >> selectedOption;
+		std::getline(cin, line);
+
+		selectedOption = std::stoi(line);
 
 		if (selectedOption == searchOption) {
 

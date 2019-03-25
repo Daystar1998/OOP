@@ -19,29 +19,23 @@ bool VerseKey::operator==(const VerseKey &other) const {
 
 istream& operator>>(istream &in, VerseKey &verseKey) {
 
+	string line;
+
 	string book;
 	int chapter;
 	int verseNumber;
 
 	cout << "Enter the book: ";
-	in >> book;
-
-	if (std::isdigit(book[0])) {
-
-		book += " ";
-
-		string bookSecondPart;
-
-		in >> bookSecondPart;
-
-		book += bookSecondPart;
-	}
+	std::getline(in, line);
+	book = line;
 
 	cout << "Enter the chapter: ";
-	in >> chapter;
+	std::getline(in, line);
+	chapter = stoi(line);
 
 	cout << "Enter the verse number: ";
-	in >> verseNumber;
+	std::getline(in, line);
+	verseNumber = stoi(line);
 
 	verseKey = VerseKey(book, chapter, verseNumber);
 

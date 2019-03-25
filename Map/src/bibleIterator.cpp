@@ -30,6 +30,8 @@ void iterateOverBible() {
 
 	int selectedOption;
 
+	std::string line;
+
 	do {
 
 		cout << startOption << ": Start at new verse" << endl;
@@ -41,7 +43,8 @@ void iterateOverBible() {
 		cout << quitOption << ": Quit" << endl;
 		cout << "\nEnter selection: ";
 
-		cin >> selectedOption;
+		std::getline(cin, line);
+		selectedOption = std::stoi(line);
 
 		switch (selectedOption) {
 
