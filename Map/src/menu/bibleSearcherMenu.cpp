@@ -1,6 +1,6 @@
 // Author: Matthew Day
 
-#include "bibleSearcher.h"
+#include "bibleSearcherMenu.h"
 
 #include <iostream>
 

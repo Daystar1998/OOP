@@ -1,6 +1,6 @@
 // Author: Matthew Day
 
-#include "bibleIterator.h"
+#include "bibleIteratorMenu.h"
 
 #include <iostream>
 

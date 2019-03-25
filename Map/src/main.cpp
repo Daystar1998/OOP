@@ -3,8 +3,8 @@
 #include <iostream>
 #include <string>
 
-#include "menu/bibleSearcher.h"
-#include "menu/bibleIterator.h"
+#include "menu/bibleSearcherMenu.h"
+#include "menu/bibleIteratorMenu.h"
 
 using std::cin;
 using std::endl;
