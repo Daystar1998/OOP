@@ -11,7 +11,7 @@ Bible *Bible::instance = nullptr;
 
 Bible::Bible() {
 
-	std::fstream fin("res/bible.txt");
+	std::ifstream fin("res/bible.txt");
 
 	if (!fin.fail()) {
 
@@ -63,6 +63,8 @@ Bible::Bible() {
 
 		throw std::runtime_error("File not found");
 	}
+
+	fin.close();
 }
 
 Bible::~Bible() {}
