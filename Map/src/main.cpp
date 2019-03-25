@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 
+#include "bible/BiblePigLatin.h"
 #include "bible/BibleWordCounter.h"
 
 #include "menu/bibleSearcherMenu.h"
@@ -15,13 +16,15 @@ using std::cout;
 const int searchOption = 1;
 const int iterateOption = 2;
 const int countWordsOption = 3;
-const int quitOption = 4;
+const int pigLatinOption = 4;
+const int quitOption = 5;
 
 void printMenu() {
 
 	cout << searchOption << ": Search Bible for verse" << endl;
 	cout << iterateOption << ": Iterate over Bible" << endl;
 	cout << countWordsOption << ": Count number of instances of the specified word" << endl;
+	cout << pigLatinOption << ": Convert to pig latin" << endl;
 	cout << quitOption << ": Quit" << endl;
 	cout << "\nEnter selection: ";
 }
@@ -31,6 +34,9 @@ int main() {
 	int selectedOption;
 
 	std::string line;
+
+	BibleWordCounter counter("");
+	BiblePigLatin pigLatin;
 
 	do {
 
@@ -42,34 +48,39 @@ int main() {
 
 		switch (selectedOption) {
 
-		case searchOption:
+			case searchOption:
 
-			searchBible();
-			break;
-		case iterateOption:
+				searchBible();
+				break;
+			case iterateOption:
 
-			iterateOverBible();
-			break;
-		case countWordsOption:
+				iterateOverBible();
+				break;
+			case countWordsOption:
 
-			cout << "Enter word: ";
-			std::getline(cin, line);
+				cout << "Enter word: ";
+				std::getline(cin, line);
 
-			BibleWordCounter counter(line);
+				counter = BibleWordCounter(line);
 
-			Bible::getInstance().visit(counter);
+				Bible::getInstance().visit(counter);
 
-			cout << "\"" << line << "\" was found " << counter.getCount();
+				cout << "\"" << line << "\" was found " << counter.getCount();
 
-			if (counter.getCount() == 1) {
+				if (counter.getCount() == 1) {
 
-				cout << " time" << endl;
-			} else {
+					cout << " time" << endl;
+				} else {
 
-				cout << " times" << endl;
-			}
+					cout << " times" << endl;
+				}
 
-			break;
+				break;
+			case pigLatinOption:
+
+				Bible::getInstance().visit(pigLatin);
+
+				break;
 		};
 	} while (selectedOption != quitOption);
 
