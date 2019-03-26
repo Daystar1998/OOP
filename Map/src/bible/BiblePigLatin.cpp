@@ -66,7 +66,7 @@ void BiblePigLatin::visit(VerseKey &key, Verse &verse) {
 		}
 	}
 
-	Bible::getInstance()[key] = Verse(key, convertedVerse);
+	verse = Verse(key, convertedVerse);
 }
 
 bool BiblePigLatin::isVowel(char character) const {
